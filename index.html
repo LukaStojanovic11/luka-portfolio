@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luka Stojanovic, designer graphique, UX/UI & stratégie digitale à Lausanne</title>
+<meta name="description" content="Portfolio de Luka Stojanovic, designer multidisciplinaire à Lausanne (HEIG-VD) : design graphique, UX/UI et stratégie digitale. Projets web, branding et édition.">
+<meta name="author" content="Luka Stojanovic">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#F6F4EF">
+<link rel="canonical" href="https://luka-stojanovic.ch/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Luka Stojanovic">
+<meta property="og:title" content="Luka Stojanovic, designer graphique, UX/UI & stratégie digitale">
+<meta property="og:description" content="Portfolio d'un designer multidisciplinaire basé à Lausanne. Design graphique, UX/UI et stratégie digitale.">
+<meta property="og:url" content="https://luka-stojanovic.ch/">
+<meta property="og:image" content="https://luka-stojanovic.ch/assets/img/og.jpg">
+<meta property="og:locale" content="fr_CH">
+<meta property="og:locale:alternate" content="en_US">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Luka Stojanovic, designer graphique, UX/UI & stratégie digitale">
+<meta name="twitter:description" content="Portfolio d'un designer multidisciplinaire basé à Lausanne.">
+<meta name="twitter:image" content="https://luka-stojanovic.ch/assets/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --bg:#F6F4EF;
+  --bg-2:#ECE9E2;
+  --surface:#FFFFFF;
+  --sage-50:#E8EEE5;
+  --ink:#211D16;
+  --muted:#7A756C;
+  --line:#E4E0D8;
+  --line-2:#D4CFC5;
+  --rust:#2E5A3C;
+  --rust-deep:#23462F;
+  --lime:#CFE8AE;
+  --ink-2:#55514A;
+  --on-g-2:rgba(247,245,240,.76);
+  --on-g-3:rgba(247,245,240,.55);
+  --cream:#F7F5F0;
+  --maxw:1220px;
+  --gutter:clamp(20px,5vw,60px);
+  --r:18px;
+  --r-lg:28px;
+  --font-display:"Bricolage Grotesque","Figtree",sans-serif;
+  --font-sans:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.33,.9,.3,1);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){ :root{ color-scheme:light; } }
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:var(--font-sans);
+  font-size:1.0625rem;
+  line-height:1.55;
+  color:var(--ink);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+/* premium film-grain overlay */
+body::after{content:"";position:fixed;inset:0;z-index:2000;pointer-events:none;opacity:.04;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:140px 140px}
+@media (prefers-reduced-motion:reduce){body::after{opacity:.025}}
+/* custom cursor ring (desktop pointer only) */
+.cursor-ring{position:fixed;top:0;left:0;z-index:3000;width:30px;height:30px;border:1.5px solid var(--rust);border-radius:50%;pointer-events:none;opacity:0;transition:width .3s var(--ease),height .3s var(--ease),background .3s,opacity .35s;will-change:transform}
+.cursor-ring.on{opacity:.75}
+.cursor-ring.hot{width:54px;height:54px;background:rgba(46,90,60,.08)}
+@media (hover:none),(pointer:coarse){.cursor-ring{display:none!important}}
+@media (prefers-reduced-motion:reduce){.cursor-ring{display:none!important}}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:var(--rust);color:var(--cream)}
+:focus-visible{outline:2.5px solid var(--rust);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter)}
+
+h1,h2,h3,.display{font-family:var(--font-display);font-weight:700;letter-spacing:-.025em}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ============ HEADER ============ */
+.site-head{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+.site-head.scrolled{border-color:var(--line)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.brand{font-family:var(--font-display);font-weight:600;font-size:1.3rem;display:flex;align-items:center;gap:3px}
+.brand .dot{color:var(--rust)}
+.nav{display:flex;align-items:center;gap:30px}
+.nav .nav-links{display:flex;gap:28px;align-items:center}
+.nav a{font-weight:600;font-size:1rem;color:var(--ink-2);transition:color .2s;position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--rust);transform:scaleX(0);transform-origin:left;transition:transform .28s var(--ease)}
+.nav a:hover{color:var(--ink)}.nav a:hover::after{transform:scaleX(1)}
+.lang{display:inline-flex;align-items:center;background:var(--bg-2);border-radius:999px;padding:3px}
+.lang button{padding:6px 13px;border-radius:999px;font-weight:600;font-size:.82rem;color:var(--muted);transition:.2s}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+.menu-btn{display:none;width:42px;height:42px;border-radius:999px;background:var(--ink);color:var(--cream);align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.menu-btn span{width:16px;height:2px;background:var(--cream);border-radius:2px;transition:.25s}
+.menu-btn.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.mobile-nav{position:fixed;inset:72px 0 0 0;z-index:55;background:var(--sage-50);display:flex;flex-direction:column;justify-content:center;padding:0 var(--gutter) 12vh;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s .3s}
+.mobile-nav.open{opacity:1;visibility:visible;transition:opacity .3s ease,visibility 0s}
+.mobile-nav a{padding:16px 0;border-bottom:1px solid var(--line-2);font-family:var(--font-display);font-size:clamp(2.3rem,11vw,3.4rem);font-weight:700;letter-spacing:-.03em;line-height:1.05;color:var(--ink);opacity:0;transform:translateY(16px);transition:opacity .35s ease,transform .45s var(--ease),color .2s}
+.mobile-nav a:last-child{border-bottom:0}
+.mobile-nav a:active{color:var(--rust)}
+.mobile-nav.open a{opacity:1;transform:none}
+.mobile-nav.open a:nth-child(2){transition-delay:.05s}.mobile-nav.open a:nth-child(3){transition-delay:.1s}
+html.nav-open{overflow:hidden}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding-top:clamp(62px,11vw,132px);padding-bottom:clamp(64px,9vw,120px);overflow:hidden;background:var(--sage-50);color:var(--ink);min-height:calc(100vh - 72px);min-height:calc(100svh - 72px);display:flex;align-items:center}
+.hero>.inner{width:100%}
+.hero::before{content:"";position:absolute;z-index:0;inset:-30% -12% -10% -12%;pointer-events:none;
+  background:
+    radial-gradient(42% 46% at 80% 16%, rgba(46,90,60,.14), transparent 62%),
+    radial-gradient(44% 48% at 12% 22%, rgba(255,255,255,.75), transparent 64%),
+    radial-gradient(50% 46% at 96% 78%, rgba(46,90,60,.08), transparent 66%),
+    radial-gradient(46% 40% at 40% 100%, rgba(255,255,255,.45), transparent 68%);
+  filter:blur(6px);animation:aurora 22s ease-in-out infinite alternate}
+@keyframes aurora{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-2.2%,1.6%,0) scale(1.06)}100%{transform:translate3d(1.8%,-1.2%,0) scale(1.03)}}
+@media (prefers-reduced-motion:reduce){.hero::before{animation:none}}
+.hero .inner{position:relative;z-index:1;width:100%}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(30px,5vw,80px);align-items:center}
+@keyframes heroUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.hero .eyebrow,.hero .lead,.hero .hero-actions{opacity:0;animation:heroUp .85s var(--ease) forwards}
+.hero .eyebrow{animation-delay:.05s}.hero .lead{animation-delay:.56s}.hero .hero-actions{animation-delay:.68s}
+.hero-visual{opacity:0;animation:heroUp 1s var(--ease) .3s forwards}
+@media (prefers-reduced-motion:reduce){.hero .eyebrow,.hero .lead,.hero .hero-actions,.hero-visual{opacity:1;animation:none}}
+.eyebrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:clamp(18px,2.2vw,28px);font-weight:600}
+.eyebrow .role{display:inline-flex;align-items:center;gap:14px;color:var(--rust);font-size:clamp(.82rem,.95vw,.95rem);letter-spacing:.05em;text-transform:uppercase}
+.eyebrow .role::before{content:"";width:34px;height:2px;background:var(--rust);border-radius:2px}
+.hero h1{font-size:clamp(2.7rem,5.6vw,5rem);line-height:.98;letter-spacing:-.035em;max-width:none;font-weight:700;color:var(--ink)}
+.hero h1 .l2{white-space:nowrap}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .ln>span{display:block;will-change:transform}
+.hero h1 .l3>span{color:var(--ink-2)}
+.hero h1 .rot{color:var(--rust);font-weight:700;display:inline-block;white-space:nowrap;vertical-align:bottom}
+.hero h1 .rot .w{display:inline-block;transition:transform .55s var(--ease),opacity .4s var(--ease)}
+.hero h1 .rot .w.out{transform:translateY(-72%);opacity:0}
+.hero h1 .rot .w.inr{transform:translateY(72%);opacity:0}
+.hero .lead{margin-top:clamp(24px,2.6vw,34px);max-width:48ch;font-size:clamp(1.08rem,1.3vw,1.3rem);color:var(--ink-2);line-height:1.55;font-weight:500}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:clamp(26px,3vw,38px)}
+/* floating project cluster */
+.hero-visual{position:relative;height:clamp(460px,46vw,620px);perspective:1200px}
+.hcard{position:absolute;width:clamp(186px,18vw,260px);aspect-ratio:4/5;border-radius:20px;overflow:hidden;box-shadow:0 34px 60px -30px rgba(24,20,16,.6),0 8px 20px -14px rgba(24,20,16,.4);transform:translate(var(--px,0px),var(--py,0px)) rotate(var(--rot));transition:box-shadow .5s var(--ease);cursor:pointer;will-change:transform;border:5px solid var(--surface)}
+.hcard img{width:100%;height:100%;object-fit:cover}
+.hcard .hc-tag{position:absolute;left:12px;bottom:12px;background:rgba(18,16,14,.72);color:#fff;font-weight:600;font-size:.78rem;padding:5px 12px;border-radius:999px;backdrop-filter:blur(6px)}
+.hcard.c1{left:0;top:6%;z-index:2}
+.hcard.c2{left:33%;top:30%;z-index:3}
+.hcard.c3{right:0;top:2%;z-index:1}
+.hcard:hover{transform:translate(var(--px,0px),var(--py,0px)) rotate(0deg) scale(1.06) translateY(-8px)!important;z-index:5;box-shadow:0 46px 80px -34px rgba(24,20,16,.7);animation-play-state:paused}
+@keyframes floatA{0%,100%{transform:translate(var(--px,0px),var(--py,0px)) rotate(var(--rot)) translateY(0)}50%{transform:translate(var(--px,0px),var(--py,0px)) rotate(var(--rot)) translateY(-16px)}}
+.hero-visual.anim .hcard{animation:floatA var(--dur,7s) ease-in-out infinite;animation-delay:var(--del,0s)}
+.hero-visual.anim .hcard:hover{animation-play-state:paused}
+.hcard.c1{--dur:7.5s;--del:0s}.hcard.c2{--dur:6.2s;--del:.5s}.hcard.c3{--dur:8s;--del:1s}
+@media (prefers-reduced-motion:reduce){.hero-visual.anim .hcard{animation:none}}
+.scrollcue{position:absolute;right:var(--gutter);bottom:clamp(20px,3vw,38px);z-index:2;display:inline-flex;align-items:center;gap:13px;color:var(--ink);font-weight:600;font-size:.96rem;transition:gap .3s var(--ease)}
+.scrollcue .ring{width:50px;height:50px;border-radius:999px;background:var(--ink);color:var(--cream);display:grid;place-items:center;transition:.3s var(--ease);flex:none}
+.scrollcue .ring svg{animation:bob 2s var(--ease) infinite}
+.scrollcue:hover{gap:17px}.scrollcue:hover .ring{background:var(--rust);transform:translateY(3px)}
+@keyframes bob{0%,100%{transform:translateY(-2px)}50%{transform:translateY(3px)}}
+@media (prefers-reduced-motion:reduce){.scrollcue .ring svg{animation:none}}
+@media (max-width:960px){
+  .hero{min-height:auto;align-items:flex-start;padding-top:clamp(48px,11vw,78px);padding-bottom:clamp(54px,10vw,84px)}
+  .hero-grid{grid-template-columns:1fr;gap:clamp(40px,8vw,58px)}
+  .hero h1{font-size:clamp(2.9rem,9.5vw,4.6rem)}
+  .hero-visual{height:clamp(360px,72vw,440px);max-width:430px;margin-inline:auto;width:100%}
+  .hcard{width:clamp(146px,38vw,200px)}
+}
+@media (max-width:760px){.scrollcue{display:none}}
+@media (max-width:560px){
+  .hero h1 .l2{white-space:normal}
+  .hero-visual{height:78vw;max-width:360px}
+  .hcard{width:42vw;border-width:4px}
+  .hcard.c1{top:2%}.hcard.c2{top:26%;left:30%}.hcard.c3{top:0}
+  .hcard .hc-tag{font-size:.72rem;padding:4px 10px}
+}
+@media (max-width:460px){
+  .hero-visual{height:clamp(336px,94vw,410px);max-width:364px}
+  .hcard{width:clamp(146px,46vw,184px);border-width:4px}
+  .hcard.c1{top:4%}.hcard.c2{top:32%}.hcard.c3{top:0}
+}
+
+
+/* ============ SECTION HEAD ============ */
+.sec{padding-top:clamp(60px,8vw,110px);padding-bottom:clamp(20px,4vw,40px)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:clamp(30px,4vw,48px)}
+.sec-head h2{font-size:clamp(3.2rem,8.6vw,7rem);line-height:.92;letter-spacing:-.03em}
+.sec-sub{color:var(--ink-2);font-family:var(--font-sans);font-weight:500;font-size:clamp(1.05rem,1.5vw,1.35rem);margin-top:18px}
+.sec-head .note{color:var(--muted);font-weight:500}
+
+/* ============ WORK ============ */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:clamp(32px,4vw,52px)}
+.filters button{font-weight:600;font-size:.95rem;color:var(--ink);background:var(--surface);border:1px solid var(--line-2);padding:10px 18px;border-radius:999px;transition:.22s var(--ease)}
+.filters button:hover{border-color:var(--rust);color:var(--rust)}
+.filters button[aria-pressed="true"]{background:var(--rust);color:var(--cream);border-color:var(--rust)}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(24px,2.6vw,40px);align-items:stretch}
+.project{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(10px,1vw,14px);transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .3s}
+.project.feat{grid-column:1 / -1}
+.project:hover{transform:translateY(-5px);box-shadow:0 26px 50px -32px rgba(33,29,22,.38);border-color:var(--line-2)}
+.project .pmedia{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:var(--bg-2)}
+.project.feat .pmedia{aspect-ratio:16/7}
+.project .pmedia img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease),filter .55s var(--ease)}
+.project:hover .pmedia img{transform:scale(1.05)}
+.project .pnum{position:absolute;z-index:4;top:clamp(12px,1.3vw,18px);right:clamp(14px,1.5vw,20px);font-family:var(--font-display);font-weight:700;font-size:clamp(1.35rem,2vw,2rem);letter-spacing:-.02em;color:#fff;mix-blend-mode:difference;line-height:1;pointer-events:none}
+.project .pgo{position:absolute;z-index:4;right:clamp(14px,1.4vw,18px);bottom:clamp(14px,1.4vw,18px);width:clamp(44px,3.2vw,54px);height:clamp(44px,3.2vw,54px);border-radius:999px;background:var(--rust);color:var(--cream);display:grid;place-items:center;opacity:0;transform:translateY(12px) scale(.82);transition:opacity .4s var(--ease),transform .4s var(--ease);box-shadow:0 14px 28px -12px rgba(18,16,14,.6);pointer-events:none}
+.project:hover .pgo{opacity:1;transform:none}
+.project .pgo svg{transition:transform .35s var(--ease)}
+.project:hover .pgo svg{transform:translateX(2px)}
+.project.rv{transition-delay:var(--d,0s)}
+/* stack-settle entrance: cards start piled (lower + smaller for later ones), then settle into grid — no rotation */
+.project.pstack{opacity:0;transform:translateY(calc(40px + var(--si,0) * 15px)) scale(calc(.97 - var(--si,0) * .013));transform-origin:50% 0;transition:opacity .8s var(--ease),transform .95s var(--ease);will-change:transform,opacity}
+.project.pstack.in{opacity:1;transform:none}
+@media (min-width:821px){
+  .projects{align-items:start}
+  .project:not(.feat):nth-child(even){margin-top:clamp(30px,4.5vw,70px)}
+}
+/* ===== projects motion: vertical deck (mobile) + horizontal coverflow (desktop), inspired by vibrant.design "Smooth Gallery Stack Animation" ===== */
+.projects .pstage{display:contents}
+.projects .pcards{display:contents}
+.projects .pscroller{display:none}
+.hs-hint{display:none}
+/* vertical stacked deck */
+.projects.vmode{display:block;max-width:960px;margin:0 auto;padding-bottom:22vh;perspective:1500px}
+.projects.vmode .project{position:sticky;top:clamp(86px,13vh,128px);width:100%;margin:0 0 clamp(34px,8vh,84px);transform-origin:50% 0;backface-visibility:hidden;box-shadow:0 30px 60px -36px rgba(33,29,22,.5)}
+.projects.vmode .project:last-child{margin-bottom:0}
+.projects.vmode .project.feat{grid-column:auto}
+.projects.vmode .project .pmedia,.projects.vmode .project.feat .pmedia{aspect-ratio:16/10}
+.projects.vmode .project.pstack{opacity:1;transform:none}
+.projects.vmode .project:hover{box-shadow:0 40px 70px -38px rgba(33,29,22,.6)}
+@media (min-width:821px){.projects.vmode .project:not(.feat):nth-child(even){margin-top:0}}
+@media (prefers-reduced-motion:reduce){.projects.vmode .project{position:static;transform:none!important}}
+/* horizontal-scroll coverflow */
+.projects.hmode{display:block;max-width:none;margin:0;padding:0;height:100vh;height:100svh;position:relative}
+.projects.hmode .pstage{display:block;position:sticky;top:0;height:100vh;height:100svh;perspective:1700px;overflow:hidden}
+.projects.hmode .pcards{display:block;position:absolute;inset:0;pointer-events:none;z-index:1}
+.projects.hmode .pscroller{display:block;position:absolute;inset:0;z-index:2;overflow-x:auto;overflow-y:hidden;cursor:grab;overscroll-behavior-x:contain}
+.projects.hmode .pscroller:active{cursor:grabbing}
+.projects.hmode .pscroller::-webkit-scrollbar{height:9px}
+.projects.hmode .pscroller::-webkit-scrollbar-track{background:transparent}
+.projects.hmode .pscroller::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:10px;border:2px solid var(--bg)}
+.projects.hmode .pscroller::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+.projects.hmode .pspacer{height:100%}
+.projects.hmode .project{position:absolute;top:50%;left:50%;width:clamp(340px,38vw,520px);margin:0;transform:translate(-50%,-50%);transform-origin:50% 50%;backface-visibility:hidden;will-change:transform,opacity;box-shadow:0 44px 90px -44px rgba(20,16,12,.72)}
+.projects.hmode .project.feat{grid-column:auto}
+.projects.hmode .project .pmedia,.projects.hmode .project.feat .pmedia{aspect-ratio:4/3}
+.projects.hmode .project.pstack{opacity:1}
+.projects.hmode .project .pbody{padding-top:clamp(14px,1.4vw,20px)}
+.projects.hmode .hs-hint{position:absolute;left:50%;bottom:clamp(30px,5vh,52px);transform:translateX(-50%);z-index:50;display:inline-flex;align-items:center;gap:10px;color:var(--ink-2);font-weight:600;font-size:.85rem;letter-spacing:.02em;pointer-events:none;opacity:.8}
+.projects.hmode .hs-hint svg{animation:hsNudge 1.8s var(--ease) infinite}
+@keyframes hsNudge{0%,100%{transform:translateX(-2px)}50%{transform:translateX(4px)}}
+@media (prefers-reduced-motion:reduce){.projects.hmode .hs-hint svg{animation:none}}
+.project .prole{position:absolute;z-index:3;top:clamp(16px,1.6vw,22px);left:clamp(16px,1.6vw,22px);background:var(--rust);color:var(--cream);font-weight:600;font-size:.82rem;letter-spacing:.01em;padding:9px 16px;border-radius:999px;box-shadow:0 8px 20px -10px rgba(18,16,14,.5)}
+.project .prole.dark{background:var(--ink);color:#fff}
+.project .phlogo{position:absolute;inset:0;z-index:3;display:grid;place-items:center;padding:17%;background:var(--surface);opacity:1;clip-path:circle(0% at 82% 84%);transition:clip-path .6s var(--ease);pointer-events:none}
+.project .phlogo::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 120% at 82% 84%,var(--pcard,var(--sage-50)),transparent 70%);opacity:.5}
+.project .phlogo img{position:relative;width:100%;max-width:min(62%,320px);height:auto;transform:scale(.6) translateY(14px) rotate(-4deg);opacity:0;transition:transform .55s .14s cubic-bezier(.3,1.3,.5,1),opacity .4s .14s}
+.project.hl:hover .phlogo{clip-path:circle(150% at 82% 84%)}
+.project.hl:hover .phlogo img{transform:none;opacity:1}
+.project.hl .pfoot-sub{font-size:clamp(1.02rem,1.25vw,1.16rem);gap:16px}
+.project.hl .pfoot-sub .pcatl{color:var(--ink);font-weight:500}
+.project .pbody{flex:1;display:flex;flex-direction:column;gap:clamp(18px,2vw,26px);padding:clamp(18px,2vw,26px) clamp(8px,1vw,14px) clamp(6px,.6vw,10px)}
+.project .phook{font-family:var(--font-display);font-weight:600;font-size:clamp(1.35rem,1.9vw,1.75rem);line-height:1.12;letter-spacing:-.015em;color:var(--ink);max-width:30ch}
+.project.feat .phook{font-size:clamp(1.6rem,2.6vw,2.4rem)}
+.project .pfoot{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:auto;padding-top:clamp(14px,1.4vw,18px);border-top:1px solid var(--line)}
+.project .pfoot-txt{display:flex;align-items:center;gap:clamp(13px,1.3vw,18px);min-width:0}
+.project .pclient{font-family:var(--font-display);font-weight:600;color:var(--ink)}
+.project .pdiv{flex:none;width:1px;height:26px;background:var(--line-2)}
+.project .plogo{height:clamp(22px,2.1vw,29px);width:auto;max-width:min(42%,170px);object-fit:contain;object-position:left center;display:block}
+.project .pfoot-sub{display:flex;align-items:baseline;gap:12px;font-size:.92rem;color:var(--muted);white-space:nowrap}
+.project .pfoot-sub .pyr{color:var(--rust);font-weight:700}
+.project .plink{flex:none;display:inline-flex;align-items:center;gap:9px;color:var(--ink);font-weight:600;font-size:.98rem;letter-spacing:-.005em}
+.project .plink-t{position:relative}
+.project .plink-t::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1.5px;background:var(--rust);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.project .plink-ar{transition:transform .4s var(--ease)}
+.project:hover .plink{color:var(--rust)}
+.project:hover .plink-t::after{transform:scaleX(1)}
+.project:hover .plink-ar{transform:translateX(5px)}
+
+/* ============ ABOUT ============ */
+.about{background:var(--sage-50);margin-top:clamp(60px,8vw,110px);padding-bottom:clamp(40px,6vw,80px)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,5vw,72px);align-items:center}
+.portrait-wrap{position:relative;margin:0;overflow:hidden;border-radius:var(--r-lg)}
+.portrait{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .7s var(--ease)}
+.portrait-wrap:hover .portrait{transform:scale(1.03)}
+.bio{font-family:var(--font-display);font-size:clamp(1.5rem,2.6vw,2.3rem);line-height:1.32;font-weight:400;max-width:20ch}
+.bio .em{color:var(--rust)}
+.about-note{margin-top:22px;color:var(--ink-2);line-height:1.6;max-width:42ch;font-size:1.05rem}
+
+.expertise{margin-top:clamp(90px,10vw,150px)}
+.exp-block{padding-top:0}
+.exp-block+.exp-block{margin-top:clamp(30px,4vw,48px)}
+.exp-block .k{display:inline-flex;align-items:center;gap:12px;font-size:1rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);font-weight:700;margin-bottom:clamp(22px,2.8vw,34px)}
+.tools-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px 32px;margin-bottom:0}
+.subsep{padding-top:clamp(18px,3vh,30px);margin-bottom:clamp(34px,4vw,56px)}
+.subpart{margin-top:clamp(10px,2vw,24px)}
+.tools-head h3{font-family:var(--font-display);font-weight:700;font-size:clamp(2.1rem,4vw,3.4rem);line-height:.95;letter-spacing:-.03em;color:var(--ink)}
+.tools-head h3 .hnum{display:inline-block;margin-right:.34em;font-size:1em;font-weight:600;letter-spacing:-.02em;color:var(--rust);vertical-align:baseline}
+.tools-head p{color:var(--ink-2);font-size:clamp(1rem,1.3vw,1.15rem)}
+.disc3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(30px,4vw,64px)}
+.dcol h4{font-family:var(--font-display);font-weight:600;font-size:clamp(1.5rem,2vw,1.95rem);margin-bottom:20px;letter-spacing:-.01em;color:var(--ink)}
+.sklist{list-style:none}
+.sklist li{font-family:var(--font-display);font-size:clamp(1.1rem,1.35vw,1.3rem);line-height:1.25;color:#746a5d;padding:9px 0;width:fit-content;transition:color .25s var(--ease),transform .3s var(--ease)}
+.sklist li:hover{color:var(--rust);transform:translateX(7px)}
+.tools-marquee{overflow:hidden;width:100%;margin-top:4px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.tm-track{display:inline-flex;white-space:nowrap;animation:mq 26s linear infinite;will-change:transform}
+.tm-track span{font-family:var(--font-display);font-weight:600;font-size:clamp(1.4rem,2.4vw,2.1rem);color:var(--ink);letter-spacing:-.015em;padding-right:clamp(34px,4.5vw,72px);flex:none}
+@media(prefers-reduced-motion:reduce){.tm-track{animation:none}}
+.about-facts{list-style:none;margin:clamp(24px,3vw,36px) 0 0;display:grid;grid-template-columns:1fr 1fr;gap:16px 30px;padding-top:clamp(22px,2.5vw,30px);border-top:1px solid var(--line)}
+.about-facts li{display:flex;flex-direction:column;gap:3px}
+.about-facts .k{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.about-facts .v{font-weight:600;color:var(--ink);font-size:1.02rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* ===== floating tool-logo orbit (inspired by vibrant.design "Agents Platform Hero") ===== */
+.tools-orbit{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(14px,2.1vw,30px);width:100%;max-width:100%;margin:clamp(20px,3.4vw,40px) auto clamp(8px,1.5vw,18px)}
+.orbit-tool{position:relative;display:grid;justify-items:center;animation:otFloat var(--dur,7s) ease-in-out var(--del,0s) infinite;will-change:transform}
+@keyframes otFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.ot-ic{width:clamp(42px,4.2vw,56px);height:clamp(42px,4.2vw,56px);display:grid;place-items:center;transition:transform .35s var(--ease)}
+.ot-ic img{width:100%;height:100%;object-fit:contain;animation:spin5 5s ease-in-out var(--sdel,0s) infinite;will-change:transform}
+@keyframes spin5{0%{transform:rotate(0)}26%{transform:rotate(360deg)}100%{transform:rotate(360deg)}}
+.orbit-tool:hover{z-index:4}
+.orbit-tool:hover .ot-ic{transform:scale(1.18)}
+.ot-name{position:absolute;top:100%;left:50%;margin-top:7px;transform:translate(-50%,-4px);font-size:.78rem;font-weight:600;color:var(--ink-2);opacity:0;transition:opacity .3s,transform .3s;white-space:nowrap;pointer-events:none}
+.orbit-tool:hover .ot-name{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.orbit-tool{animation:none}.ot-ic img{animation:none}}
+@media (max-width:620px){.tools-orbit{gap:clamp(14px,4.5vw,26px);max-width:430px}.ot-name{display:none}}
+@media (max-width:520px){.about-facts{grid-template-columns:1fr}}
+
+/* ============ CONTACT ============ */
+.contact{background:var(--bg);text-align:left;padding-top:0;padding-bottom:clamp(60px,7vw,100px)}
+.contact h2{font-size:clamp(3.2rem,10vw,7.5rem);line-height:.92;letter-spacing:-.03em}
+.contact h2 .em{color:var(--rust)}
+.contact-tag{font-family:var(--font-display);font-size:clamp(1.5rem,3.2vw,2.6rem);line-height:1.1;margin-top:20px;color:var(--ink)}
+.contact-tag .em{color:var(--rust)}
+.contact .sub{color:var(--ink-2);font-size:clamp(1.05rem,1.6vw,1.25rem);margin-top:18px}
+.contact-actions{margin-top:44px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:11px;font-weight:600;padding:15px 26px;border-radius:999px;transition:.25s var(--ease);font-size:1rem;border:1.5px solid var(--ink)}
+.btn svg{flex:none}
+.btn.primary{background:var(--rust);color:var(--cream);border-color:var(--rust)}
+.btn.primary:hover{background:var(--rust-deep);border-color:var(--rust-deep);transform:translateY(-3px)}
+.btn.ghost:hover{background:var(--ink);color:var(--cream);transform:translateY(-3px)}
+.hero-actions{margin-top:clamp(40px,5vw,64px);display:flex;flex-wrap:wrap;gap:14px}
+.btn.g-pri{background:var(--cream);border-color:var(--cream);color:var(--rust)}
+.btn.g-pri:hover{background:var(--lime);border-color:var(--lime);color:var(--rust-deep);transform:translateY(-3px)}
+.btn.g-sec{background:transparent;border-color:rgba(247,245,240,.45);color:var(--cream)}
+.btn.g-sec:hover{background:var(--cream);border-color:var(--cream);color:var(--rust);transform:translateY(-3px)}
+
+/* ============ FOOTER ============ */
+.site-foot{border-top:1px solid var(--line);padding:40px 0}
+.site-foot .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-weight:500;font-size:.92rem}
+.site-foot a.ln{color:var(--ink);font-weight:600}
+.site-foot a.ln:hover{color:var(--rust)}
+.to-top{background:var(--cream);border:1px solid var(--line-2);border-radius:999px;padding:10px 18px;font-weight:600;color:var(--ink);transition:.25s}
+.to-top:hover{background:var(--ink);color:var(--cream)}
+
+/* ============ TRAVAIL DE BACHELOR ============ */
+.tb{padding-bottom:clamp(50px,7vw,90px)}
+.tb-card{display:grid;grid-template-columns:1.6fr 1fr;gap:clamp(26px,3.5vw,56px);align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(28px,3.2vw,46px);position:relative;overflow:hidden}
+.tb-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--rust)}
+.tb-title{font-family:var(--font-display);font-weight:600;font-size:clamp(1.5rem,2.2vw,2rem);letter-spacing:-.02em;line-height:1.05;color:var(--ink);margin:0 0 16px}
+.tb-lead{max-width:56ch;color:var(--ink-2);font-weight:500;font-size:clamp(1.05rem,1.35vw,1.24rem);line-height:1.52;margin:0}
+.tb-lead .em{color:var(--ink);font-weight:700}
+.tb-card-aside{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.tb-btn{display:inline-flex;align-items:center;gap:10px}
+.tb-meta{color:var(--muted);font-weight:500;font-size:.9rem}
+@media (max-width:820px){
+  .tb-card{grid-template-columns:1fr;gap:clamp(22px,4vw,30px)}
+  .tb-card-aside{align-items:flex-start}
+}
+
+/* ============ PAGE TRANSITION ============ */
+.page-trans{position:fixed;inset:0;z-index:100;background:var(--ink);transform:translateY(100%);display:grid;place-items:center;pointer-events:none;will-change:transform}
+.page-trans .pt-mark{font-family:var(--font-display);color:var(--cream);font-size:clamp(1.3rem,3vw,2rem);font-weight:600;opacity:0;transition:opacity .3s ease}
+.page-trans .pt-mark .dot{color:var(--rust)}
+.page-trans.cover .pt-mark{opacity:1}
+
+/* ============ DETAIL ============ */
+.detail{display:none;padding-top:30px;padding-bottom:90px}
+body.route-detail .site-main{display:none}
+body.route-detail .detail{display:block}
+@keyframes dIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.detail>*{animation:dIn .6s var(--ease) both}
+.detail>*:nth-child(2){animation-delay:.05s}
+.detail>*:nth-child(3){animation-delay:.1s}
+.detail>*:nth-child(4){animation-delay:.15s}
+.detail>*:nth-child(5){animation-delay:.2s}
+.detail>*:nth-child(6){animation-delay:.25s}
+.detail>*:nth-child(7){animation-delay:.3s}
+.back{display:inline-flex;align-items:center;gap:10px;font-weight:600;color:var(--muted);margin-bottom:clamp(28px,5vw,52px);transition:.2s}
+.back:hover{color:var(--rust)}
+.back .ar{transition:transform .25s var(--ease)}
+.back:hover .ar{transform:translateX(-4px)}
+.detail h1{font-size:clamp(2.8rem,7.4vw,6rem);line-height:.95;letter-spacing:-.03em;max-width:16ch}
+.detail .d-lead{color:var(--ink-2);font-size:clamp(1.2rem,2vw,1.6rem);margin-top:24px;max-width:52ch;line-height:1.45;font-family:var(--font-display);font-weight:400}
+.d-meta{display:flex;flex-wrap:wrap;gap:clamp(30px,4.5vw,70px);margin-top:clamp(40px,5vw,62px)}
+.d-meta .k{font-size:.76rem;color:var(--muted);font-weight:600;margin-bottom:12px;text-transform:uppercase;letter-spacing:.14em}
+.d-meta .v{font-family:var(--font-display);font-weight:600;font-size:clamp(1.25rem,1.7vw,1.55rem);line-height:1.15}
+.d-cover{margin-top:clamp(30px,4vw,46px);border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/9;background:var(--bg-2);border:1px solid var(--line-2)}
+.d-cover img{width:100%;height:100%;object-fit:cover}
+.d-body{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,5vw,74px);margin-top:clamp(44px,6vw,76px)}
+.d-body h3{font-family:var(--font-display);font-weight:600;font-size:1.5rem;margin-bottom:22px}
+.d-body .ctx p{line-height:1.75;font-size:1.12rem;max-width:56ch}
+.d-list{list-style:none}
+.d-list li{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,38px);align-items:baseline;padding:22px 0;border-top:1px solid var(--line-2);transition:padding-left .35s var(--ease)}
+.d-list li:last-child{border-bottom:1px solid var(--line-2)}
+.d-list li:hover{padding-left:10px}
+.d-list li .n{font-family:var(--font-display);font-size:clamp(1.7rem,2.6vw,2.4rem);font-weight:500;color:var(--pc,var(--rust));line-height:1}
+.d-list li .tx{font-size:1.1rem;line-height:1.5}
+.btn.proj{background:var(--pc,var(--rust));border-color:var(--pc,var(--rust));color:var(--pc-fg,var(--cream))}
+.btn.proj:hover{filter:brightness(.92);transform:translateY(-3px)}
+.btn.proj.ghost{background:transparent;border-color:var(--pc,var(--rust));color:var(--pc,var(--rust))}
+.btn.proj.ghost:hover{background:var(--pc,var(--rust));color:var(--pc-fg,var(--cream));filter:none}
+.d-cta{margin-top:clamp(36px,5vw,54px);display:flex;flex-wrap:wrap;gap:14px}
+.d-next{margin-top:clamp(60px,8vw,110px)}
+.d-next .k{color:var(--muted);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
+.dn-card{position:relative;display:block;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:21/8;border:1px solid var(--line-2);background:var(--ink)}
+.dn-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9;transition:transform .85s var(--ease)}
+.dn-card:hover img{transform:scale(1.05)}
+.dn-card::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,18,16,.94) 32%,rgba(20,18,16,.64) 74%,rgba(20,18,16,.46))}
+.dn-inner{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:clamp(28px,5vw,64px);color:var(--cream)}
+.dn-inner .dn-cat{font-weight:600;font-size:.85rem;opacity:.85}
+.dn-inner h3{font-family:var(--font-display);font-weight:600;font-size:clamp(2rem,4.6vw,3.8rem);line-height:1;display:inline-flex;align-items:center;gap:20px}
+.dn-inner h3 .ar{transition:transform .3s var(--ease)}
+.dn-card:hover .dn-inner h3 .ar{transform:translateX(12px)}
+.d-gallery{margin-top:clamp(56px,7vw,100px)}
+.d-gallery>h3{font-family:var(--font-display);font-weight:600;font-size:1.5rem;margin-bottom:clamp(18px,2.2vw,26px)}
+.dg-group{margin-top:clamp(34px,4.5vw,60px)}
+.dg-group:first-of-type{margin-top:clamp(18px,2vw,26px)}
+.dg-group>h4{font-family:var(--font-display);font-weight:600;font-size:clamp(1.05rem,1.5vw,1.3rem);color:var(--ink);display:flex;align-items:baseline;gap:12px;margin-bottom:clamp(16px,2vw,24px)}
+.dg-group>h4::before{content:attr(data-n);font-size:.82rem;font-weight:700;color:var(--pc,var(--rust));letter-spacing:.03em}
+.dg-mascots{background:var(--sage-50);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(22px,3.5vw,46px);margin:0}
+.dg-mascots .mas{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,3vw,44px);align-items:center}
+.dg-mascots img{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 30px rgba(33,29,22,.12))}
+.dg-mascots figcaption{margin:clamp(16px,2vw,24px) auto 0;color:var(--ink-2);font-size:1rem;line-height:1.5;text-align:center;max-width:56ch}
+.dg-devs{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(8px,1.6vw,22px);align-items:start}
+.dg-dev{margin:0;cursor:pointer}
+.dg-devimg{position:relative;border-radius:10px;overflow:hidden;transition:transform .45s var(--ease)}
+.dg-dev img{width:100%;height:auto;display:block}
+.dg-dev:hover .dg-devimg{transform:translateY(-6px)}
+.dg-dev:focus-visible{outline:none}
+.dg-dev:focus-visible .dg-devimg{outline:2px solid var(--pc,var(--rust));outline-offset:2px}
+.dg-dev figcaption{margin-top:2px;text-align:center;color:var(--muted);font-size:.9rem;line-height:1.45}
+.dg-zoom{position:absolute;left:50%;bottom:16%;transform:translate(-50%,8px);z-index:2;display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;background:rgba(33,29,22,.84);color:#fff;font-size:.78rem;font-weight:600;opacity:0;transition:.3s var(--ease);pointer-events:none}
+.dg-dev:hover .dg-zoom,.dg-dev:focus-visible .dg-zoom{opacity:1;transform:translate(-50%,0)}
+.lb{position:fixed;inset:0;z-index:200;background:rgba(20,18,16,.86);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding:clamp(18px,4vw,56px);overflow:auto;animation:lbIn .25s var(--ease)}
+.lb[hidden]{display:none}
+@keyframes lbIn{from{opacity:0}to{opacity:1}}
+.lb img{max-width:min(1040px,100%);width:auto;height:auto;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.lb-x{position:fixed;top:16px;right:20px;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,255,255,.14);color:#fff;font-size:1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.lb-x:hover{background:rgba(255,255,255,.28)}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:980px){
+  .projects{grid-template-columns:1fr;gap:clamp(36px,6vw,52px)}
+  .project.feat{grid-column:auto}
+  .project .pmedia,.project.feat .pmedia{aspect-ratio:3/2}
+  .project .pfoot{flex-wrap:wrap;gap:14px}
+  .project .pfoot-txt{width:100%}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .portrait-wrap{max-width:380px}
+  .disc3{grid-template-columns:1fr 1fr}
+  .d-body{grid-template-columns:1fr;gap:34px}
+}
+@media (max-width:760px){
+  .nav .nav-links{display:none}
+  .menu-btn{display:flex}
+  .d-meta{gap:24px 40px}
+  .dn-card{aspect-ratio:3/2}
+  .hero h1 .l2{white-space:normal}
+  .disc3{grid-template-columns:1fr}
+  .dg-mascots .mas{grid-template-columns:1fr;gap:10px;max-width:360px;margin:0 auto}
+}
+@media (max-width:440px){
+  .d-meta{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero h1 .ln>span{transform:none!important}
+}
+/* ============ WHAT I DO · sub-part of À propos, pinned wheel ============ */
+.wdo{background:var(--sage-50)}
+.wdo-rows{display:flex;flex-direction:column;margin-top:clamp(8px,1.6vw,22px)}
+.wdo-row{display:grid;grid-template-columns:auto minmax(0,1.1fr) minmax(0,1fr);gap:clamp(16px,3vw,48px);align-items:start;padding:clamp(26px,3.4vw,46px) 0;border-top:1px solid var(--line-2)}
+.wdo-row:last-child{border-bottom:1px solid var(--line-2)}
+.wdo-row.rv{transition-delay:var(--d,0s)}
+.wr-n{font-family:var(--font-display);font-weight:700;font-size:clamp(1.05rem,1.3vw,1.35rem);color:var(--rust);padding-top:.5em}
+.wr-t{font-family:var(--font-display);font-weight:700;font-size:clamp(1.65rem,3.1vw,2.7rem);letter-spacing:-.025em;line-height:1.03;color:var(--ink);transition:color .3s}
+.wr-d{margin-top:12px;color:var(--ink-2);font-weight:500;font-size:clamp(1rem,1.2vw,1.12rem);line-height:1.5;max-width:42ch}
+.wr-skills{list-style:none;display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;padding-top:6px}
+.wr-skills li{font-size:.92rem;font-weight:500;color:var(--ink);background:var(--surface);border:1px solid var(--line-2);border-radius:999px;padding:9px 15px;transition:border-color .3s,background .3s,color .3s}
+.wdo-row:hover .wr-t{color:var(--rust)}
+.wdo-row:hover .wr-skills li{border-color:var(--rust);color:var(--rust-deep)}
+@media (max-width:860px){
+  .wdo-row{grid-template-columns:auto 1fr;gap:8px 18px}
+  .wr-skills{grid-column:1/-1;margin-top:8px}
+}
+.wheel{--step:2.9em;position:relative;height:210vh}
+.wheel .st{position:sticky;top:72px;height:calc(100vh - 72px);height:calc(100svh - 72px);display:grid;grid-template-rows:auto auto auto auto;align-content:center}
+.whead{width:100%;padding-top:clamp(34px,6vh,72px);margin-bottom:0}
+.wsep{width:100%;padding-top:clamp(18px,3vh,30px)}
+.wsep span,.divider span,.subsep span{position:relative;display:block;height:1px;background:var(--line-2)}
+.wsep span::before,.divider span::before,.subsep span::before{content:"";position:absolute;left:0;top:-1px;width:max(clamp(40px,4vw,64px),calc(var(--sp,0) * 100%));height:3px;border-radius:3px;background:var(--rust)}
+.wsep span::after,.divider span::after,.subsep span::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-radius:50%;background:var(--rust)}
+.wheel ul{list-style:none;position:relative;height:clamp(300px,42vh,400px);margin-top:clamp(20px,3vh,36px);overflow:hidden;-webkit-mask-image:linear-gradient(#000 0,#000 66%,transparent 96%);mask-image:linear-gradient(#000 0,#000 66%,transparent 96%)}
+.wheel li{position:absolute;left:0;right:0;top:calc(clamp(34px,4vw,56px) + .5em);display:flex;justify-content:center;align-items:center;font-family:var(--font-display);font-weight:500;font-size:min(clamp(38px,6.2vw,96px),10.5vh);line-height:1;letter-spacing:-.04em;text-transform:uppercase;color:var(--ink);white-space:nowrap;transform:translate3d(0,calc(var(--o,0) * var(--step) - 50%),0) scale(calc(var(--s,1) * var(--fit,1)));opacity:var(--a,1);transition:color .22s ease-out;will-change:transform,opacity}
+.wheel li.on{color:var(--rust)}
+.wheel li .w{display:inline-flex;align-items:center;gap:.3em}
+.wheel li .g{flex:none;width:.56em;height:.56em;color:var(--ink)}
+.wheel li .g svg{width:100%;height:100%;display:block}
+.wheel li .subs{position:absolute;left:50%;top:calc(100% + clamp(18px,2.6vh,28px));transform:translateX(-50%) translateY(12px);width:max-content;max-width:min(90vw,860px);display:flex;flex-wrap:wrap;justify-content:center;gap:10px;opacity:0;transition:opacity .28s ease-out,transform .35s var(--ease);pointer-events:none;white-space:normal;text-transform:none;letter-spacing:0}
+.wheel li.on .subs{opacity:1;transform:translateX(-50%)}
+.wheel li .subs span{font-family:var(--font-sans);font-weight:500;font-size:clamp(14px,1.1vw,16px);line-height:1;padding:12px 18px;border-radius:999px;background:var(--surface);border:1px solid var(--line-2);color:var(--ink);white-space:nowrap}
+.wfoot{width:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px;padding-top:clamp(12px,2vh,22px);padding-bottom:clamp(40px,7vh,72px);font-family:var(--font-display);font-weight:600;font-size:.98rem;color:var(--muted)}
+.wfoot .wcount b{color:var(--ink);font-weight:600}
+.wbars{display:flex;gap:8px}
+.wbars i{position:relative;display:block;width:clamp(36px,5vw,68px);height:3px;border-radius:3px;background:rgba(33,29,22,.12);overflow:hidden}
+.wbars i::after{content:"";position:absolute;inset:0;background:var(--rust);transform:scaleX(var(--p,0));transform-origin:left}
+.wfoot .wskills{justify-self:end;white-space:nowrap}
+.divider{padding-top:clamp(44px,7vh,80px)}
+@media (max-width:760px){
+  .hero{padding-top:clamp(70px,16vw,110px);padding-bottom:clamp(80px,18vw,120px)}
+  .hero h1{font-size:clamp(3.3rem,13.5vw,5rem)}
+  .wbars{gap:7px;align-items:center}
+  .wbars i{width:3px;height:22px}
+  .wbars i::after{transform:scaleY(var(--p,0));transform-origin:top}
+  .wheel{--step:4.7em}
+  .whead{padding-top:26px}
+  .wheel li{font-size:clamp(30px,9.4vw,46px)}
+  .wheel li .subs{gap:7px}
+  .wheel li .subs span{font-size:13px;padding:9px 12px}
+}
+
+/* header and footer tone on green */
+.site-foot.green{background:var(--sage-50);border-top:0;color:var(--muted);padding:clamp(70px,8vw,120px) 0 34px}
+.foot-mark{display:block;font-family:var(--font-display);font-weight:700;font-size:clamp(2.8rem,9.4vw,9rem);line-height:.9;letter-spacing:-.045em;color:var(--ink);margin-bottom:clamp(44px,6vw,90px)}
+.fnav{padding-bottom:30px}
+.foot-links{display:flex;flex-wrap:wrap;gap:10px 34px}
+.foot-links a{position:relative;font-family:var(--font-display);font-weight:600;font-size:clamp(1.1rem,1.5vw,1.3rem);color:var(--ink);transition:color .25s}
+.foot-links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--rust);transform:scaleX(0);transform-origin:left;transition:transform .28s var(--ease)}
+.foot-links a:hover{color:var(--rust)}.foot-links a:hover::after{transform:scaleX(1)}
+.site-foot.green .foot-lang{background:var(--surface);border:1px solid var(--line-2)}
+.site-foot.green .wrap.fbar{position:relative;color:var(--muted);padding-top:26px}
+.site-foot.green .wrap.fbar::before{content:"";position:absolute;top:0;left:var(--gutter);right:var(--gutter);height:1px;background:var(--line-2)}
+.site-foot.green .to-top{background:var(--surface);border-color:var(--line-2);color:var(--ink)}
+.site-foot.green .to-top:hover{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+
+/* ============ DARK FINALE (inspired by designeer / bencho) ============ */
+:root{--dark:#15201a;--dark-line:rgba(247,245,240,.14)}
+.contact{background:var(--dark);color:var(--cream);padding-top:0;padding-bottom:clamp(54px,7vw,96px);position:relative}
+.contact::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 55% at 85% 0%,rgba(207,232,174,.10),transparent 60%),radial-gradient(50% 50% at 8% 90%,rgba(46,90,60,.22),transparent 62%)}
+.contact>*{position:relative}
+.contact h2{color:var(--cream)}
+.contact .contact-tag{color:var(--cream)}
+.contact .contact-tag .em,.contact h2 .em{color:var(--lime)}
+.contact .sub{color:var(--on-g-2)}
+.contact .btn.primary{background:var(--cream);border-color:var(--cream);color:var(--dark)}
+.contact .btn.primary:hover{background:var(--lime);border-color:var(--lime);color:var(--rust-deep)}
+.contact .btn.ghost{background:transparent;border-color:rgba(247,245,240,.4);color:var(--cream)}
+.contact .btn.ghost:hover{background:var(--cream);border-color:var(--cream);color:var(--dark)}
+.tb{background:var(--dark);padding-top:clamp(10px,2vw,24px)}
+.site-foot.green{background:var(--dark);color:var(--on-g-3)}
+.site-foot.green .foot-mark{color:var(--cream)}
+.site-foot.green .foot-mark span:not(.ml){color:var(--lime)!important}
+.site-foot.green .foot-links a{color:var(--cream)}
+.site-foot.green .foot-links a:hover{color:var(--lime)}
+.site-foot.green .foot-links a::after{background:var(--lime)}
+.site-foot.green .foot-lang{background:rgba(247,245,240,.07);border-color:var(--dark-line)}
+.site-foot.green .foot-lang button{color:var(--on-g-2)}
+.site-foot.green .foot-lang button[aria-pressed="true"]{background:var(--cream);color:var(--dark)}
+.site-foot.green .wrap.fbar::before{background:var(--dark-line)}
+.site-foot.green .to-top{background:rgba(247,245,240,.07);border-color:var(--dark-line);color:var(--cream)}
+.site-foot.green .to-top:hover{background:var(--cream);border-color:var(--cream);color:var(--dark)}
+
+/* ============ INTRO · name reveal ============ */
+html.iv-lock{overflow:hidden}
+html.iv-skip .iv:not(.ptv){display:none!important}
+.iv{position:fixed;inset:0;z-index:300;display:grid;place-items:center;background:var(--sage-50);color:var(--ink);cursor:pointer;transition:transform .8s cubic-bezier(.76,0,.24,1)}
+.iv.out{transform:translateY(-100%);pointer-events:none}
+.iv.ptv{opacity:0;transition:opacity .2s ease,transform .8s cubic-bezier(.76,0,.24,1)}
+.iv.ptv.show{opacity:1}
+.iv-mk{display:flex;align-items:baseline;font-size:clamp(78px,14vw,200px);line-height:1;opacity:0;transition:opacity .3s ease,transform .8s cubic-bezier(.76,0,.24,1)}
+.iv.go .iv-mk{opacity:1}
+.iv.out .iv-mk{transform:translateY(60px);opacity:0;transition:opacity .4s ease,transform .8s cubic-bezier(.76,0,.24,1)}
+.iv-mk span{display:inline-block;text-align:center}
+.iv-f0{opacity:0}
+.iv-f1{font:700 1em/1 var(--font-sans);letter-spacing:-.04em}
+.iv-f2{font:500 .8em/1 ui-monospace,"SFMono-Regular",Menlo,monospace;color:var(--rust)}
+.iv-f3{font:600 1.02em/1 var(--font-display)}
+.iv-f4{font:800 1.04em/1 var(--font-display);letter-spacing:-.03em}
+@media (prefers-reduced-motion:reduce){.iv{display:none}}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Luka Stojanovic",
+  "jobTitle":"Designer graphique, UX/UI & stratégie digitale",
+  "url":"https://luka-stojanovic.ch/",
+  "image":"https://luka-stojanovic.ch/assets/img/og.jpg",
+  "email":"mailto:sluka1008@gmail.com",
+  "alumniOf":{"@type":"CollegeOrUniversity","name":"HEIG-VD"},
+  "address":{"@type":"PostalAddress","addressLocality":"Lausanne","addressCountry":"CH"},
+  "knowsAbout":["Design graphique","UX/UI","Stratégie digitale","Branding","E-commerce","SEO"],
+  "sameAs":["https://www.linkedin.com/in/luka-stojanovic-434a962a1/"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ItemList",
+  "name":"Projets de Luka Stojanovic",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"item":{"@type":"CreativeWork","name":"Site E-Commerce, FightStart","url":"https://luka-stojanovic.ch/#travaux/fightstart","creator":{"@type":"Person","name":"Luka Stojanovic"},"about":"Design graphique, UX/UI, Stratégie digitale","description":"Une boutique de sports de combat construite de A à Z : marque, maquettes, WooCommerce, SEO et publicité."}},
+    {"@type":"ListItem","position":2,"item":{"@type":"CreativeWork","name":"HUG, Don du sang","url":"https://luka-stojanovic.ch/#travaux/pulse","creator":{"@type":"Person","name":"Luka Stojanovic"},"about":"UX/UI","description":"Réduire de 30 % l'écart entre inscriptions et dons, sans toucher au processus médical."}},
+    {"@type":"ListItem","position":3,"item":{"@type":"CreativeWork","name":"Interface d'un projet d'éducation","url":"https://luka-stojanovic.ch/#travaux/odd","creator":{"@type":"Person","name":"Luka Stojanovic"},"about":"UX/UI","description":"Un système d'interface autour des Objectifs de développement durable."}},
+    {"@type":"ListItem","position":4,"item":{"@type":"CreativeWork","name":"Restaurant « Étoile Blanche », Lausanne","url":"https://luka-stojanovic.ch/#travaux/etoile","creator":{"@type":"Person","name":"Luka Stojanovic"},"about":"Design graphique, Stratégie digitale","description":"Une refonte d'identité Swiss Style pour un lieu : direction artistique, playbook et réseaux."}},
+    {"@type":"ListItem","position":5,"item":{"@type":"CreativeWork","name":"Yearbook","url":"https://luka-stojanovic.ch/#travaux/yearbook","creator":{"@type":"Person","name":"Luka Stojanovic"},"about":"Design graphique","description":"Un yearbook de 28 pages et son système éditorial sur-mesure, mis en page sur InDesign."}},
+    {"@type":"ListItem","position":6,"item":{"@type":"CreativeWork","name":"VisualDon, la face cachée de l'UFC","url":"https://luka-stojanovic.ch/#travaux/visualdon","creator":{"@type":"Person","name":"Luka Stojanovic"},"about":"Data visualisation","description":"Une data-visualisation scrollytelling sur les coûts humains et financiers de l'UFC."}}
+  ]
+}
+</script>
+<script>(function(){try{var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;var seen=sessionStorage.getItem('luka-intro')==='1';document.documentElement.classList.add((rm||seen)?'iv-skip':'iv-lock');}catch(e){}})();</script>
+</head>
+<body>
+<div class="iv" id="iv" aria-hidden="true"><p class="iv-mk"><span class="iv-f0">L</span><span class="iv-f0">u</span><span class="iv-f0">k</span><span class="iv-f0">a</span></p></div>
+<!-- ============ HEADER ============ -->
+<header class="site-head" id="head">
+  <div class="wrap">
+    <a class="brand" href="#top" data-go="home">Luka Stojanovic</a>
+    <nav class="nav">
+      <div class="nav-links">
+        <a href="#travaux" data-i18n="nav.work">Projets</a>
+        <a href="#apropos" data-i18n="nav.about">À propos</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+      <div class="lang" role="group" aria-label="Langue">
+        <button data-lang="fr" aria-pressed="true">FR</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="menu-btn" aria-label="Menu" id="menuBtn"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#travaux" data-i18n="nav.work">Projets</a>
+  <a href="#apropos" data-i18n="nav.about">À propos</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
+</div>
+<a id="top"></a>
+
+<!-- ============ MAIN ============ -->
+<main class="site-main">
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="wrap inner hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow"><span class="role" data-i18n="hero.role">Design graphique · UX/UI · Stratégie digitale</span></p>
+        <h1>
+          <span class="ln"><span data-i18n="hero.h1a">Je conçois des</span></span>
+          <span class="ln l2"><span><span class="rot" id="rot"></span></span></span>
+          <span class="ln l3"><span data-i18n="hero.h1c">et je les mets en ligne.</span></span>
+        </h1>
+        <p class="lead" data-i18n="hero.lead">Luka Stojanovic, étudiant en Ingénierie des médias à la HEIG-VD. Du design graphique à l'UX/UI, je mène chaque projet du concept à la mise en ligne.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#travaux"><span data-i18n="hero.btn1">Voir les projets</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+          <a class="btn ghost" href="#contact"><span data-i18n="hero.btn2">Me contacter</span></a>
+        </div>
+      </div>
+      <div class="hero-visual" id="heroVisual" aria-hidden="true">
+        <a class="hcard c1" href="#travaux/visualdon" tabindex="-1" style="--rot:-7deg"><img src="assets/img/vdon/poster.jpg" alt="" loading="eager"><span class="hc-tag">Data viz</span></a>
+        <a class="hcard c2" href="#travaux/etoile" tabindex="-1" style="--rot:5deg"><img src="assets/img/etoile.jpg" alt="" loading="eager"><span class="hc-tag">Branding</span></a>
+        <a class="hcard c3" href="#travaux/pulse" tabindex="-1" style="--rot:-3deg"><img src="assets/img/pulse.jpg" alt="" loading="eager"><span class="hc-tag">UX/UI</span></a>
+      </div>
+    </div>
+    <a class="scrollcue" href="#travaux" aria-label="Voir les projets">
+      <span class="ring"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></span>
+      <span class="lbl" data-i18n="hero.cue">Mes projets</span>
+    </a>
+  </section>
+
+  <!-- WORK -->
+  <section class="sec wrap" id="travaux">
+    <div class="sec-head">
+      <div>
+        <h2 data-i18n="work.title" data-scramble>Projets</h2>
+        <p class="sec-sub" data-i18n="work.sub">Une sélection de mes projets récents.</p>
+      </div>
+      <div class="note"><span id="workCount">6</span>&nbsp;<span data-i18n="work.projects">projets</span></div>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filtres">
+      <button data-filter="all" aria-pressed="true" data-i18n="filter.all">Tous</button>
+      <button data-filter="design" aria-pressed="false" data-i18n="filter.design">Design graphique</button>
+      <button data-filter="ux" aria-pressed="false" data-i18n="filter.ux">UX/UI</button>
+      <button data-filter="dev" aria-pressed="false" data-i18n="filter.dev">Développement</button>
+      <button data-filter="dataviz" aria-pressed="false" data-i18n="filter.dataviz">Data visualisation</button>
+      <button data-filter="strategy" aria-pressed="false" data-i18n="filter.strategy">Stratégie digitale</button>
+    </div>
+    <div class="projects" id="projects"></div>
+    <noscript>
+      <ul>
+        <li><a href="https://fightstart.ch">Site E-Commerce, FightStart</a> · Une boutique de sports de combat construite de A à Z : marque, maquettes, WooCommerce, SEO et publicité.</li>
+        <li><a href="https://dondusang.loannjuillerat.ch">HUG, Don du sang</a> · Une plateforme qui engage les entreprises dans le don du sang et valorise leur démarche par le label CTS.</li>
+        <li>Interface d'un projet d'éducation · Un système d'interface autour des Objectifs de développement durable.</li>
+        <li>Restaurant « Étoile Blanche », Lausanne · Une refonte d'identité Swiss Style pour un lieu : direction artistique, playbook et réseaux.</li>
+        <li>Yearbook · Un yearbook de 28 pages et son système éditorial sur-mesure, mis en page sur InDesign.</li>
+        <li><a href="https://github.com/LukaStojanovic11/Projet-VisualDon">VisualDon, la face cachée de l'UFC</a> · Une data-visualisation scrollytelling sur les coûts humains et financiers de l'UFC.</li>
+      </ul>
+    </noscript>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="apropos">
+    <div class="wrap sec">
+      <div class="sec-head"><div><h2 data-i18n="about.title" data-scramble>À propos</h2></div></div>
+      <div class="subpart">
+      <div class="tools-head"><h3><span class="hnum">01.</span><span data-i18n="about.sub">Présentation</span></h3><p data-i18n="about.lead">Description</p></div>
+      <div class="subsep" aria-hidden="true"><span style="--sp:1"></span></div>
+      <div class="about-grid">
+        <figure class="portrait-wrap rv">
+          <img class="portrait" src="assets/img/luka.jpg" alt="Luka Stojanovic" width="760" height="950">
+        </figure>
+        <div class="about-intro rv">
+          <p class="bio" data-i18n="about.bio">Je suis étudiant en Ingénierie des médias à la <span class="em">HEIG-VD</span>, une formation à la croisée du design, de la communication et de la technique. C'est exactement là que j'aime travailler : à l'intersection du visuel et de l'interactif.</p>
+          <p class="about-note" data-i18n="about.p2">Mes projets vont de l'identité de marque à la data-visualisation, en passant par l'UX/UI et l'e-commerce. Ce qui les relie, c'est une même façon de faire : comprendre le besoin, poser une direction claire, puis l'exécuter jusqu'au détail · maquette, contenu et mise en ligne compris.</p>
+          <ul class="about-facts">
+            <li><span class="k" data-i18n="about.k1">Basé à</span><span class="v">Suisse romande</span></li>
+            <li><span class="k" data-i18n="about.k2">Formation</span><span class="v" data-i18n="about.v2">Ingénierie des médias, HEIG-VD</span></li>
+            <li><span class="k" data-i18n="about.k3">Focus</span><span class="v" data-i18n="about.v3">Design · UX/UI · Développement</span></li>
+            <li><span class="k" data-i18n="about.k4">Disponibilité</span><span class="v" data-i18n="about.v4">En recherche d'emploi</span></li>
+          </ul>
+        </div>
+      </div>
+      </div>
+
+      <div class="expertise">
+        <div class="exp-block rv">
+          <div class="tools-head"><h3><span class="hnum">02.</span><span data-i18n="outils.k">Outils</span></h3><p data-i18n="outils.sub">Les logiciels avec lesquels je travaille au quotidien.</p></div>
+          <div class="subsep" aria-hidden="true"><span style="--sp:1"></span></div>
+          <div class="tools-logos" id="toolsLogos"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I DO · pinned wheel -->
+  <section class="wdo sec" id="services" aria-labelledby="wdo-h">
+    <div class="wrap">
+      <div class="tools-head"><h3 id="wdo-h"><span class="hnum">03.</span><span data-i18n="wdo.title">Ce que je fais</span></h3><p data-i18n="wdo.sub">Quatre disciplines, du premier croquis à la mise en ligne.</p></div>
+      <div class="subsep" aria-hidden="true"><span style="--sp:1"></span></div>
+      <div class="wdo-rows" id="wdoRows"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap" style="padding-top:clamp(70px,9vw,130px)">
+    <h2 class="rv" data-i18n="contact.title" data-scramble>Contact</h2>
+    <p class="contact-tag rv" data-i18n="contact.tag">Et si on <span class="em">travaillait</span> ensemble ?</p>
+    <p class="sub rv" data-i18n="contact.sub">En recherche d'emploi, Suisse romande.</p>
+    <div class="contact-actions rv">
+      <a class="btn primary" href="mailto:sluka1008@gmail.com">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 5.5 8.5-5.5"/></svg>
+        <span data-i18n="contact.write">Me contacter</span>
+      </a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/luka-stojanovic-434a962a1/" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.65h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.64 4.76 6.08V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21H9z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+    </div>
+  </section>
+
+  <!-- TRAVAIL DE BACHELOR -->
+  <section class="tb" id="tb">
+    <div class="wrap">
+    <div class="tb-card">
+      <div class="tb-card-main">
+        <h3 class="tb-title" data-i18n="tb.eyebrow">Travail de Bachelor, HEIG-VD 2026–27</h3>
+        <p class="tb-lead" data-i18n="tb.lead">Je recherche actuellement un <span class="em">sujet de Travail de Bachelor</span> ainsi qu'une entreprise partenaire en Suisse romande. Si un projet autour du design, de l'UX/UI ou de la stratégie digitale pourrait vous intéresser, n'hésitez pas à me contacter.</p>
+      </div>
+      <div class="tb-card-aside">
+        <a class="btn primary tb-btn" href="assets/docs/Guide-TB-IM-2026-27.pdf" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+          <span data-i18n="tb.download">Télécharger la brochure (PDF)</span>
+        </a>
+        <span class="tb-meta" data-i18n="tb.meta">PDF · 100 Ko · Guide officiel HEIG-VD</span>
+      </div>
+    </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ DETAIL ============ -->
+<article class="detail wrap" id="detail" aria-live="polite"></article>
+<div class="lb" id="lb" hidden><button class="lb-x" id="lbX" aria-label="Fermer">&#10005;</button><img id="lbImg" src="" alt=""></div>
+
+<!-- ============ PAGE TRANSITION ============ -->
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot green">
+  <div class="wrap"><span class="foot-mark" data-magnetic aria-hidden="true">Luka <span style="color:var(--rust)">Stojanovic</span></span></div>
+  <div class="wrap fnav">
+    <nav class="foot-links" aria-label="Navigation">
+      <a href="#travaux" data-i18n="nav.work">Projets</a>
+      <a href="#apropos" data-i18n="nav.about">À propos</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang foot-lang" role="group" aria-label="Langue">
+      <button data-lang="fr" aria-pressed="true">FR</button>
+      <button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+  <div class="wrap fbar">
+    <div>© <span id="year"></span> Luka Stojanovic</div>
+    <a class="to-top" href="#top" data-go="home" data-i18n="foot.top">Haut ↑</a>
+  </div>
+</footer>
+
+<script>
+/* ============ INTRO · letters flick through typefaces, settle into Bricolage, then the screen lifts ============ */
+(function(){
+  var el=document.getElementById('iv'); if(!el) return;
+  var html=document.documentElement;
+  if(html.classList.contains('iv-skip')){ el.remove(); return; }
+  var ls=[].slice.call(el.querySelectorAll('.iv-mk span'));
+  var seq=['iv-f1','iv-f2','iv-f3','iv-f1','iv-f2','iv-f4'];
+  var timers=[], finished=false;
+  ls.forEach(function(l,k){ seq.forEach(function(c,j){ timers.push(setTimeout(function(){ l.className=c; }, 200 + k*90 + j*62)); }); });
+  function finish(){
+    if(finished) return; finished=true;
+    timers.forEach(clearTimeout);
+    ls.forEach(function(l){ l.className='iv-f4'; });
+    try{ sessionStorage.setItem('luka-intro','1'); }catch(e){}
+    setTimeout(function(){ el.classList.add('out'); html.classList.remove('iv-lock'); }, 400);
+    setTimeout(function(){ if(el.parentNode) el.remove(); }, 1500);
+  }
+  requestAnimationFrame(function(){ requestAnimationFrame(function(){ el.classList.add('go'); timers.push(setTimeout(finish, 1200)); }); });
+  el.addEventListener('click', finish);
+})();
+
+/* ============ DATA ============ */
+const PROJECTS = [
+  { id:"fightstart", cover:"assets/img/fightstart.jpg", year:"2026", cats:["design","ux","strategy","dev"],
+    theme:{bg:"#2B2521",fg:"#F3EDE4"},
+    title:"Site E-Commerce, FightStart",
+    hook:{fr:"Une marque de combat, de l'idée à la vente.",en:"A fight brand, from idea to sale."},
+    client:{fr:"Projet e-commerce, HEIG-VD",en:"E-commerce project, HEIG-VD"},
+    logo:"assets/img/logos/heig.svg",logoName:"HEIG-VD",hoverLogo:"assets/img/logos/heig.svg",
+    role:{fr:"Conception, design & stratégie",en:"Concept, design & strategy"},
+    catLabel:{fr:"E-commerce · Stratégie",en:"E-commerce · Strategy"},
+    tags:{fr:["UX/UI","Branding","E-commerce","SEO"],en:["UX/UI","Branding","E-commerce","SEO"]},
+    teaser:{fr:"Une boutique de sports de combat construite de A à Z : marque, maquettes, WooCommerce, SEO et publicité.",
+            en:"A combat-sports store built end to end: brand, mockups, WooCommerce, SEO and ads."},
+    lead:{fr:"Un projet e-commerce complet, de la proposition de valeur jusqu'à la première vente.",
+          en:"A complete e-commerce project, from value proposition to first sale."},
+    context:{fr:"FightStart est une boutique en ligne de sports de combat pensée comme un projet e-commerce complet. De la stratégie au tunnel d'achat, j'ai couvert chaque étape : positionnement, personas et analyse concurrentielle, identité de marque, maquettes Figma, intégration WordPress / WooCommerce, référencement, réseaux sociaux et campagne publicitaire.",
+             en:"FightStart is an online combat-sports store designed as a full e-commerce project. From strategy to checkout, I covered every step: positioning, personas and competitive analysis, brand identity, Figma mockups, WordPress / WooCommerce integration, SEO, social media and an ad campaign."},
+    did:{fr:["Positionnement, personas et analyse concurrentielle","Identité de marque et charte graphique","Maquettes Figma et parcours d'achat","Intégration WordPress / WooCommerce","Optimisation SEO et plan de contenu","Réseaux sociaux, newsletter et publicité"],
+         en:["Positioning, personas and competitive analysis","Brand identity and visual guidelines","Figma mockups and purchase journey","WordPress / WooCommerce integration","SEO optimization and content plan","Social media, newsletter and advertising"]},
+    link:{label:{fr:"Voir le site",en:"Visit the site"},url:"https://fightstart.ch"} },
+
+  { id:"pulse", cover:"assets/img/pulse.jpg", year:"2025", cats:["ux","dev"],
+    theme:{bg:"#2E4A47",fg:"#F3EDE4"},
+    title:"HUG, Don du sang",
+    hook:{fr:"Faire du don du sang un projet d'entreprise.",en:"Making blood donation a company project."},
+    client:{fr:"HUG × HEIG-VD",en:"HUG × HEIG-VD"},
+    logo:"assets/img/logos/hug.svg",logoName:"Hôpitaux Universitaires Genève",hoverLogo:"assets/img/logos/hug.svg",
+    role:{fr:"UX/UI & concept",en:"UX/UI & concept"},
+    catLabel:{fr:"UX/UI · Développement",en:"UX/UI · Development"},
+    tags:{fr:["UX/UI","Recherche","Santé"],en:["UX/UI","Research","Healthcare"]},
+    teaser:{fr:"Une plateforme qui engage les entreprises dans le don du sang et valorise leur démarche par le label CTS.",
+            en:"A platform that engages companies in blood donation and rewards their effort with the CTS label."},
+    lead:{fr:"Une UX rassurante au service d'un enjeu de santé publique : mobiliser les entreprises autour du don du sang.",
+          en:"Reassuring UX for a public-health goal: rallying companies around blood donation."},
+    context:{fr:"Plateforme réalisée pour les Hôpitaux Universitaires de Genève afin de mobiliser les entreprises autour du don du sang. Le parcours guide le donneur de la découverte à la prise de rendez-vous : un quiz d'éligibilité en neuf questions, mené par « Courage », une mascotte castor conçue pour rassurer, puis la réservation d'un créneau. Côté entreprises, un espace dédié et un système de reconnaissance (le label CTS et le Trophée de la générosité) valorisent leur engagement. J'ai travaillé le design system, la mascotte, et les maquettes du site public comme de l'espace entreprise.",
+             en:"A platform built for Geneva University Hospitals to rally companies around blood donation. The journey guides the donor from discovery to booking: a nine-question eligibility quiz led by \"Courage\", a beaver mascot designed to reassure, then slot reservation. For companies, a dedicated space and a recognition system (the CTS label and the Trophée de la générosité) reward their commitment. I worked on the design system, the mascot, and the mockups for both the public site and the company space."},
+    did:{fr:["Recherche et cadrage : le don du sang en entreprise","Design system et mascotte « Courage »","Quiz d'éligibilité et parcours de prise de rendez-vous","Maquettes du site public et de l'espace entreprise","Label CTS et Trophée de la générosité"],
+         en:["Research and framing: workplace blood donation","Design system and \"Courage\" mascot","Eligibility quiz and appointment-booking flow","Mockups for the public site and company space","CTS label and Trophée de la générosité"]},
+    poster:"assets/img/hug/poster.jpg",
+    galleryGroups:[
+      {kind:"mascot",title:{fr:"La mascotte « Courage »",en:"The \"Courage\" mascot"},
+       cap:{fr:"Courage, le castor-guide créé pour rassurer les donneurs tout au long du parcours.",en:"Courage, the guide mascot created to reassure donors throughout the journey."},
+       items:[{src:"assets/img/hug/courage-tux.png"},{src:"assets/img/hug/courage-guide.png"}]},
+      {kind:"device",title:{fr:"Le site don du sang",en:"The blood-donation site"},
+       items:[{src:"assets/img/hug/site-accueil.jpg",mock:"assets/img/hug/site-accueil-mock.jpg",cap:{fr:"Page d'accueil",en:"Home page"}},
+              {src:"assets/img/hug/site-trophee.jpg",mock:"assets/img/hug/site-trophee-mock.jpg",cap:{fr:"Trophée de la générosité",en:"Trophée de la générosité"}}]},
+      {kind:"device",title:{fr:"L'espace entreprise",en:"The company space"},
+       items:[{src:"assets/img/hug/espace-entreprise.jpg",mock:"assets/img/hug/espace-entreprise-mock.jpg",cap:{fr:"Landing de collecte en entreprise",en:"Company blood-drive landing"}}]},
+      {kind:"device",title:{fr:"Le parcours donneur",en:"The donor journey"},
+       items:[{src:"assets/img/hug/quiz-guide.jpg",mock:"assets/img/hug/quiz-guide-mock.jpg",cap:{fr:"Introduction du quiz, guidée par Courage",en:"Quiz intro, guided by Courage"}},
+              {src:"assets/img/hug/quiz-reponses.jpg",mock:"assets/img/hug/quiz-reponses-mock.jpg",cap:{fr:"Récapitulatif du quiz d'éligibilité",en:"Eligibility quiz recap"}},
+              {src:"assets/img/hug/rdv.jpg",mock:"assets/img/hug/rdv-mock.jpg",cap:{fr:"Prise de rendez-vous",en:"Appointment booking"}}]}
+    ],
+    link:{label:{fr:"Voir le site",en:"Visit the site"},url:"https://dondusang.loannjuillerat.ch"},
+    link2:{label:{fr:"Voir le site partenaire",en:"Visit the partner site"},url:"https://dondusang.loannjuillerat.ch/entreprise/ubs"} },
+
+  { id:"odd", cover:"assets/img/odd.jpg", year:"2025", cats:["ux"],
+    theme:{bg:"#6E2F3A",fg:"#F3EDE4"},
+    title:"Interface d'un projet d'éducation",
+    hook:{fr:"Une interface pour 17 objectifs.",en:"One interface for 17 goals."},
+    client:{fr:"Projet de groupe, HEIG-VD",en:"Group project, HEIG-VD"},
+    logo:"assets/img/logos/heig.svg",logoName:"HEIG-VD",hoverLogo:"assets/img/logos/heig.svg",
+    role:{fr:"UX/UI, travail d'équipe",en:"UX/UI, teamwork"},
+    catLabel:{fr:"UX/UI",en:"UX/UI"},
+    tags:{fr:["UX/UI","Figma","Design system"],en:["UX/UI","Figma","Design system"]},
+    teaser:{fr:"Un système d'interface autour des Objectifs de développement durable.",
+            en:"An interface system built around the UN Sustainable Development Goals."},
+    lead:{fr:"Les bases de l'interface (composants, grille, états), appliquées à une thématique à sens.",
+          en:"Interface fundamentals (components, grid, states), applied to a meaningful theme."},
+    context:{fr:"Projet de groupe explorant les bases de l'interface autour des Objectifs de développement durable (ODD). Construction d'un socle de composants, d'une grille et des états, puis maquettes et prototype sur Figma.",
+             en:"A group project exploring interface fundamentals around the UN Sustainable Development Goals. We built a base of components, a grid and states, then mockups and a prototype in Figma."},
+    did:{fr:["Socle de composants, grille et états","Maquettes et prototype Figma","Thématique Objectifs de développement durable","Collaboration en équipe"],
+         en:["Component base, grid and states","Figma mockups and prototype","Sustainable Development Goals theme","Team collaboration"]},
+    link:{label:{fr:"Voir sur Figma",en:"Open in Figma"},url:"https://www.figma.com/design/9mwjQqhMEiVJbH1GfRrv8H/BasesUI-LukaStojanovic-WilliamVladStancu-SteveBenjamin-NabilMohamedHagos?node-id=11-2"} },
+
+  { id:"etoile", cover:"assets/img/etoile.jpg", year:"2025", cats:["design","strategy"],
+    theme:{bg:"#4A3350",fg:"#F6F1E9"},
+    title:"Restaurant « Étoile Blanche », Lausanne",
+    hook:{fr:"L'essentiel suffit.",en:"The essentials are enough."},
+    client:{fr:"SimpleType, HEIG-VD",en:"SimpleType, HEIG-VD"},
+    logo:"assets/img/logos/etoile.svg",logoName:"Étoile Blanche",pillDark:true,hoverLogo:"assets/img/logos/etoile.svg",
+    role:{fr:"Direction artistique & marque",en:"Art direction & branding"},
+    catLabel:{fr:"Design graphique",en:"Graphic design"},
+    tags:{fr:["Branding","Direction artistique","Social media"],en:["Branding","Art direction","Social media"]},
+    teaser:{fr:"Une refonte d'identité Swiss Style pour un lieu : direction artistique, playbook et réseaux.",
+            en:"A Swiss-style brand refresh for a venue: art direction, playbook and social media."},
+    lead:{fr:"« Systèmes visuels clairs. L'essentiel suffit. » Une identité construite sur la retenue.",
+          en:"\"Clear visual systems. The essentials are enough.\" An identity built on restraint."},
+    context:{fr:"SimpleType × L'Étoile Blanche : une identité construite autour d'une idée simple : des systèmes visuels clairs, où l'essentiel suffit. Direction artistique digitale, playbook de marque et stratégie de contenus Instagram / TikTok pour positionner le lieu comme destination afterwork, avec un ton sobre, direct et sans surenchère.",
+             en:"SimpleType × L'Étoile Blanche: an identity built around a simple idea: clear visual systems where the essentials are enough. Digital art direction, a brand playbook and an Instagram / TikTok content strategy to position the venue as an after-work destination, with a sober, direct and understated tone."},
+    did:{fr:["Direction artistique et système visuel","Playbook de marque","Stratégie de contenus Instagram & TikTok","Déclinaisons : posts, stories, menus"],
+         en:["Art direction and visual system","Brand playbook","Instagram & TikTok content strategy","Deliverables: posts, stories, menus"]},
+    galleryGroups:[
+      {kind:"device",title:{fr:"Posts Instagram",en:"Instagram posts"},
+       items:[{src:"assets/img/etoile/full-leclair.jpg",mock:"assets/img/etoile/post-leclair.jpg",cap:{fr:"Le Clair · cocktail signature",en:"Le Clair · signature cocktail"}},
+              {src:"assets/img/etoile/full-fumant.jpg",mock:"assets/img/etoile/post-fumant.jpg",cap:{fr:"Fumant · la cuisine en gros plan",en:"Fumant · food close-up"}},
+              {src:"assets/img/etoile/full-gestejuste.jpg",mock:"assets/img/etoile/post-gestejuste.jpg",cap:{fr:"Le geste juste · les coulisses",en:"The right touch · behind the scenes"}}]},
+      {kind:"device",title:{fr:"Stories & annonces",en:"Stories & announcements"},
+       items:[{src:"assets/img/etoile/full-savethedate.jpg",mock:"assets/img/etoile/story-savethedate.jpg",cap:{fr:"Save the date · afterwork",en:"Save the date · afterwork"}},
+              {src:"assets/img/etoile/full-philosophie.jpg",mock:"assets/img/etoile/story-philosophie.jpg",cap:{fr:"L'essentiel suffit · la philosophie",en:"The essentials are enough · philosophy"}},
+              {src:"assets/img/etoile/full-review.jpg",mock:"assets/img/etoile/story-review.jpg",cap:{fr:"Avis client · Google review",en:"Customer review · Google"}}]},
+      {kind:"device",title:{fr:"Cartes & menus",en:"Menus & print"},
+       items:[{src:"assets/img/etoile/full-mets.jpg",mock:"assets/img/etoile/menu-mets.jpg",cap:{fr:"La carte des mets",en:"The food menu"}},
+              {src:"assets/img/etoile/full-bricoles.jpg",mock:"assets/img/etoile/menu-bricoles.jpg",cap:{fr:"Bricoles & bar",en:"Small plates & bar"}},
+              {src:"assets/img/etoile/full-boissons.jpg",mock:"assets/img/etoile/menu-boissons.jpg",cap:{fr:"La carte des boissons",en:"The drinks menu"}},
+              {src:"assets/img/etoile/full-leclair-poster.jpg",mock:"assets/img/etoile/menu-leclair-poster.jpg",cap:{fr:"Le Clair · affiche signature",en:"Le Clair · signature poster"}}]}
+    ],
+    link:null },
+
+  { id:"yearbook", cover:"assets/img/yearbook/hero.jpg", year:"2025", cats:["design"],
+    theme:{bg:"#35463A",fg:"#F3EDE4"},
+    title:"Yearbook",
+    hook:{fr:"28 pages, un seul système.",en:"28 pages, one system."},
+    client:{fr:"Ingénierie des médias, HEIG-VD",en:"Media Engineering, HEIG-VD"},
+    logo:"assets/img/logos/heig.svg",logoName:"HEIG-VD",hoverLogo:"assets/img/logos/heig.svg",
+    role:{fr:"Design éditorial & mise en page",en:"Editorial design & layout"},
+    catLabel:{fr:"Design graphique",en:"Graphic design"},
+    tags:{fr:["Édition","InDesign","Risographie"],en:["Editorial","InDesign","Risograph"]},
+    teaser:{fr:"Un yearbook de 28 pages et son système éditorial sur-mesure, mis en page sur InDesign.",
+            en:"A 28-page yearbook and its systematic editorial grammar, laid out in InDesign."},
+    lead:{fr:"Un système de symboles pour guider la lecture d'un bout à l'autre du volume.",
+          en:"A symbol system guiding the reader from cover to cover."},
+    context:{fr:"Conception d'un yearbook de 28 pages pour la filière Ingénierie des médias. Un système éditorial à base de symboles (éditorial, enseignement, recherche, conclusion) structure la lecture d'un bout à l'autre. Travail complémentaire en risographie.",
+             en:"Design of a 28-page yearbook for the Media Engineering programme. A symbol-based editorial system (editorial, teaching, research, conclusion) structures the reading throughout. Complemented by risograph work."},
+    did:{fr:["Direction éditoriale et grille de mise en page","Système de symboles et hiérarchie","Mise en page InDesign, 28 pages","Impression et risographie"],
+         en:["Editorial direction and layout grid","Symbol system and hierarchy","InDesign layout, 28 pages","Print and risograph"]},
+    galleryGroups:[
+      {kind:"device",title:{fr:"L'objet imprimé",en:"The printed object"},
+       items:[{src:"assets/img/yearbook/cover.jpg",mock:"assets/img/yearbook/cover-mock.jpg",cap:{fr:"La couverture",en:"The cover"}},
+              {src:"assets/img/yearbook/binary.jpg",mock:"assets/img/yearbook/binary-mock.jpg",cap:{fr:"Double page · pleine image",en:"Spread · full bleed"}}]},
+      {kind:"device",title:{fr:"Les doubles pages",en:"The spreads"},
+       items:[{src:"assets/img/yearbook/robustesse.jpg",mock:"assets/img/yearbook/robustesse-mock.jpg",cap:{fr:"« Robustesse » · ouverture d'article",en:"\"Robustesse\" · article opener"}},
+              {src:"assets/img/yearbook/bachelor.jpg",mock:"assets/img/yearbook/bachelor-mock.jpg",cap:{fr:"Un bachelor intégrant la pratique",en:"A practice-integrated bachelor"}},
+              {src:"assets/img/yearbook/salle.jpg",mock:"assets/img/yearbook/salle-mock.jpg",cap:{fr:"Pleine page · clôture du volume",en:"Full spread · closing the volume"}}]}
+    ],
+    link:null },
+
+  { id:"visualdon", cover:"assets/img/vdon/landing.jpg", poster:"assets/img/vdon/poster.jpg", year:"2025", cats:["dataviz","dev"],
+    theme:{bg:"#2A1416",fg:"#F3EDE4"},
+    title:"VisualDon, la face cachée de l'UFC",
+    hook:{fr:"Ce que le spectacle ne montre pas.",en:"What the spectacle doesn't show."},
+    client:{fr:"Projet de groupe, HEIG-VD",en:"Group project, HEIG-VD"},
+    logo:"assets/img/logos/heig.svg",logoName:"HEIG-VD",hoverLogo:"assets/img/logos/heig.svg",
+    role:{fr:"Data viz & développement",en:"Data viz & development"},
+    catLabel:{fr:"Data viz · Développement",en:"Data viz · Development"},
+    tags:{fr:["Data viz","D3.js","Three.js"],en:["Data viz","D3.js","Three.js"]},
+    teaser:{fr:"Une data-visualisation scrollytelling sur les coûts humains et financiers de l'UFC.",
+            en:"A scrollytelling data-visualization on the human and financial costs of the UFC."},
+    lead:{fr:"Blessures, carrières et argent : un récit interactif derrière le spectacle du MMA.",
+          en:"Injuries, careers and money: an interactive story behind the MMA spectacle."},
+    context:{fr:"Projet de data-visualisation réalisé à la HEIG-VD autour d'une question : que coûte vraiment l'UFC à ses combattants ? À partir de données publiques (statistiques de combats, suspensions médicales, bourses), le site raconte en scrollytelling le parcours d'un combattant, cartographie les origines des athlètes, explore une carte anatomique des blessures et met en regard la santé et l'argent. Développé avec D3.js, Three.js, GSAP et Scrollama.",
+             en:"A data-visualization project built at HEIG-VD around one question: what does the UFC really cost its fighters? From public data (fight stats, medical suspensions, purses), the site tells, through scrollytelling, a fighter's career, maps athletes' origins, explores an anatomical injury map and sets health against money. Built with D3.js, Three.js, GSAP and Scrollama."},
+    did:{fr:["Récit scrollytelling : la chronologie d'une carrière","Carte mondiale des origines des combattants","Carte anatomique interactive des blessures","Comparaison de carrières et analyse des bourses","Front-end : D3.js, Three.js, GSAP, Scrollama"],
+         en:["Scrollytelling: the timeline of a career","World map of fighters' origins","Interactive anatomical injury map","Career comparison and purse analysis","Front-end: D3.js, Three.js, GSAP, Scrollama"]},
+    galleryGroups:[
+      {kind:"device",title:{fr:"Le récit interactif",en:"The interactive story"},
+       items:[{src:"assets/img/vdon/parcours.jpg",mock:"assets/img/vdon/parcours-mock.jpg",cap:{fr:"Chronologie d'une carrière",en:"Career timeline"}},
+              {src:"assets/img/vdon/origines.jpg",mock:"assets/img/vdon/origines-mock.jpg",cap:{fr:"Carte globale des origines",en:"Global origins map"}},
+              {src:"assets/img/vdon/anatomie.jpg",mock:"assets/img/vdon/anatomie-mock.jpg",cap:{fr:"Carte anatomique des blessures",en:"Anatomical injury map"}}]},
+      {kind:"device",title:{fr:"Les chiffres",en:"The figures"},
+       items:[{src:"assets/img/vdon/faceaface.jpg",mock:"assets/img/vdon/faceaface-mock.jpg",cap:{fr:"Comparer deux combattants",en:"Compare two fighters"}},
+              {src:"assets/img/vdon/argent.jpg",mock:"assets/img/vdon/argent-mock.jpg",cap:{fr:"L'argent derrière le spectacle",en:"The money behind the show"}},
+              {src:"assets/img/vdon/cout.jpg",mock:"assets/img/vdon/cout-mock.jpg",cap:{fr:"Le coût humain du ring",en:"The human cost of the ring"}}]}
+    ],
+    link:{label:{fr:"Voir le projet sur GitHub",en:"View on GitHub"},url:"https://github.com/LukaStojanovic11/Projet-VisualDon"} }
+];
+
+/* ============ I18N ============ */
+const I18N = {
+  fr:{
+    "nav.work":"Projets","nav.about":"À propos","nav.tb":"Travail de Bachelor","nav.contact":"Contact",
+    "tb.title":"Travail de Bachelor","tb.sub":"Brochure et échéances · Ingénierie des médias, HEIG-VD (2026–27).","tb.lead":"Je recherche actuellement un <span class='em'>sujet de Travail de Bachelor</span> ainsi qu'une entreprise partenaire en Suisse romande. Si un projet autour du design, de l'UX/UI ou de la stratégie digitale pourrait vous intéresser, n'hésitez pas à me contacter.","tb.eyebrow":"Travail de Bachelor, HEIG-VD 2026–27","tb.download":"Télécharger la brochure (PDF)","tb.meta":"PDF · 100 Ko · Guide officiel HEIG-VD","tb.p1":"Kick-off","tb.p2":"Validation du sujet","tb.p3":"Pré-étude & Travail de Bachelor","tb.p4":"Soutenances",
+    "hero.status":"En recherche d'emploi · Suisse romande","hero.role":"Design graphique · UX/UI · Stratégie digitale",
+    "hero.h1a":"Je conçois des","hero.h1b":"","hero.h1c":"et je les mets en ligne.",
+    "hero.lead":"Luka Stojanovic, étudiant en Ingénierie des médias à la HEIG-VD. Du design graphique à l'UX/UI, je mène chaque projet du concept à la mise en ligne.",
+    "hero.f1":"projets","hero.f2":"disciplines","hero.f3":"Ingénierie des médias",
+    "hero.cue":"Mes projets","hero.btn1":"Voir les projets","hero.btn2":"Me contacter",
+    "work.title":"Projets","work.sub":"Six projets récents, d'une boutique de sports de combat à une data-visualisation sur l'UFC. Chacun mené du concept à la livraison.","work.projects":"projets","work.cta":"Voir le projet",
+    "filter.all":"Tous","filter.design":"Design graphique","filter.ux":"UX/UI","filter.dev":"Développement","filter.dataviz":"Data visualisation","filter.strategy":"Stratégie digitale",
+    "about.title":"À propos","about.sub":"En bref","about.lead":"Étudiant-designer, basé en Suisse romande.",
+    "about.bio":"Je suis étudiant en Ingénierie des médias à la <span class='em'>HEIG-VD</span>, une formation à la croisée du design, de la communication et de la technique. C'est exactement là que j'aime travailler : à l'intersection du visuel et de l'interactif.",
+    "about.p2":"Mes projets vont de l'identité de marque à la data-visualisation, en passant par l'UX/UI et l'e-commerce. Ce qui les relie, c'est une même façon de faire : comprendre le besoin, poser une direction claire, puis l'exécuter jusqu'au détail, maquette, contenu et mise en ligne compris.",
+    "about.k1":"Basé à","about.k2":"Formation","about.v2":"Ingénierie des médias, HEIG-VD","about.k3":"Focus","about.v3":"Design · UX/UI · Développement","about.k4":"Disponibilité","about.v4":"En recherche d'emploi",
+    "disc.design.t":"Design graphique","disc.design.p":"Identité, direction artistique, édition, réseaux.",
+    "disc.ux.t":"UX / UI","disc.ux.p":"Recherche, wireframing, prototypage Figma, design systems.",
+    "disc.strategy.t":"Stratégie digitale","disc.strategy.p":"Business model, e-commerce, SEO, publicité.",
+    "savoir.k":"Savoir-faire","outils.k":"Outils","outils.sub":"Les logiciels avec lesquels je travaille au quotidien.",
+    "wdo.title":"Ce que je fais","wdo.sub":"Quatre disciplines, du premier croquis à la mise en ligne.","wdo.aria":"Ce que je fais","wdo.count":"compétences",
+    "contact.title":"Contact","contact.tag":"Et si on <span class='em'>travaillait</span> ensemble ?","contact.sub":"En recherche d'emploi, Suisse romande.",
+    "contact.write":"Me contacter",
+    "foot.rights":"Conçu et réalisé à Lausanne","foot.top":"Haut ↑",
+    "d.back":"Tous les projets","d.role":"Rôle","d.year":"Année","d.client":"Client","d.cat":"Catégorie",
+    "d.context":"Contexte","d.did":"Ce que j'ai fait","d.gallery":"Aperçu","d.zoom":"Agrandir","d.next":"Projet suivant","d.view":"Voir le projet"
+  },
+  en:{
+    "nav.work":"Work","nav.about":"About","nav.tb":"Bachelor's thesis","nav.contact":"Contact",
+    "tb.title":"Bachelor's thesis","tb.sub":"Brochure and deadlines · Media Engineering, HEIG-VD (2026–27).","tb.lead":"I'm currently looking for a <span class='em'>Bachelor's thesis topic</span> and a partner company in French-speaking Switzerland. If a project around design, UX/UI or digital strategy could interest you, feel free to reach out.","tb.eyebrow":"Bachelor's thesis, HEIG-VD 2026–27","tb.download":"Download the brochure (PDF)","tb.meta":"PDF · 100 KB · Official HEIG-VD guide","tb.p1":"Kick-off","tb.p2":"Topic validation","tb.p3":"Pre-study & Bachelor's thesis","tb.p4":"Oral defenses",
+    "hero.status":"Open to work · French-speaking Switzerland","hero.role":"Graphic design · UX/UI · Digital strategy",
+    "hero.h1a":"I design","hero.h1b":"","hero.h1c":"and ship them online.",
+    "hero.lead":"Luka Stojanovic, Media Engineering student at HEIG-VD. From graphic design to UX/UI, I take each project from concept to launch.",
+    "hero.f1":"projects","hero.f2":"disciplines","hero.f3":"Media Engineering",
+    "hero.cue":"My work","hero.btn1":"See the work","hero.btn2":"Contact me",
+    "work.title":"Projects","work.sub":"Six recent projects, from a combat-sports online store to a data-visualization on the UFC. Each taken from concept to delivery.","work.projects":"projects","work.cta":"View project",
+    "filter.all":"All","filter.design":"Graphic design","filter.ux":"UX/UI","filter.dev":"Development","filter.dataviz":"Data visualization","filter.strategy":"Digital strategy",
+    "about.title":"About","about.sub":"In short","about.lead":"Student-designer, based in French-speaking Switzerland.",
+    "about.bio":"I'm a Media Engineering student at <span class='em'>HEIG-VD</span>, a programme at the crossroads of design, communication and engineering. That's exactly where I like to work: at the intersection of the visual and the interactive.",
+    "about.p2":"My projects range from brand identity to data-visualization, through UX/UI and e-commerce. What ties them together is one way of working: understand the need, set a clear direction, then execute it down to the detail, mockups, content and launch included.",
+    "about.k1":"Based in","about.k2":"Education","about.v2":"Media Engineering, HEIG-VD","about.k3":"Focus","about.v3":"Design · UX/UI · Development","about.k4":"Availability","about.v4":"Open to work",
+    "disc.design.t":"Graphic design","disc.design.p":"Identity, art direction, editorial, social.",
+    "disc.ux.t":"UX / UI","disc.ux.p":"Research, wireframing, Figma prototyping, design systems.",
+    "disc.strategy.t":"Digital strategy","disc.strategy.p":"Business model, e-commerce, SEO, advertising.",
+    "savoir.k":"Skills","outils.k":"Tools","outils.sub":"The software I work with every day.",
+    "wdo.title":"What I do","wdo.sub":"Four disciplines, from the first sketch to going live.","wdo.aria":"What I do","wdo.count":"skills",
+    "contact.title":"Contact","contact.tag":"Shall we <span class='em'>work</span> together?","contact.sub":"Open to opportunities, French-speaking Switzerland.",
+    "contact.write":"Contact me",
+    "foot.rights":"Designed and built in Lausanne","foot.top":"Top ↑",
+    "d.back":"All projects","d.role":"Role","d.year":"Year","d.client":"Client","d.cat":"Category",
+    "d.context":"Context","d.did":"What I did","d.gallery":"Preview","d.zoom":"Enlarge","d.next":"Next project","d.view":"View project"
+  }
+};
+const ROT = { fr:["marques","sites web","interfaces","expériences"], en:["brands","websites","interfaces","experiences"] };
+const SKILLS = [
+  {c:"design",t:{fr:"Identité de marque",en:"Brand identity"}},
+  {c:"design",t:{fr:"Direction artistique",en:"Art direction"}},
+  {c:"design",t:{fr:"Design visuel",en:"Visual design"}},
+  {c:"design",t:{fr:"Édition & print",en:"Editorial & print"}},
+  {c:"design",t:{fr:"Illustration",en:"Illustration"}},
+  {c:"design",t:{fr:"Réseaux sociaux",en:"Social media"}},
+  {c:"ux",t:{fr:"Recherche utilisateurs",en:"User research"}},
+  {c:"ux",t:{fr:"Tests utilisateurs",en:"User testing"}},
+  {c:"ux",t:{fr:"Architecture de l'information",en:"Information architecture"}},
+  {c:"ux",t:{fr:"Wireframing",en:"Wireframing"}},
+  {c:"ux",t:{fr:"Prototypage",en:"Prototyping"}},
+  {c:"ux",t:{fr:"Design systems",en:"Design systems"}},
+  {c:"strategy",t:{fr:"Business model",en:"Business model"}},
+  {c:"strategy",t:{fr:"Stratégie de marque",en:"Brand strategy"}},
+  {c:"strategy",t:{fr:"SEO & contenu",en:"SEO & content"}},
+  {c:"strategy",t:{fr:"E-commerce",en:"E-commerce"}},
+  {c:"strategy",t:{fr:"Publicité",en:"Advertising"}}
+];
+const DISC = [
+  {c:"design",t:{fr:"Design graphique",en:"Graphic design"}},
+  {c:"ux",t:{fr:"UX / UI",en:"UX / UI"}},
+  {c:"strategy",t:{fr:"Stratégie digitale",en:"Digital strategy"}}
+];
+const WDO = [
+  {t:{fr:"Design graphique",en:"Graphic design"},
+   d:{fr:"Identité, direction artistique, édition et contenus pour les réseaux.",en:"Identity, art direction, editorial and social content."},
+   s:{fr:["Identité de marque","Direction artistique","Édition & print","Réseaux sociaux"],en:["Brand identity","Art direction","Editorial & print","Social media"]}},
+  {t:{fr:"UX / UI",en:"UX / UI"},
+   d:{fr:"De la recherche au prototype : des interfaces claires et cohérentes.",en:"From research to prototype: clear, consistent interfaces."},
+   s:{fr:["Recherche utilisateurs","Wireframing","Prototypage Figma","Design systems"],en:["User research","Wireframing","Figma prototyping","Design systems"]}},
+  {t:{fr:"Développement & intégration",en:"Development & integration"},
+   d:{fr:"Mettre les maquettes en ligne, du front-end à la data-visualisation.",en:"Shipping the mockups, from front-end to data-visualization."},
+   s:{fr:["HTML · CSS · JS","WordPress / WooCommerce","D3.js & Three.js","Responsive"],en:["HTML · CSS · JS","WordPress / WooCommerce","D3.js & Three.js","Responsive"]}},
+  {t:{fr:"Stratégie digitale",en:"Digital strategy"},
+   d:{fr:"Positionner, vendre et faire grandir un projet en ligne.",en:"Positioning, selling and growing a project online."},
+   s:{fr:["Positionnement & personas","E-commerce","SEO & contenu","Publicité"],en:["Positioning & personas","E-commerce","SEO & content","Advertising"]}}
+];
+const TOOLS = [
+  {n:"Figma",l:"assets/img/tools/figma.svg"},
+  {n:"Illustrator",l:"assets/img/tools/illustrator.svg"},
+  {n:"Photoshop",l:"assets/img/tools/photoshop.svg"},
+  {n:"InDesign",l:"assets/img/tools/indesign.svg"},
+  {n:"Premiere Pro",l:"assets/img/tools/premiere.svg"},
+  {n:"After Effects",l:"assets/img/tools/aftereffects.svg"},
+  {n:"Canva",l:"assets/img/tools/canva.svg"},
+  {n:"WordPress",l:"assets/img/tools/wordpress.svg"},
+  {n:"Notion",l:"assets/img/tools/notion.svg"},
+  {n:"VS Code",l:"assets/img/tools/vscode.svg"},
+  {n:"Miro",l:"assets/img/tools/miro.svg"}
+];
+
+/* ============ STATE ============ */
+let LANG="fr";
+try{const s=localStorage.getItem("ls_lang");if(s==="fr"||s==="en")LANG=s;}catch(e){}
+let FILTER="all";
+const t=k=>(I18N[LANG]&&I18N[LANG][k]!=null)?I18N[LANG][k]:k;
+const tv=o=>o?(o[LANG]!=null?o[LANG]:o.fr):"";
+
+/* ============ RENDER PROJECTS ============ */
+const projectsEl=document.getElementById("projects");
+function renderProjects(){
+  const list=PROJECTS.filter(p=>FILTER==="all"||p.cats.includes(FILTER));
+  document.getElementById("workCount").textContent=list.length;
+  const n=list.length;
+  projectsEl.innerHTML=list.map((p,i)=>{
+    const feat = (i===0) || (i===n-1 && (n-1)%2===1);
+    const cls = feat ? "feat" : "";
+    const gi=PROJECTS.indexOf(p);
+    return `
+    <a class="project rv pstack ${cls}${p.hoverLogo?" hl":""}" href="#travaux/${p.id}" data-id="${p.id}" data-d="${i*110}" aria-label="${p.title}" style="--si:${i};--pcard:${p.theme.bg}">
+      <div class="pmedia">
+        <img src="${p.poster||p.cover}" alt="${p.title}" loading="lazy">
+        <span class="pnum" aria-hidden="true">${String(gi+1).padStart(2,"0")}</span>
+        <span class="pgo" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        ${p.hoverLogo?`<span class="phlogo" aria-hidden="true"><img src="${p.hoverLogo}" alt=""></span>`:""}
+      </div>
+      <div class="pbody">
+      <h3 class="phook">${tv(p.hook)}</h3>
+      <div class="pfoot">
+        <div class="pfoot-txt">
+          <span class="pfoot-sub">${p.logo?"":`<span class="pclient">${tv(p.client)}</span>`}<span class="pyr">${p.year}</span><span class="pcatl">${tv(p.catLabel)}</span></span>
+          ${(p.logo&&!p.hoverLogo)?`<span class="pdiv" aria-hidden="true"></span><img class="plogo" src="${p.logo}" alt="${p.logoName||tv(p.client)}" loading="lazy">`:""}
+        </div>
+        <span class="plink"><span class="plink-t">${t("work.cta")}</span><svg class="plink-ar" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+      </div>
+    </a>`;}).join("");
+  const hint=`<span class="hs-hint" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>${t("work.cta")==="View project"?"scroll":"scrollez"}</span>`;
+  projectsEl.innerHTML=`<div class="pstage"><div class="pcards">${projectsEl.innerHTML}${hint}</div><div class="pscroller"><div class="pspacer"></div></div></div>`;
+  observeReveal();
+  layoutProjects();
+}
+
+/* ===== projects motion: vertical deck (<900px) + horizontal coverflow (≥900px) ===== */
+const MQ_H=matchMedia("(min-width: 900px)");
+let projRAF=null,projApply=null,projBound=false;
+function bindProjScroll(){
+  if(projBound) return;
+  const on=()=>{if(projRAF==null&&projApply)projRAF=requestAnimationFrame(()=>{projRAF=null;if(projApply)projApply();});};
+  window.addEventListener("scroll",on,{passive:true});
+  window.addEventListener("resize",on,{passive:true});
+  projBound=true;
+}
+function clearCardStyles(){projectsEl.querySelectorAll(".project").forEach(c=>{c.style.transform="";c.style.filter="";c.style.zIndex="";c.style.opacity="";c.style.pointerEvents="";});}
+function layoutProjects(){
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const horizontal=MQ_H.matches && !reduce;
+  projectsEl.classList.remove("stacked");
+  projectsEl.classList.toggle("hmode",horizontal);
+  projectsEl.classList.toggle("vmode",!horizontal);
+  clearCardStyles();
+  projectsEl.style.height="";
+  if(horizontal) setupHstack(); else setupVstack();
+}
+function setupVstack(){
+  const cards=[...projectsEl.querySelectorAll(".project")];
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){projApply=null;return;}
+  cards.forEach((c,i)=>c.style.zIndex=String(i+1));
+  projApply=()=>{
+    const first=cards[0]; if(!first) return;
+    const T=parseFloat(getComputedStyle(first).top)||100;
+    cards.forEach((card,i)=>{
+      const next=cards[i+1];
+      if(!next){card.style.transform="translateY(0) scale(1)";card.style.filter="";return;}
+      const gap=next.getBoundingClientRect().top - T;
+      const range=Math.min(window.innerHeight*0.55, card.offsetHeight*0.75);
+      const p=Math.max(0,Math.min(1, 1 - gap/range));
+      card.style.transform=`translateY(${(-18*p).toFixed(1)}px) scale(${(1-0.085*p).toFixed(4)})`;
+      card.style.filter=`brightness(${(1-0.26*p).toFixed(3)})`;
+    });
+  };
+  bindProjScroll(); projApply();
+}
+function setupHstack(){
+  const scroller=projectsEl.querySelector(".pscroller");
+  const spacer=projectsEl.querySelector(".pspacer");
+  const cards=[...projectsEl.querySelectorAll(".project")];
+  const n=cards.length;
+  if(!scroller||!spacer||!n){projApply=null;return;}
+  projectsEl.style.height="";
+  spacer.style.width=(Math.max(2,n)*60)+"vw";
+  const hint=projectsEl.querySelector(".hs-hint");
+  const render=()=>{
+    const max=scroller.scrollWidth-scroller.clientWidth;
+    const progress=max>0?scroller.scrollLeft/max:0;
+    const a=progress*(n-1);
+    const spacing=Math.min(scroller.clientWidth*0.24,300);
+    if(hint) hint.style.opacity=(progress>0.02&&progress<0.96)?".8":"0";
+    cards.forEach((card,i)=>{
+      const d=i-a, ad=Math.abs(d);
+      const cl=Math.max(-3,Math.min(3,d)), acl=Math.abs(cl);
+      card.style.transform=`translate(-50%,-50%) translateX(${(cl*spacing).toFixed(1)}px) translateZ(${(-acl*220).toFixed(1)}px) rotateY(${(-cl*38).toFixed(2)}deg) scale(${(1-acl*0.085).toFixed(4)})`;
+      card.style.zIndex=String(Math.round(100-acl*10));
+      card.style.opacity=ad>3.25?"0":(ad>2?(1-(ad-2)*0.8).toFixed(2):"1");
+      card.style.filter=`brightness(${(1-acl*0.13).toFixed(3)})`;
+    });
+  };
+  if(!scroller.dataset.bound){
+    let raf=null;
+    scroller.addEventListener("scroll",()=>{if(raf==null)raf=requestAnimationFrame(()=>{raf=null;render();});},{passive:true});
+    // mouse wheel → horizontal; release to the page at the ends
+    scroller.addEventListener("wheel",(e)=>{
+      const max=scroller.scrollWidth-scroller.clientWidth;
+      const dom=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;
+      const atStart=scroller.scrollLeft<=0, atEnd=scroller.scrollLeft>=max-1;
+      if((dom>0&&!atEnd)||(dom<0&&!atStart)){e.preventDefault();scroller.scrollLeft+=dom;}
+    },{passive:false});
+    // click (not drag) opens the centered project
+    let downX=0,downL=0,moved=false;
+    scroller.addEventListener("pointerdown",(e)=>{downX=e.clientX;downL=scroller.scrollLeft;moved=false;});
+    scroller.addEventListener("pointermove",(e)=>{if(Math.abs(e.clientX-downX)>6)moved=true;});
+    scroller.addEventListener("click",()=>{
+      if(moved||Math.abs(scroller.scrollLeft-downL)>6)return;
+      const max=scroller.scrollWidth-scroller.clientWidth;
+      const progress=max>0?scroller.scrollLeft/max:0;
+      const card=cards[Math.round(progress*(n-1))];
+      if(card){const href=card.getAttribute("href");if(href)location.hash=href;}
+    });
+    scroller.dataset.bound="1";
+  }
+  projApply=render;
+  bindProjScroll();
+  render();
+}
+MQ_H.addEventListener("change",layoutProjects);
+
+/* ============ RENDER SKILLS ============ */
+function renderSkills(){
+  const d3=document.getElementById("disc3"), to=document.getElementById("toolsList");
+  if(d3){
+    d3.innerHTML=DISC.map(disc=>{
+      const items=SKILLS.filter(s=>s.c===disc.c);
+      return `<div class="dcol" data-c="${disc.c}">
+        <h4>${tv(disc.t)}</h4>
+        <ul class="sklist">${items.map(s=>`<li>${tv(s.t)}</li>`).join("")}</ul>
+      </div>`;
+    }).join("");
+  }
+  const tl=document.getElementById("toolsLogos");
+  if(tl){
+    const fdur=[6.4,7.3,8.1,6.7,7.7,6.1,8.3,7,6.9,7.4,6.6];
+    const tools=TOOLS.map((x,i)=>`<span class="orbit-tool" style="--dur:${fdur[i%fdur.length]}s;--del:${(i*0.22).toFixed(2)}s;--sdel:${(i*0.33).toFixed(2)}s"><span class="ot-ic"><img src="${x.l}" alt="" loading="lazy"></span><span class="ot-name">${x.n}</span></span>`).join("");
+    const a11y=`<ul class="sr-only">${TOOLS.map(x=>`<li>${x.n}</li>`).join("")}</ul>`;
+    tl.className="tools-orbit"; tl.innerHTML=tools+a11y;
+  }
+}
+
+/* ============ WHAT I DO · wheel (built from SKILLS + DISC) ============ */
+const WHEEL_G={
+  design:'<circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.6" fill="currentColor"/>',
+  ux:'<rect x="2.5" y="2.5" width="19" height="19" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><rect x="7" y="7" width="10" height="5" rx="1.2" fill="currentColor"/>',
+  strategy:'<path d="M3 21 21 3M10 3h11v11" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>'
+};
+function renderWheel(){
+  const host=document.getElementById("wdoRows"); if(!host) return;
+  host.innerHTML=WDO.map((d,i)=>`
+    <div class="wdo-row rv" style="--d:${(i*0.06).toFixed(2)}s">
+      <span class="wr-n">${String(i+1).padStart(2,"0")}</span>
+      <div class="wr-main">
+        <h3 class="wr-t">${tv(d.t)}</h3>
+        <p class="wr-d">${tv(d.d)}</p>
+      </div>
+      <ul class="wr-skills">${tv(d.s).map(x=>`<li>${x}</li>`).join("")}</ul>
+    </div>`).join("");
+  observeReveal();
+}
+function sizeWheel(){
+  const wh=document.getElementById("wheel"); if(!wh) return;
+  const ul=wh.querySelector("ul"), n=DISC.length, small=innerWidth<=760;
+  wh.style.height=(100+(n-1)*(small?50:55))+"vh";
+  const avail=ul.clientWidth*.92;
+  wh.querySelectorAll("li").forEach(li=>{const w=li.firstElementChild.offsetWidth; li.style.setProperty("--fit",(w>avail&&avail>0)?(avail/w).toFixed(3):"1");});
+  paintWheel(true);
+}
+let wheelRaf=0, wheelCur=null, wheelTarget=0;
+const clamp01=v=>Math.min(1,Math.max(0,v));
+function wheelTargetF(){
+  const wh=document.getElementById("wheel"); if(!wh||!wh.offsetParent) return null;
+  const st=wh.querySelector(".st"), n=DISC.length;
+  const r=wh.getBoundingClientRect(), top=parseFloat(getComputedStyle(st).top)||0;
+  const p=clamp01((top-r.top)/Math.max(1,r.height-st.offsetHeight));
+  // short hold on each category, quick glide between them
+  const x=clamp01((p-.04)/.92)*(n-1), i=Math.min(n-1,Math.floor(x)), tt=clamp01((x-i-.15)/.7);
+  return Math.min(n-1,i+tt*tt*(3-2*tt));
+}
+function applyWheel(f){
+  const wh=document.getElementById("wheel"); if(!wh) return;
+  const li=wh.querySelectorAll("li"); if(!li.length) return;
+  li.forEach((e,k)=>{const o=k-f,a=Math.abs(o);
+    e.style.setProperty("--o",o.toFixed(4));
+    e.style.setProperty("--s",(1-Math.min(a,2)*.14).toFixed(4));
+    e.style.setProperty("--a",Math.max(0,1-Math.min(a,1.2)*.9).toFixed(4));
+    e.classList.toggle("on",a<.5);});
+  const cur=Math.round(f);
+  document.getElementById("wNow").textContent=String(cur+1).padStart(2,"0");
+  document.getElementById("wSkills").textContent=SKILLS.filter(k=>k.c===DISC[cur].c).length+" "+t("wdo.count");
+  document.querySelectorAll("#wBars i").forEach((b,k)=>b.style.setProperty("--p",clamp01(f+1-k).toFixed(4)));
+}
+const WRM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+let wheelActive=false;
+function wheelLoop(){
+  wheelRaf=0;
+  const f=wheelTargetF();
+  if(f!==null){
+    if(wheelCur===null) wheelCur=f;
+    const d=f-wheelCur;
+    wheelCur = Math.abs(d)<.0008 ? f : wheelCur+d*.24;
+    applyWheel(wheelCur);
+    if(wheelActive || Math.abs(f-wheelCur)>.0008){ wheelRaf=requestAnimationFrame(wheelLoop); }
+  }
+}
+function startWheelLoop(){ if(!wheelRaf) wheelRaf=requestAnimationFrame(wheelLoop); }
+function paintWheel(instant){
+  const f=wheelTargetF(); if(f===null) return;
+  if(wheelCur===null||instant===true||WRM){wheelCur=f;applyWheel(f);return;}
+  startWheelLoop();
+}
+const _wsec=document.getElementById("services");
+if(_wsec && "IntersectionObserver" in window){
+  new IntersectionObserver(es=>es.forEach(e=>{wheelActive=e.isIntersecting; if(wheelActive&&!WRM) startWheelLoop();}),{rootMargin:"30% 0px 30% 0px"}).observe(_wsec);
+}
+window.addEventListener("scroll",()=>{ if(!WRM) startWheelLoop(); },{passive:true});
+
+window.addEventListener("resize",sizeWheel);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(sizeWheel);
+
+/* ============ RENDER DETAIL ============ */
+const detailEl=document.getElementById("detail");
+function renderDetail(id){
+  const i=PROJECTS.findIndex(p=>p.id===id);
+  if(i<0){goHome();return;}
+  const p=PROJECTS[i], next=PROJECTS[(i+1)%PROJECTS.length];
+  detailEl.style.setProperty("--pc",p.theme.bg);
+  detailEl.style.setProperty("--pc-fg",p.theme.fg);
+  const mkBtn=(l,extra)=>`<a class="btn proj${extra}" href="${l.url}" target="_blank" rel="noopener">${tv(l.label)}</a>`;
+  const linkBtn=[p.link&&mkBtn(p.link,""),p.link2&&mkBtn(p.link2," ghost")].filter(Boolean).join("");
+  detailEl.innerHTML=`
+    <a class="back" href="#travaux" data-go="work"><span class="ar">←</span> ${t("d.back")}</a>
+    <h1>${p.title}</h1>
+    <p class="d-lead">${tv(p.lead)}</p>
+    <div class="d-meta">
+      <div class="cell"><div class="k">${t("d.role")}</div><div class="v">${tv(p.role)}</div></div>
+      <div class="cell"><div class="k">${t("d.year")}</div><div class="v">${p.year}</div></div>
+      <div class="cell"><div class="k">${t("d.client")}</div><div class="v">${tv(p.client)}</div></div>
+      <div class="cell"><div class="k">${t("d.cat")}</div><div class="v">${tv(p.catLabel)}</div></div>
+    </div>
+    <div class="d-cover"><img src="${p.cover}" alt="${p.title}"></div>
+    <div class="d-body">
+      <div class="ctx"><h3>${t("d.context")}</h3><p>${tv(p.context)}</p>${linkBtn?`<div class="d-cta">${linkBtn}</div>`:""}</div>
+      <div><h3>${t("d.did")}</h3><ul class="d-list">${tv(p.did).map((x,n)=>`<li><span class="n">${String(n+1).padStart(2,"0")}</span><span class="tx">${x}</span></li>`).join("")}</ul></div>
+    </div>
+    ${p.galleryGroups&&p.galleryGroups.length?`<section class="d-gallery"><h3>${t("d.gallery")}</h3>${p.galleryGroups.map((g,gi)=>{
+      const n=String(gi+1).padStart(2,"0");
+      if(g.kind==="mascot"){
+        return `<div class="dg-group"><h4 data-n="${n}">${tv(g.title)}</h4><figure class="dg-mascots"><div class="mas">${g.items.map(it=>`<img src="${it.src}" alt="${tv(g.title)}" loading="lazy">`).join("")}</div>${g.cap?`<figcaption>${tv(g.cap)}</figcaption>`:""}</figure></div>`;
+      }
+      return `<div class="dg-group"><h4 data-n="${n}">${tv(g.title)}</h4><div class="dg-devs">${g.items.map(it=>`<figure class="dg-dev" data-full="${it.src}" role="button" tabindex="0" aria-label="${tv(it.cap)}"><div class="dg-devimg"><img src="${it.mock}" alt="${tv(it.cap)}" loading="lazy"><span class="dg-zoom">⤢ ${t("d.zoom")}</span></div><figcaption>${tv(it.cap)}</figcaption></figure>`).join("")}</div></div>`;
+    }).join("")}</section>`:""}
+    <div class="d-next">
+      <div class="k">${t("d.next")}</div>
+      <a class="dn-card" href="#travaux/${next.id}" data-id="${next.id}" style="--pc:${next.theme.bg}">
+        <img src="${next.cover}" alt="${next.title}">
+        <div class="dn-inner">
+          <span class="dn-cat">${tv(next.catLabel)} · ${next.year}</span>
+          <h3>${next.title} <span class="ar" aria-hidden="true">→</span></h3>
+        </div>
+      </a>
+    </div>`;
+}
+
+/* ============ ROUTER ============ */
+const parseHash=()=>{const m=location.hash.replace(/^#/,"").match(/^travaux\/([a-z0-9-]+)$/i);return m?m[1]:null;};
+function route(){
+  const id=parseHash();
+  if(id){document.body.classList.add("route-detail");renderDetail(id);window.scrollTo(0,0);}
+  else{document.body.classList.remove("route-detail");}
+}
+function goHome(){history.replaceState(null,"","#top");document.body.classList.remove("route-detail");}
+window.addEventListener("hashchange",route);
+
+/* ============ LIGHTBOX ============ */
+const lb=document.getElementById("lb"),lbImg=document.getElementById("lbImg");
+function openLB(src){if(!src)return;lbImg.src=src;lb.hidden=false;document.documentElement.classList.add("nav-open");}
+function closeLB(){lb.hidden=true;lbImg.src="";document.documentElement.classList.remove("nav-open");}
+document.getElementById("lbX").addEventListener("click",closeLB);
+lb.addEventListener("click",e=>{if(e.target===lb)closeLB();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!lb.hidden)closeLB();});
+document.addEventListener("click",e=>{const w=e.target.closest(".dg-dev");if(w)openLB(w.dataset.full);});
+document.addEventListener("keydown",e=>{const a=document.activeElement;if((e.key==="Enter"||e.key===" ")&&a&&a.classList&&a.classList.contains("dg-dev")){e.preventDefault();openLB(a.dataset.full);}});
+
+/* ============ I18N APPLY ============ */
+function applyI18n(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const v=t(el.getAttribute("data-i18n"));
+    if(/[<&]/.test(v))el.innerHTML=v;else el.textContent=v;
+  });
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===LANG)));
+  renderProjects();
+  renderSkills();
+  renderWheel();
+  startRotator();
+  if(document.body.classList.contains("route-detail")){const id=parseHash();if(id)renderDetail(id);}
+}
+function setLang(l){LANG=l;try{localStorage.setItem("ls_lang",l)}catch(e){}applyI18n();}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+
+/* ============ FILTERS ============ */
+document.getElementById("filters").addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  FILTER=b.dataset.filter;
+  document.querySelectorAll("#filters button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+  renderProjects();
+});
+
+
+/* ============ MOBILE NAV ============ */
+const mnav=document.getElementById("mobileNav"),mbtn=document.getElementById("menuBtn");
+mbtn.addEventListener("click",()=>{const o=mnav.classList.toggle("open");mbtn.classList.toggle("open",o);document.documentElement.classList.toggle("nav-open",o);});
+mnav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{mnav.classList.remove("open");mbtn.classList.remove("open");document.documentElement.classList.remove("nav-open");}));
+
+/* ============ PAGE TRANSITION ============ */
+let animating=false;
+function pageTransition(apply){
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce||animating){apply();return;}
+  animating=true;
+  const el=document.createElement("div"); el.className="iv ptv"; el.setAttribute("aria-hidden","true");
+  el.innerHTML='<p class="iv-mk">'+[..."Luka"].map(c=>'<span class="iv-f0">'+c+'</span>').join("")+'</p>';
+  document.body.appendChild(el);
+  const ls=[...el.querySelectorAll(".iv-mk span")], seq=["iv-f1","iv-f2","iv-f3","iv-f1","iv-f2","iv-f4"];
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    el.classList.add("show","go");
+    ls.forEach((l,k)=>seq.forEach((c,j)=>setTimeout(()=>{l.className=c;},140+k*60+j*48)));
+  }));
+  setTimeout(()=>{
+    apply();
+    setTimeout(()=>{ el.classList.add("out"); setTimeout(()=>{ el.remove(); animating=false; },820); },140);
+  },760);
+}
+document.addEventListener("click",(e)=>{
+  const a=e.target.closest("a"); if(!a) return;
+  const href=a.getAttribute("href")||"";
+  const go=a.dataset.go;
+  const inDetail=document.body.classList.contains("route-detail");
+  if(/^#travaux\/[A-Za-z0-9-]+$/.test(href)){
+    e.preventDefault();
+    pageTransition(()=>{ if(location.hash==="#"+href.slice(1)) route(); else location.hash=href; });
+    return;
+  }
+  if(go==="home"){
+    e.preventDefault();
+    pageTransition(()=>{ goHome(); window.scrollTo(0,0); });
+    return;
+  }
+  if(inDetail && (go==="work" || /^#(travaux|apropos|services|tb|contact|top)$/.test(href))){
+    e.preventDefault();
+    const target=go==="work"?"#travaux":href;
+    pageTransition(()=>{
+      document.body.classList.remove("route-detail");
+      history.replaceState(null,"",target);
+      const id=target.slice(1);
+      const el=document.getElementById(id);
+      if(el && id!=="top") el.scrollIntoView(); else window.scrollTo(0,0);
+    });
+    return;
+  }
+});
+
+/* ============ HEADER SCROLL ============ */
+const head=document.getElementById("head");
+addEventListener("scroll",()=>head.classList.toggle("scrolled",scrollY>10),{passive:true});
+
+/* ============ YEAR ============ */
+document.getElementById("year").textContent=new Date().getFullYear();
+
+/* ============ REVEAL ON SCROLL ============ */
+let io;
+function observeReveal(){
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const els=document.querySelectorAll(".rv:not(.in)");
+  if(reduce){els.forEach(e=>e.classList.add("in"));return;}
+  if(!io){
+    io=new IntersectionObserver((ents)=>{
+      ents.forEach((en)=>{if(en.isIntersecting){en.target.style.transitionDelay=(en.target.dataset.d||0)+"ms";en.target.classList.add("in");io.unobserve(en.target);}});
+    },{threshold:.12,rootMargin:"0px 0px -8% 0px"});
+  }
+  let i=0;
+  els.forEach(e=>{if(!e.dataset.d){e.dataset.d=(i%3)*90;i++;}io.observe(e);});
+}
+
+/* ============ ROTATING WORD ============ */
+let rotTimer=null;
+function startRotator(){
+  const host=document.getElementById("rot");if(!host)return;
+  const words=ROT[LANG];let idx=0;
+  host.innerHTML=`<span class="w">${words[0]}</span>`;
+  if(rotTimer)clearInterval(rotTimer);
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  rotTimer=setInterval(()=>{
+    const cur=host.querySelector(".w");if(!cur)return;
+    idx=(idx+1)%words.length;
+    cur.classList.add("out");
+    setTimeout(()=>{
+      host.innerHTML=`<span class="w inr">${words[idx]}</span>`;
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{const n=host.querySelector(".w");if(n)n.classList.remove("inr");}));
+    },430);
+  },2200);
+}
+
+/* ============ HERO LOAD SEQUENCE ============ */
+(function heroIn(){
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const spans=document.querySelectorAll(".hero h1 .ln>span");
+  if(reduce)return;
+  spans.forEach((s,i)=>{
+    s.style.transform="translateY(115%)";
+    s.style.transition="transform .85s cubic-bezier(.22,.9,.3,1)";
+    s.style.transitionDelay=(0.1+i*0.12)+"s";
+  });
+  requestAnimationFrame(()=>requestAnimationFrame(()=>spans.forEach(s=>s.style.transform="translateY(0)")));
+})();
+
+/* ============ HERO FLOATING CARDS ============ */
+(function heroCards(){
+  const vis=document.getElementById("heroVisual"), hero=document.getElementById("hero");
+  if(!vis||!hero)return;
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const cards=[...vis.querySelectorAll(".hcard")];
+  if(!reduce)vis.classList.add("anim");
+  if(reduce||matchMedia("(pointer:coarse)").matches)return;
+  const depths=[20,28,13]; let raf=null,tx=0,ty=0;
+  function apply(){raf=null;cards.forEach((c,i)=>{const d=depths[i%depths.length];c.style.setProperty("--px",(tx*d).toFixed(1)+"px");c.style.setProperty("--py",(ty*d*0.55).toFixed(1)+"px");});}
+  hero.addEventListener("mousemove",e=>{const r=hero.getBoundingClientRect();tx=((e.clientX-r.left)/r.width-.5)*2;ty=((e.clientY-r.top)/r.height-.5)*2;if(!raf)raf=requestAnimationFrame(apply);});
+  hero.addEventListener("mouseleave",()=>{tx=0;ty=0;if(!raf)raf=requestAnimationFrame(apply);});
+})();
+
+/* ============ CUSTOM CURSOR RING ============ */
+(function cursorRing(){
+  if(matchMedia("(pointer:coarse)").matches||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+  const r=document.createElement("div");r.className="cursor-ring";document.body.appendChild(r);
+  let x=innerWidth/2,y=innerHeight/2,rx=x,ry=y,raf=null;
+  function loop(){raf=null;rx+=(x-rx)*.22;ry+=(y-ry)*.22;r.style.transform="translate("+rx.toFixed(1)+"px,"+ry.toFixed(1)+"px) translate(-50%,-50%)";if(Math.abs(x-rx)>.4||Math.abs(y-ry)>.4)raf=requestAnimationFrame(loop);}
+  addEventListener("mousemove",e=>{x=e.clientX;y=e.clientY;r.classList.add("on");if(!raf)raf=requestAnimationFrame(loop);},{passive:true});
+  document.addEventListener("mouseleave",()=>r.classList.remove("on"));
+  const hot="a,button,.hcard,.project,.tool,.dg-dev,.lang button,.menu-btn";
+  addEventListener("mouseover",e=>{if(e.target.closest&&e.target.closest(hot))r.classList.add("hot");},{passive:true});
+  addEventListener("mouseout",e=>{if(e.target.closest&&e.target.closest(hot))r.classList.remove("hot");},{passive:true});
+})();
+
+/* ============ MAGNETIC BUTTONS (tactile, inspired by bencho) ============ */
+(function magnetic(){
+  if(matchMedia("(pointer:coarse)").matches||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+  function bind(el,strength){
+    el.addEventListener("mousemove",e=>{
+      const r=el.getBoundingClientRect();
+      const mx=e.clientX-(r.left+r.width/2), my=e.clientY-(r.top+r.height/2);
+      el.style.transform="translate("+(mx*strength).toFixed(1)+"px,"+(my*strength*1.3).toFixed(1)+"px)";
+    });
+    el.addEventListener("mouseleave",()=>{el.style.transform="";});
+  }
+  document.querySelectorAll(".hero-actions .btn,.contact-actions .btn,.tb-btn,.to-top").forEach(el=>bind(el,.3));
+  const sc=document.querySelector(".scrollcue .ring"); if(sc) bind(sc,.4);
+})();
+
+/* ============ MAGNETIC LETTERS (bencho component) ============ */
+(function magneticLetters(){
+  if(matchMedia("(pointer:coarse)").matches||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+  function letterize(node){
+    [...node.childNodes].forEach(n=>{
+      if(n.nodeType===3){
+        const frag=document.createDocumentFragment();
+        [...n.textContent].forEach(ch=>{
+          const s=document.createElement("span");s.className="ml";
+          s.textContent=ch===" "?" ":ch;
+          s.style.cssText="display:inline-block;will-change:transform;transition:transform .4s cubic-bezier(.2,.9,.3,1)";
+          frag.appendChild(s);
+        });
+        node.replaceChild(frag,n);
+      } else if(n.nodeType===1) letterize(n);
+    });
+  }
+  document.querySelectorAll("[data-magnetic]").forEach(el=>{
+    letterize(el);
+    const spans=[...el.querySelectorAll(".ml")];
+    let raf=null,ev=null;
+    el.addEventListener("mousemove",e=>{ev=e;if(!raf)raf=requestAnimationFrame(run);});
+    el.addEventListener("mouseleave",()=>{spans.forEach(s=>s.style.transform="");});
+    function run(){raf=null;const max=150;spans.forEach(s=>{const r=s.getBoundingClientRect();const dx=ev.clientX-(r.left+r.width/2),dy=ev.clientY-(r.top+r.height/2);const d=Math.hypot(dx,dy);if(d<max){const f=1-d/max;s.style.transform="translate("+(dx*f*0.32).toFixed(1)+"px,"+(dy*f*0.5).toFixed(1)+"px)";}else s.style.transform="";});}
+  });
+})();
+
+/* ============ TEXT SCRAMBLE REVEAL (bencho component) ============ */
+(function scrambleReveal(){
+  if(matchMedia("(prefers-reduced-motion:reduce)").matches||!("IntersectionObserver" in window))return;
+  const chars="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/#%&*";
+  function scramble(el){
+    const final=el.dataset.final||el.textContent;el.dataset.final=final;
+    const n=final.length;let frame=0;const speed=1.6;
+    clearInterval(el._sc);
+    el._sc=setInterval(()=>{
+      let out="";const rev=frame/speed;
+      for(let i=0;i<n;i++){
+        if(final[i]===" "){out+=" ";continue;}
+        if(i<rev)out+=final[i];
+        else out+=chars[(Math.random()*chars.length)|0];
+      }
+      el.textContent=out;frame++;
+      if(rev>=n){clearInterval(el._sc);el.textContent=final;}
+    },28);
+  }
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){scramble(e.target);io.unobserve(e.target);}});},{threshold:.6});
+  document.querySelectorAll("[data-scramble]").forEach(el=>io.observe(el));
+  window._rescramble=()=>document.querySelectorAll("[data-scramble]").forEach(el=>{delete el.dataset.final;io.observe(el);});
+})();
+
+/* ============ INIT ============ */
+applyI18n();
+route();
+observeReveal();
+</script>
+</body>
+</html>
