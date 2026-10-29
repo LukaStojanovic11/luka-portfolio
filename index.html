@@ -94,7 +94,7 @@ h1,h2,h3,.display{font-family:var(--font-display);font-weight:700;letter-spacing
 .site-head{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
 .site-head.scrolled{border-color:var(--line)}
 .site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
-.brand{font-family:var(--font-display);font-weight:600;font-size:1.3rem;display:flex;align-items:center;gap:3px}
+.brand{font-family:var(--font-display);font-weight:600;font-size:1.3rem;display:flex;align-items:center;gap:3px;white-space:nowrap}
 .brand .dot{color:var(--rust)}
 .nav{display:flex;align-items:center;gap:30px}
 .nav .nav-links{display:flex;gap:28px;align-items:center}
@@ -613,7 +613,7 @@ html.iv-skip .iv:not(.ptv){display:none!important}
   "alumniOf":{"@type":"CollegeOrUniversity","name":"HEIG-VD"},
   "address":{"@type":"PostalAddress","addressLocality":"Lausanne","addressCountry":"CH"},
   "knowsAbout":["Design graphique","UX/UI","Stratégie digitale","Branding","E-commerce","SEO"],
-  "sameAs":["https://www.linkedin.com/in/luka-stojanovic-434a962a1/"]
+  "sameAs":["https://www.linkedin.com/in/luka-stojanovic-434a962a1/","https://github.com/LukaStojanovic11"]
 }
 </script>
 <script type="application/ld+json">
@@ -679,9 +679,9 @@ html.iv-skip .iv:not(.ptv){display:none!important}
         </div>
       </div>
       <div class="hero-visual" id="heroVisual" aria-hidden="true">
-        <a class="hcard c1" href="#travaux/visualdon" tabindex="-1" style="--rot:-7deg"><img src="assets/img/vdon/poster.jpg" alt="" loading="eager"><span class="hc-tag">Data viz</span></a>
-        <a class="hcard c2" href="#travaux/etoile" tabindex="-1" style="--rot:5deg"><img src="assets/img/etoile.jpg" alt="" loading="eager"><span class="hc-tag">Branding</span></a>
-        <a class="hcard c3" href="#travaux/pulse" tabindex="-1" style="--rot:-3deg"><img src="assets/img/pulse.jpg" alt="" loading="eager"><span class="hc-tag">UX/UI</span></a>
+        <a class="hcard c1" href="#travaux/visualdon" tabindex="-1" style="--rot:-7deg"><img src="assets/img/vdon/poster.webp" alt="" loading="eager"><span class="hc-tag">Data viz</span></a>
+        <a class="hcard c2" href="#travaux/etoile" tabindex="-1" style="--rot:5deg"><img src="assets/img/etoile.webp" alt="" loading="eager"><span class="hc-tag">Branding</span></a>
+        <a class="hcard c3" href="#travaux/pulse" tabindex="-1" style="--rot:-3deg"><img src="assets/img/pulse.webp" alt="" loading="eager"><span class="hc-tag">UX/UI</span></a>
       </div>
     </div>
     <a class="scrollcue" href="#travaux" aria-label="Voir les projets">
@@ -729,7 +729,7 @@ html.iv-skip .iv:not(.ptv){display:none!important}
       <div class="subsep" aria-hidden="true"><span style="--sp:1"></span></div>
       <div class="about-grid">
         <figure class="portrait-wrap rv">
-          <img class="portrait" src="assets/img/luka.jpg" alt="Luka Stojanovic" width="760" height="950">
+          <img class="portrait" src="assets/img/luka.webp" alt="Luka Stojanovic" width="760" height="950" loading="lazy" decoding="async">
         </figure>
         <div class="about-intro rv">
           <p class="bio" data-i18n="about.bio">Je suis étudiant en Ingénierie des médias à la <span class="em">HEIG-VD</span>, une formation à la croisée du design, de la communication et de la technique. C'est exactement là que j'aime travailler : à l'intersection du visuel et de l'interactif.</p>
@@ -738,7 +738,7 @@ html.iv-skip .iv:not(.ptv){display:none!important}
             <li><span class="k" data-i18n="about.k1">Basé à</span><span class="v">Suisse romande</span></li>
             <li><span class="k" data-i18n="about.k2">Formation</span><span class="v" data-i18n="about.v2">Ingénierie des médias, HEIG-VD</span></li>
             <li><span class="k" data-i18n="about.k3">Focus</span><span class="v" data-i18n="about.v3">Design · UX/UI · Développement</span></li>
-            <li><span class="k" data-i18n="about.k4">Disponibilité</span><span class="v" data-i18n="about.v4">En recherche d'emploi</span></li>
+            <li><span class="k" data-i18n="about.k4">Disponibilité</span><span class="v" data-i18n="about.v4">Travail de Bachelor 2026–27</span></li>
           </ul>
         </div>
       </div>
@@ -768,7 +768,7 @@ html.iv-skip .iv:not(.ptv){display:none!important}
     <div class="wrap" style="padding-top:clamp(70px,9vw,130px)">
     <h2 class="rv" data-i18n="contact.title" data-scramble>Contact</h2>
     <p class="contact-tag rv" data-i18n="contact.tag">Et si on <span class="em">travaillait</span> ensemble ?</p>
-    <p class="sub rv" data-i18n="contact.sub">En recherche d'emploi, Suisse romande.</p>
+    <p class="sub rv" data-i18n="contact.sub">À la recherche d'une entreprise partenaire pour mon Travail de Bachelor 2026–27, en Suisse romande.</p>
     <div class="contact-actions rv">
       <a class="btn primary" href="mailto:sluka1008@gmail.com">
         <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 5.5 8.5-5.5"/></svg>
@@ -777,6 +777,10 @@ html.iv-skip .iv:not(.ptv){display:none!important}
       <a class="btn ghost" href="https://www.linkedin.com/in/luka-stojanovic-434a962a1/" target="_blank" rel="noopener">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.65h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.64 4.76 6.08V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21H9z"/></svg>
         LinkedIn
+      </a>
+      <a class="btn ghost" href="https://github.com/LukaStojanovic11" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.21-3.37-1.21-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.35 1.11 2.92.85.09-.66.35-1.11.64-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.4 9.4 0 0 1 12 6.84c.85 0 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .27.18.59.69.49A10.1 10.1 0 0 0 22 12.23C22 6.58 17.52 2 12 2z"/></svg>
+        GitHub
       </a>
     </div>
     </div>
@@ -852,7 +856,7 @@ html.iv-skip .iv:not(.ptv){display:none!important}
 
 /* ============ DATA ============ */
 const PROJECTS = [
-  { id:"fightstart", cover:"assets/img/fightstart.jpg", year:"2026", cats:["design","ux","strategy","dev"],
+  { id:"fightstart", cover:"assets/img/fightstart.webp", year:"2026", cats:["design","ux","strategy","dev"],
     theme:{bg:"#2B2521",fg:"#F3EDE4"},
     title:"Site E-Commerce, FightStart",
     hook:{fr:"Une marque de combat, de l'idée à la vente.",en:"A fight brand, from idea to sale."},
@@ -871,7 +875,7 @@ const PROJECTS = [
          en:["Positioning, personas and competitive analysis","Brand identity and visual guidelines","Figma mockups and purchase journey","WordPress / WooCommerce integration","SEO optimization and content plan","Social media, newsletter and advertising"]},
     link:{label:{fr:"Voir le site",en:"Visit the site"},url:"https://fightstart.ch"} },
 
-  { id:"pulse", cover:"assets/img/pulse.jpg", year:"2025", cats:["ux","dev"],
+  { id:"pulse", cover:"assets/img/pulse.webp", year:"2025", cats:["ux","dev"],
     theme:{bg:"#2E4A47",fg:"#F3EDE4"},
     title:"HUG, Don du sang",
     hook:{fr:"Faire du don du sang un projet d'entreprise.",en:"Making blood donation a company project."},
@@ -888,25 +892,25 @@ const PROJECTS = [
              en:"A platform built for Geneva University Hospitals to rally companies around blood donation. The journey guides the donor from discovery to booking: a nine-question eligibility quiz led by \"Courage\", a beaver mascot designed to reassure, then slot reservation. For companies, a dedicated space and a recognition system (the CTS label and the Trophée de la générosité) reward their commitment. I worked on the design system, the mascot, and the mockups for both the public site and the company space."},
     did:{fr:["Recherche et cadrage : le don du sang en entreprise","Design system et mascotte « Courage »","Quiz d'éligibilité et parcours de prise de rendez-vous","Maquettes du site public et de l'espace entreprise","Label CTS et Trophée de la générosité"],
          en:["Research and framing: workplace blood donation","Design system and \"Courage\" mascot","Eligibility quiz and appointment-booking flow","Mockups for the public site and company space","CTS label and Trophée de la générosité"]},
-    poster:"assets/img/hug/poster.jpg",
+    poster:"assets/img/hug/poster.webp",
     galleryGroups:[
       {kind:"mascot",title:{fr:"La mascotte « Courage »",en:"The \"Courage\" mascot"},
        cap:{fr:"Courage, le castor-guide créé pour rassurer les donneurs tout au long du parcours.",en:"Courage, the guide mascot created to reassure donors throughout the journey."},
-       items:[{src:"assets/img/hug/courage-tux.png"},{src:"assets/img/hug/courage-guide.png"}]},
+       items:[{src:"assets/img/hug/courage-tux.webp"},{src:"assets/img/hug/courage-guide.webp"}]},
       {kind:"device",title:{fr:"Le site don du sang",en:"The blood-donation site"},
-       items:[{src:"assets/img/hug/site-accueil.jpg",mock:"assets/img/hug/site-accueil-mock.jpg",cap:{fr:"Page d'accueil",en:"Home page"}},
-              {src:"assets/img/hug/site-trophee.jpg",mock:"assets/img/hug/site-trophee-mock.jpg",cap:{fr:"Trophée de la générosité",en:"Trophée de la générosité"}}]},
+       items:[{src:"assets/img/hug/site-accueil.webp",mock:"assets/img/hug/site-accueil-mock.webp",cap:{fr:"Page d'accueil",en:"Home page"}},
+              {src:"assets/img/hug/site-trophee.webp",mock:"assets/img/hug/site-trophee-mock.webp",cap:{fr:"Trophée de la générosité",en:"Trophée de la générosité"}}]},
       {kind:"device",title:{fr:"L'espace entreprise",en:"The company space"},
-       items:[{src:"assets/img/hug/espace-entreprise.jpg",mock:"assets/img/hug/espace-entreprise-mock.jpg",cap:{fr:"Landing de collecte en entreprise",en:"Company blood-drive landing"}}]},
+       items:[{src:"assets/img/hug/espace-entreprise.webp",mock:"assets/img/hug/espace-entreprise-mock.webp",cap:{fr:"Landing de collecte en entreprise",en:"Company blood-drive landing"}}]},
       {kind:"device",title:{fr:"Le parcours donneur",en:"The donor journey"},
-       items:[{src:"assets/img/hug/quiz-guide.jpg",mock:"assets/img/hug/quiz-guide-mock.jpg",cap:{fr:"Introduction du quiz, guidée par Courage",en:"Quiz intro, guided by Courage"}},
-              {src:"assets/img/hug/quiz-reponses.jpg",mock:"assets/img/hug/quiz-reponses-mock.jpg",cap:{fr:"Récapitulatif du quiz d'éligibilité",en:"Eligibility quiz recap"}},
-              {src:"assets/img/hug/rdv.jpg",mock:"assets/img/hug/rdv-mock.jpg",cap:{fr:"Prise de rendez-vous",en:"Appointment booking"}}]}
+       items:[{src:"assets/img/hug/quiz-guide.webp",mock:"assets/img/hug/quiz-guide-mock.webp",cap:{fr:"Introduction du quiz, guidée par Courage",en:"Quiz intro, guided by Courage"}},
+              {src:"assets/img/hug/quiz-reponses.webp",mock:"assets/img/hug/quiz-reponses-mock.webp",cap:{fr:"Récapitulatif du quiz d'éligibilité",en:"Eligibility quiz recap"}},
+              {src:"assets/img/hug/rdv.webp",mock:"assets/img/hug/rdv-mock.webp",cap:{fr:"Prise de rendez-vous",en:"Appointment booking"}}]}
     ],
     link:{label:{fr:"Voir le site",en:"Visit the site"},url:"https://dondusang.loannjuillerat.ch"},
     link2:{label:{fr:"Voir le site partenaire",en:"Visit the partner site"},url:"https://dondusang.loannjuillerat.ch/entreprise/ubs"} },
 
-  { id:"odd", cover:"assets/img/odd.jpg", year:"2025", cats:["ux"],
+  { id:"odd", cover:"assets/img/odd.webp", year:"2025", cats:["ux"],
     theme:{bg:"#6E2F3A",fg:"#F3EDE4"},
     title:"Interface d'un projet d'éducation",
     hook:{fr:"Une interface pour 17 objectifs.",en:"One interface for 17 goals."},
@@ -925,7 +929,7 @@ const PROJECTS = [
          en:["Component base, grid and states","Figma mockups and prototype","Sustainable Development Goals theme","Team collaboration"]},
     link:{label:{fr:"Voir sur Figma",en:"Open in Figma"},url:"https://www.figma.com/design/9mwjQqhMEiVJbH1GfRrv8H/BasesUI-LukaStojanovic-WilliamVladStancu-SteveBenjamin-NabilMohamedHagos?node-id=11-2"} },
 
-  { id:"etoile", cover:"assets/img/etoile.jpg", year:"2025", cats:["design","strategy"],
+  { id:"etoile", cover:"assets/img/etoile.webp", year:"2025", cats:["design","strategy"],
     theme:{bg:"#4A3350",fg:"#F6F1E9"},
     title:"Restaurant « Étoile Blanche », Lausanne",
     hook:{fr:"L'essentiel suffit.",en:"The essentials are enough."},
@@ -944,22 +948,22 @@ const PROJECTS = [
          en:["Art direction and visual system","Brand playbook","Instagram & TikTok content strategy","Deliverables: posts, stories, menus"]},
     galleryGroups:[
       {kind:"device",title:{fr:"Posts Instagram",en:"Instagram posts"},
-       items:[{src:"assets/img/etoile/full-leclair.jpg",mock:"assets/img/etoile/post-leclair.jpg",cap:{fr:"Le Clair · cocktail signature",en:"Le Clair · signature cocktail"}},
-              {src:"assets/img/etoile/full-fumant.jpg",mock:"assets/img/etoile/post-fumant.jpg",cap:{fr:"Fumant · la cuisine en gros plan",en:"Fumant · food close-up"}},
-              {src:"assets/img/etoile/full-gestejuste.jpg",mock:"assets/img/etoile/post-gestejuste.jpg",cap:{fr:"Le geste juste · les coulisses",en:"The right touch · behind the scenes"}}]},
+       items:[{src:"assets/img/etoile/full-leclair.webp",mock:"assets/img/etoile/post-leclair.webp",cap:{fr:"Le Clair · cocktail signature",en:"Le Clair · signature cocktail"}},
+              {src:"assets/img/etoile/full-fumant.webp",mock:"assets/img/etoile/post-fumant.webp",cap:{fr:"Fumant · la cuisine en gros plan",en:"Fumant · food close-up"}},
+              {src:"assets/img/etoile/full-gestejuste.webp",mock:"assets/img/etoile/post-gestejuste.webp",cap:{fr:"Le geste juste · les coulisses",en:"The right touch · behind the scenes"}}]},
       {kind:"device",title:{fr:"Stories & annonces",en:"Stories & announcements"},
-       items:[{src:"assets/img/etoile/full-savethedate.jpg",mock:"assets/img/etoile/story-savethedate.jpg",cap:{fr:"Save the date · afterwork",en:"Save the date · afterwork"}},
-              {src:"assets/img/etoile/full-philosophie.jpg",mock:"assets/img/etoile/story-philosophie.jpg",cap:{fr:"L'essentiel suffit · la philosophie",en:"The essentials are enough · philosophy"}},
-              {src:"assets/img/etoile/full-review.jpg",mock:"assets/img/etoile/story-review.jpg",cap:{fr:"Avis client · Google review",en:"Customer review · Google"}}]},
+       items:[{src:"assets/img/etoile/full-savethedate.webp",mock:"assets/img/etoile/story-savethedate.webp",cap:{fr:"Save the date · afterwork",en:"Save the date · afterwork"}},
+              {src:"assets/img/etoile/full-philosophie.webp",mock:"assets/img/etoile/story-philosophie.webp",cap:{fr:"L'essentiel suffit · la philosophie",en:"The essentials are enough · philosophy"}},
+              {src:"assets/img/etoile/full-review.webp",mock:"assets/img/etoile/story-review.webp",cap:{fr:"Avis client · Google review",en:"Customer review · Google"}}]},
       {kind:"device",title:{fr:"Cartes & menus",en:"Menus & print"},
-       items:[{src:"assets/img/etoile/full-mets.jpg",mock:"assets/img/etoile/menu-mets.jpg",cap:{fr:"La carte des mets",en:"The food menu"}},
-              {src:"assets/img/etoile/full-bricoles.jpg",mock:"assets/img/etoile/menu-bricoles.jpg",cap:{fr:"Bricoles & bar",en:"Small plates & bar"}},
-              {src:"assets/img/etoile/full-boissons.jpg",mock:"assets/img/etoile/menu-boissons.jpg",cap:{fr:"La carte des boissons",en:"The drinks menu"}},
-              {src:"assets/img/etoile/full-leclair-poster.jpg",mock:"assets/img/etoile/menu-leclair-poster.jpg",cap:{fr:"Le Clair · affiche signature",en:"Le Clair · signature poster"}}]}
+       items:[{src:"assets/img/etoile/full-mets.webp",mock:"assets/img/etoile/menu-mets.webp",cap:{fr:"La carte des mets",en:"The food menu"}},
+              {src:"assets/img/etoile/full-bricoles.webp",mock:"assets/img/etoile/menu-bricoles.webp",cap:{fr:"Bricoles & bar",en:"Small plates & bar"}},
+              {src:"assets/img/etoile/full-boissons.webp",mock:"assets/img/etoile/menu-boissons.webp",cap:{fr:"La carte des boissons",en:"The drinks menu"}},
+              {src:"assets/img/etoile/full-leclair-poster.webp",mock:"assets/img/etoile/menu-leclair-poster.webp",cap:{fr:"Le Clair · affiche signature",en:"Le Clair · signature poster"}}]}
     ],
     link:null },
 
-  { id:"yearbook", cover:"assets/img/yearbook/hero.jpg", year:"2025", cats:["design"],
+  { id:"yearbook", cover:"assets/img/yearbook/hero.webp", year:"2025", cats:["design"],
     theme:{bg:"#35463A",fg:"#F3EDE4"},
     title:"Yearbook",
     hook:{fr:"28 pages, un seul système.",en:"28 pages, one system."},
@@ -978,16 +982,16 @@ const PROJECTS = [
          en:["Editorial direction and layout grid","Symbol system and hierarchy","InDesign layout, 28 pages","Print and risograph"]},
     galleryGroups:[
       {kind:"device",title:{fr:"L'objet imprimé",en:"The printed object"},
-       items:[{src:"assets/img/yearbook/cover.jpg",mock:"assets/img/yearbook/cover-mock.jpg",cap:{fr:"La couverture",en:"The cover"}},
-              {src:"assets/img/yearbook/binary.jpg",mock:"assets/img/yearbook/binary-mock.jpg",cap:{fr:"Double page · pleine image",en:"Spread · full bleed"}}]},
+       items:[{src:"assets/img/yearbook/cover.webp",mock:"assets/img/yearbook/cover-mock.webp",cap:{fr:"La couverture",en:"The cover"}},
+              {src:"assets/img/yearbook/binary.webp",mock:"assets/img/yearbook/binary-mock.webp",cap:{fr:"Double page · pleine image",en:"Spread · full bleed"}}]},
       {kind:"device",title:{fr:"Les doubles pages",en:"The spreads"},
-       items:[{src:"assets/img/yearbook/robustesse.jpg",mock:"assets/img/yearbook/robustesse-mock.jpg",cap:{fr:"« Robustesse » · ouverture d'article",en:"\"Robustesse\" · article opener"}},
-              {src:"assets/img/yearbook/bachelor.jpg",mock:"assets/img/yearbook/bachelor-mock.jpg",cap:{fr:"Un bachelor intégrant la pratique",en:"A practice-integrated bachelor"}},
-              {src:"assets/img/yearbook/salle.jpg",mock:"assets/img/yearbook/salle-mock.jpg",cap:{fr:"Pleine page · clôture du volume",en:"Full spread · closing the volume"}}]}
+       items:[{src:"assets/img/yearbook/robustesse.webp",mock:"assets/img/yearbook/robustesse-mock.webp",cap:{fr:"« Robustesse » · ouverture d'article",en:"\"Robustesse\" · article opener"}},
+              {src:"assets/img/yearbook/bachelor.webp",mock:"assets/img/yearbook/bachelor-mock.webp",cap:{fr:"Un bachelor intégrant la pratique",en:"A practice-integrated bachelor"}},
+              {src:"assets/img/yearbook/salle.webp",mock:"assets/img/yearbook/salle-mock.webp",cap:{fr:"Pleine page · clôture du volume",en:"Full spread · closing the volume"}}]}
     ],
     link:null },
 
-  { id:"visualdon", cover:"assets/img/vdon/landing.jpg", poster:"assets/img/vdon/poster.jpg", year:"2025", cats:["dataviz","dev"],
+  { id:"visualdon", cover:"assets/img/vdon/landing.webp", poster:"assets/img/vdon/poster.webp", year:"2025", cats:["dataviz","dev"],
     theme:{bg:"#2A1416",fg:"#F3EDE4"},
     title:"VisualDon, la face cachée de l'UFC",
     hook:{fr:"Ce que le spectacle ne montre pas.",en:"What the spectacle doesn't show."},
@@ -1006,13 +1010,13 @@ const PROJECTS = [
          en:["Scrollytelling: the timeline of a career","World map of fighters' origins","Interactive anatomical injury map","Career comparison and purse analysis","Front-end: D3.js, Three.js, GSAP, Scrollama"]},
     galleryGroups:[
       {kind:"device",title:{fr:"Le récit interactif",en:"The interactive story"},
-       items:[{src:"assets/img/vdon/parcours.jpg",mock:"assets/img/vdon/parcours-mock.jpg",cap:{fr:"Chronologie d'une carrière",en:"Career timeline"}},
-              {src:"assets/img/vdon/origines.jpg",mock:"assets/img/vdon/origines-mock.jpg",cap:{fr:"Carte globale des origines",en:"Global origins map"}},
-              {src:"assets/img/vdon/anatomie.jpg",mock:"assets/img/vdon/anatomie-mock.jpg",cap:{fr:"Carte anatomique des blessures",en:"Anatomical injury map"}}]},
+       items:[{src:"assets/img/vdon/parcours.webp",mock:"assets/img/vdon/parcours-mock.webp",cap:{fr:"Chronologie d'une carrière",en:"Career timeline"}},
+              {src:"assets/img/vdon/origines.webp",mock:"assets/img/vdon/origines-mock.webp",cap:{fr:"Carte globale des origines",en:"Global origins map"}},
+              {src:"assets/img/vdon/anatomie.webp",mock:"assets/img/vdon/anatomie-mock.webp",cap:{fr:"Carte anatomique des blessures",en:"Anatomical injury map"}}]},
       {kind:"device",title:{fr:"Les chiffres",en:"The figures"},
-       items:[{src:"assets/img/vdon/faceaface.jpg",mock:"assets/img/vdon/faceaface-mock.jpg",cap:{fr:"Comparer deux combattants",en:"Compare two fighters"}},
-              {src:"assets/img/vdon/argent.jpg",mock:"assets/img/vdon/argent-mock.jpg",cap:{fr:"L'argent derrière le spectacle",en:"The money behind the show"}},
-              {src:"assets/img/vdon/cout.jpg",mock:"assets/img/vdon/cout-mock.jpg",cap:{fr:"Le coût humain du ring",en:"The human cost of the ring"}}]}
+       items:[{src:"assets/img/vdon/faceaface.webp",mock:"assets/img/vdon/faceaface-mock.webp",cap:{fr:"Comparer deux combattants",en:"Compare two fighters"}},
+              {src:"assets/img/vdon/argent.webp",mock:"assets/img/vdon/argent-mock.webp",cap:{fr:"L'argent derrière le spectacle",en:"The money behind the show"}},
+              {src:"assets/img/vdon/cout.webp",mock:"assets/img/vdon/cout-mock.webp",cap:{fr:"Le coût humain du ring",en:"The human cost of the ring"}}]}
     ],
     link:{label:{fr:"Voir le projet sur GitHub",en:"View on GitHub"},url:"https://github.com/LukaStojanovic11/Projet-VisualDon"} }
 ];
@@ -1022,7 +1026,7 @@ const I18N = {
   fr:{
     "nav.work":"Projets","nav.about":"À propos","nav.tb":"Travail de Bachelor","nav.contact":"Contact",
     "tb.title":"Travail de Bachelor","tb.sub":"Brochure et échéances · Ingénierie des médias, HEIG-VD (2026–27).","tb.lead":"Je recherche actuellement un <span class='em'>sujet de Travail de Bachelor</span> ainsi qu'une entreprise partenaire en Suisse romande. Si un projet autour du design, de l'UX/UI ou de la stratégie digitale pourrait vous intéresser, n'hésitez pas à me contacter.","tb.eyebrow":"Travail de Bachelor, HEIG-VD 2026–27","tb.download":"Télécharger la brochure (PDF)","tb.meta":"PDF · 100 Ko · Guide officiel HEIG-VD","tb.p1":"Kick-off","tb.p2":"Validation du sujet","tb.p3":"Pré-étude & Travail de Bachelor","tb.p4":"Soutenances",
-    "hero.status":"En recherche d'emploi · Suisse romande","hero.role":"Design graphique · UX/UI · Stratégie digitale",
+    "hero.status":"Disponible pour un Travail de Bachelor · Suisse romande","hero.role":"Design graphique · UX/UI · Stratégie digitale",
     "hero.h1a":"Je conçois des","hero.h1b":"","hero.h1c":"et je les mets en ligne.",
     "hero.lead":"Luka Stojanovic, étudiant en Ingénierie des médias à la HEIG-VD. Du design graphique à l'UX/UI, je mène chaque projet du concept à la mise en ligne.",
     "hero.f1":"projets","hero.f2":"disciplines","hero.f3":"Ingénierie des médias",
@@ -1032,13 +1036,13 @@ const I18N = {
     "about.title":"À propos","about.sub":"En bref","about.lead":"Étudiant-designer, basé en Suisse romande.",
     "about.bio":"Je suis étudiant en Ingénierie des médias à la <span class='em'>HEIG-VD</span>, une formation à la croisée du design, de la communication et de la technique. C'est exactement là que j'aime travailler : à l'intersection du visuel et de l'interactif.",
     "about.p2":"Mes projets vont de l'identité de marque à la data-visualisation, en passant par l'UX/UI et l'e-commerce. Ce qui les relie, c'est une même façon de faire : comprendre le besoin, poser une direction claire, puis l'exécuter jusqu'au détail, maquette, contenu et mise en ligne compris.",
-    "about.k1":"Basé à","about.k2":"Formation","about.v2":"Ingénierie des médias, HEIG-VD","about.k3":"Focus","about.v3":"Design · UX/UI · Développement","about.k4":"Disponibilité","about.v4":"En recherche d'emploi",
+    "about.k1":"Basé à","about.k2":"Formation","about.v2":"Ingénierie des médias, HEIG-VD","about.k3":"Focus","about.v3":"Design · UX/UI · Développement","about.k4":"Disponibilité","about.v4":"Travail de Bachelor 2026–27",
     "disc.design.t":"Design graphique","disc.design.p":"Identité, direction artistique, édition, réseaux.",
     "disc.ux.t":"UX / UI","disc.ux.p":"Recherche, wireframing, prototypage Figma, design systems.",
     "disc.strategy.t":"Stratégie digitale","disc.strategy.p":"Business model, e-commerce, SEO, publicité.",
     "savoir.k":"Savoir-faire","outils.k":"Outils","outils.sub":"Les logiciels avec lesquels je travaille au quotidien.",
     "wdo.title":"Ce que je fais","wdo.sub":"Quatre disciplines, du premier croquis à la mise en ligne.","wdo.aria":"Ce que je fais","wdo.count":"compétences",
-    "contact.title":"Contact","contact.tag":"Et si on <span class='em'>travaillait</span> ensemble ?","contact.sub":"En recherche d'emploi, Suisse romande.",
+    "contact.title":"Contact","contact.tag":"Et si on <span class='em'>travaillait</span> ensemble ?","contact.sub":"À la recherche d'une entreprise partenaire pour mon Travail de Bachelor 2026–27, en Suisse romande.",
     "contact.write":"Me contacter",
     "foot.rights":"Conçu et réalisé à Lausanne","foot.top":"Haut ↑",
     "d.back":"Tous les projets","d.role":"Rôle","d.year":"Année","d.client":"Client","d.cat":"Catégorie",
@@ -1047,7 +1051,7 @@ const I18N = {
   en:{
     "nav.work":"Work","nav.about":"About","nav.tb":"Bachelor's thesis","nav.contact":"Contact",
     "tb.title":"Bachelor's thesis","tb.sub":"Brochure and deadlines · Media Engineering, HEIG-VD (2026–27).","tb.lead":"I'm currently looking for a <span class='em'>Bachelor's thesis topic</span> and a partner company in French-speaking Switzerland. If a project around design, UX/UI or digital strategy could interest you, feel free to reach out.","tb.eyebrow":"Bachelor's thesis, HEIG-VD 2026–27","tb.download":"Download the brochure (PDF)","tb.meta":"PDF · 100 KB · Official HEIG-VD guide","tb.p1":"Kick-off","tb.p2":"Topic validation","tb.p3":"Pre-study & Bachelor's thesis","tb.p4":"Oral defenses",
-    "hero.status":"Open to work · French-speaking Switzerland","hero.role":"Graphic design · UX/UI · Digital strategy",
+    "hero.status":"Available for a Bachelor's thesis · French-speaking Switzerland","hero.role":"Graphic design · UX/UI · Digital strategy",
     "hero.h1a":"I design","hero.h1b":"","hero.h1c":"and ship them online.",
     "hero.lead":"Luka Stojanovic, Media Engineering student at HEIG-VD. From graphic design to UX/UI, I take each project from concept to launch.",
     "hero.f1":"projects","hero.f2":"disciplines","hero.f3":"Media Engineering",
@@ -1057,13 +1061,13 @@ const I18N = {
     "about.title":"About","about.sub":"In short","about.lead":"Student-designer, based in French-speaking Switzerland.",
     "about.bio":"I'm a Media Engineering student at <span class='em'>HEIG-VD</span>, a programme at the crossroads of design, communication and engineering. That's exactly where I like to work: at the intersection of the visual and the interactive.",
     "about.p2":"My projects range from brand identity to data-visualization, through UX/UI and e-commerce. What ties them together is one way of working: understand the need, set a clear direction, then execute it down to the detail, mockups, content and launch included.",
-    "about.k1":"Based in","about.k2":"Education","about.v2":"Media Engineering, HEIG-VD","about.k3":"Focus","about.v3":"Design · UX/UI · Development","about.k4":"Availability","about.v4":"Open to work",
+    "about.k1":"Based in","about.k2":"Education","about.v2":"Media Engineering, HEIG-VD","about.k3":"Focus","about.v3":"Design · UX/UI · Development","about.k4":"Availability","about.v4":"Bachelor's thesis 2026–27",
     "disc.design.t":"Graphic design","disc.design.p":"Identity, art direction, editorial, social.",
     "disc.ux.t":"UX / UI","disc.ux.p":"Research, wireframing, Figma prototyping, design systems.",
     "disc.strategy.t":"Digital strategy","disc.strategy.p":"Business model, e-commerce, SEO, advertising.",
     "savoir.k":"Skills","outils.k":"Tools","outils.sub":"The software I work with every day.",
     "wdo.title":"What I do","wdo.sub":"Four disciplines, from the first sketch to going live.","wdo.aria":"What I do","wdo.count":"skills",
-    "contact.title":"Contact","contact.tag":"Shall we <span class='em'>work</span> together?","contact.sub":"Open to opportunities, French-speaking Switzerland.",
+    "contact.title":"Contact","contact.tag":"Shall we <span class='em'>work</span> together?","contact.sub":"Looking for a partner company for my 2026–27 Bachelor's thesis, in French-speaking Switzerland.",
     "contact.write":"Contact me",
     "foot.rights":"Designed and built in Lausanne","foot.top":"Top ↑",
     "d.back":"All projects","d.role":"Role","d.year":"Year","d.client":"Client","d.cat":"Category",
@@ -1146,7 +1150,7 @@ function renderProjects(){
         <img src="${p.poster||p.cover}" alt="${p.title}" loading="lazy">
         <span class="pnum" aria-hidden="true">${String(gi+1).padStart(2,"0")}</span>
         <span class="pgo" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        ${p.hoverLogo?`<span class="phlogo" aria-hidden="true"><img src="${p.hoverLogo}" alt=""></span>`:""}
+        ${p.hoverLogo?`<span class="phlogo" aria-hidden="true"><img src="${p.hoverLogo}" alt="" loading="lazy"></span>`:""}
       </div>
       <div class="pbody">
       <h3 class="phook">${tv(p.hook)}</h3>
@@ -1393,7 +1397,7 @@ function renderDetail(id){
     <div class="d-next">
       <div class="k">${t("d.next")}</div>
       <a class="dn-card" href="#travaux/${next.id}" data-id="${next.id}" style="--pc:${next.theme.bg}">
-        <img src="${next.cover}" alt="${next.title}">
+        <img src="${next.cover}" alt="${next.title}" loading="lazy">
         <div class="dn-inner">
           <span class="dn-cat">${tv(next.catLabel)} · ${next.year}</span>
           <h3>${next.title} <span class="ar" aria-hidden="true">→</span></h3>
@@ -1436,7 +1440,7 @@ function applyI18n(){
   startRotator();
   if(document.body.classList.contains("route-detail")){const id=parseHash();if(id)renderDetail(id);}
 }
-function setLang(l){LANG=l;try{localStorage.setItem("ls_lang",l)}catch(e){}applyI18n();}
+function setLang(l){LANG=l;try{localStorage.setItem("ls_lang",l)}catch(e){}applyI18n();startRotator();}
 document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
 
 /* ============ FILTERS ============ */
