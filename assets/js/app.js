@@ -520,6 +520,7 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
   function bind(){
     if(bound) return;bound=true;
     try{if(sessionStorage.getItem("luka-words"))introT=-1e9;}catch(e){}
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches)introT=-1e9;
     new ResizeObserver(resize).observe(stage);
     new IntersectionObserver(es=>es.forEach(en=>{
       if(en.isIntersecting){
@@ -573,7 +574,7 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
     restore(){if(saved!=null){window.scrollTo({top:saved,behavior:"instant"});saved=null;}},
     first(){go(0);},
     supported(){
-      if(failed||location.protocol==="file:"||matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+      if(failed||location.protocol==="file:") return false;
       return !!window.WebGL2RenderingContext;
     },
     set(list){
@@ -766,7 +767,24 @@ function applyI18n(){
   if(document.body.classList.contains("route-detail")){const id=parseHash();if(id)renderDetail(id);}
   setMeta(parseHash());
 }
-function setLang(l){LANG=l;try{localStorage.setItem("ls_lang",l)}catch(e){}applyI18n();startRotator();}
+function setLang(l){LANG=l;try{localStorage.setItem("ls_lang",l)}catch(e){}applyI18n();startRotator();syncTheme();}
+/* ============ MODE SOMBRE : suit l'ordinateur, sauf si le visiteur a choisi ============ */
+function syncTheme(){
+  const b=document.getElementById("themeBtn");if(!b)return;
+  const dark=document.documentElement.dataset.theme==="dark",en=LANG==="en";
+  b.setAttribute("aria-pressed",String(dark));
+  b.setAttribute("aria-label",dark?(en?"Switch to light mode":"Passer en mode clair"):(en?"Switch to dark mode":"Passer en mode sombre"));
+  const m=document.querySelector('meta[name="theme-color"]');if(m)m.content=dark?"#1C1B19":"#F7F5F1";
+}
+document.getElementById("themeBtn")?.addEventListener("click",()=>{
+  const t=document.documentElement.dataset.theme==="dark"?"light":"dark";
+  document.documentElement.dataset.theme=t;try{localStorage.setItem("luka-theme",t)}catch(e){}
+  syncTheme();
+});
+matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",e=>{
+  try{if(localStorage.getItem("luka-theme"))return;}catch(_){}
+  document.documentElement.dataset.theme=e.matches?"dark":"light";syncTheme();
+});
 document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
 
 /* ============ FILTERS ============ */
@@ -845,7 +863,7 @@ let io;
 function observeReveal(){
   const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
   const els=document.querySelectorAll(".rv:not(.in)");
-  if(reduce){els.forEach(e=>e.classList.add("in"));return;}
+  if(reduce&&!("IntersectionObserver" in window)){els.forEach(e=>e.classList.add("in"));return;}
   if(!io){
     io=new IntersectionObserver((ents)=>{
       ents.forEach((en)=>{if(en.isIntersecting){en.target.style.transitionDelay=(en.target.dataset.d||0)+"ms";en.target.classList.add("in");io.unobserve(en.target);}});
@@ -862,7 +880,6 @@ function startRotator(){
   const words=ROT[LANG];let idx=0;
   host.textContent=words[0];
   clearInterval(rotTimer);
-  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
   rotTimer=setInterval(()=>{
     if(document.hidden||document.body.classList.contains("route-detail"))return;
     host.classList.add("out");
@@ -950,6 +967,6 @@ function startRotator(){
 })();
 
 /* ============ INIT ============ */
-applyI18n();
+applyI18n();syncTheme();
 route();
 observeReveal();

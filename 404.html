@@ -7,6 +7,7 @@
 <meta name="description" content="Cette page n'existe pas. Retrouvez le portfolio de Luka Stojanovic.">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#F7F5F1">
+<script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('luka-theme')}catch(e){}if(t!=='light'&&t!=='dark')t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';d.dataset.theme=t;})();</script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +23,8 @@
   p{color:var(--muted);font-size:17px;line-height:1.55;margin:0 0 32px}
   a{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600;text-decoration:none;transition:background .2s}
   a:hover{background:var(--accent)}
+  [data-theme="dark"]{--bg:#1C1B19;--ink:#EDE9E2;--muted:rgba(237,233,226,.7);--accent:#E3A285;color-scheme:dark}
+  [data-theme="dark"] a{color:#1C1B19}
 </style>
 </head>
 <body>
