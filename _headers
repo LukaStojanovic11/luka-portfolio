@@ -1,0 +1,13 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+# Les images changent rarement : cache navigateur d'une semaine.
+/assets/*
+  Cache-Control: public, max-age=604800
+
+# Le script n'a pas de nom versionné : le navigateur vérifie à chaque visite qu'il est à jour.
+/assets/js/*
+  ! Cache-Control
+  Cache-Control: public, max-age=0, must-revalidate

@@ -1,0 +1,8 @@
+# Fichiers du dépôt qui ne doivent pas être publiés sur le site
+.git
+.gitignore
+.assetsignore
+.claude
+wrangler.jsonc
+netlify.toml
+scripts

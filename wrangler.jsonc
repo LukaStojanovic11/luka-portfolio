@@ -1,0 +1,10 @@
+// Hébergement Cloudflare : site statique, aucun build, le dossier est publié tel quel.
+{
+  "name": "luka-stojanovic",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": ".",
+    // une adresse inconnue affiche 404.html (avec le code 404)
+    "not_found_handling": "404-page"
+  }
+}
