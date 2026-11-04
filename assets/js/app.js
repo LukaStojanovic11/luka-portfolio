@@ -413,7 +413,7 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
     const t={tex:null,ar:1};TEX.set(src,t);
     const im=new Image();
     const upload=()=>{
-      // large sources are scaled down first, and uploaded one per frame so scrolling never stalls
+      // uploaded one per frame so scrolling never stalls ; large sources are scaled down first
       const big=Math.max(im.naturalWidth,im.naturalHeight);let px=im;
       if(big>2048){const c=document.createElement("canvas"),z=2048/big;c.width=Math.round(im.naturalWidth*z);c.height=Math.round(im.naturalHeight*z);c.getContext("2d").drawImage(im,0,0,c.width,c.height);px=c;}
       t.tex=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,t.tex);
@@ -445,12 +445,13 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
   const spacing=()=>narrow()?phoneW()+.12:SP*fit,lift=()=>narrow()?.72:.26;
   const cropOf=(t,a)=>t.ar>a?[.5-a/t.ar/2,0,a/t.ar,1]:[0,1-t.ar/a,1,t.ar/a];
   const index=x=>clamp(x/SEG.step,0,n-1);
+  const pick=c=>cv.height&&cv.height<=1300?c.small:c.src;
 
   function poses(x,vel,el){
     const out=[],a=index(x),sp=spacing(),CY=lift(),w2=2*Math.PI/3.6,blurX=clamp(vel*.012,-.035,.035),half=PX*asp*1.6;
     cards.forEach((c,i)=>{
       const m=smooth((el-WORD*2.6-c.rnd*220)/LAND);if(m<=0) return;
-      const t=loadTex(c.src);if(!t.tex) return;
+      const t=loadTex(pick(c));if(!t.tex) return;
       const{w,h,a:ca}=sizeOf(t),d=c.d-a;
       if(Math.abs(d)*sp-w/2>half) return;
       const rp=[d*sp,CY,-D+1.6*(Math.cos(w2*d)-1)],p0=[rp[0],CY,-34],p=p0.map((v,j)=>lerp(v,rp[j],m));
@@ -528,12 +529,22 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
     try{if(sessionStorage.getItem("luka-words"))introT=-1e9;}catch(e){}
     if(matchMedia("(prefers-reduced-motion: reduce)").matches)introT=-1e9;
     new ResizeObserver(resize).observe(stage);
+    let near=false,active=false,wake=null;
+    const kick=()=>{if(active)return;active=true;["scroll","pointerdown","keydown","wheel","touchstart"].forEach(t=>removeEventListener(t,kick));if(wake){const w=wake;wake=null;w();}};
+    ["scroll","pointerdown","keydown","wheel","touchstart"].forEach(t=>addEventListener(t,kick,{passive:true}));
     new IntersectionObserver(es=>es.forEach(en=>{
+      near=en.isIntersecting;
       if(en.isIntersecting){
-        // WebGL and the images only start when the gallery gets close
-        if(!gl){if(!init()){failed=true;layoutProjects();return;}resize();}
-        cards.forEach(c=>loadTex(c.src));
-        if(raf==null){last=performance.now();raf=requestAnimationFrame(frame);}
+        // WebGL and the images only start when the gallery gets close, and when the browser is idle
+        const start=()=>{
+          if(!near) return;
+          const r=root.getBoundingClientRect();
+          if(!active&&r.top>innerHeight){wake=start;return;}
+          if(!gl){if(!init()){failed=true;layoutProjects();return;}resize();}
+          cards.forEach(c=>loadTex(pick(c)));
+          if(raf==null){last=performance.now();raf=requestAnimationFrame(frame);}
+        };
+        if(gl||!window.requestIdleCallback)start();else requestIdleCallback(start,{timeout:1200});
       }
       else if(raf!=null){cancelAnimationFrame(raf);raf=null;}
     }),{rootMargin:"25% 0px 25% 0px"}).observe(root);
@@ -585,12 +596,12 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
     },
     set(list){
       n=Math.max(1,list.length);
-      cards=list.map((p,i)=>({src:p.poster||p.cover,id:p.id,d:i,rnd:(i*.37)%1}));
+      cards=list.map((p,i)=>({src:p.poster||p.cover,small:"assets/img/gal/"+p.id+".webp",id:p.id,d:i,rnd:(i*.37)%1}));
       M.B=0;M.C=(n-1)*SEG.step;
       posX=clamp(posX,0,M.C);
       capsEl.innerHTML=list.map((p,i)=>`<a class="gal-cap" href="/projets/${p.id}/" data-id="${p.id}" data-i="${i}"><span class="gal-cap-txt"><h3 class="gal-cap-hook">${tv(p.hook)}</h3><span class="gal-cap-sub">${p.name} · ${tv(p.catLabel)} · ${p.year}</span></span>${capLogos(p)}<span class="gal-cap-go"><span class="gal-cap-cta">${t("work.cta")}</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>`).join("");
       caps=[...capsEl.children];dirty=true;
-      if(gl)cards.forEach(c=>loadTex(c.src));
+      if(gl)cards.forEach(c=>loadTex(pick(c)));
       bind();resize();
     }
   };
