@@ -359,16 +359,17 @@ function bindProjScroll(){
 }
 function clearCardStyles(){projectsEl.querySelectorAll(".project").forEach(c=>{c.style.transform="";c.style.filter="";c.style.zIndex="";c.style.opacity="";c.style.pointerEvents="";});}
 /* project logos: one tone, compact marks, the school always comes last */
-const LOGO={heig:["heig.svg#svgView(viewBox(0 0 690 493))","HEIG-VD"],hug:["hug.svg#svgView(viewBox(0 0 730 323))","Hôpitaux Universitaires de Genève"],etoile:["etoile.svg","L'Étoile Blanche"]};
+const LOGO={heig:["heig.svg#svgView(viewBox(0 0 690 493))","HEIG-VD",690,493],hug:["hug.svg#svgView(viewBox(0 0 730 323))","Hôpitaux Universitaires de Genève",730,323],etoile:["etoile.svg","L'Étoile Blanche",1500,480]};
 const LOGO_PARTNER={pulse:"hug",etoile:"etoile"};
 function capLogos(p){
-  const logo=k=>`<img class="lg-${k}" src="assets/img/logos/${LOGO[k][0]}" alt="${LOGO[k][1]}" loading="lazy" decoding="async">`,x=LOGO_PARTNER[p.id];
+  const logo=k=>`<img class="lg-${k}" src="assets/img/logos/${LOGO[k][0]}" alt="${LOGO[k][1]}" width="${LOGO[k][2]}" height="${LOGO[k][3]}" loading="lazy" decoding="async">`,x=LOGO_PARTNER[p.id];
   return `<span class="gal-cap-logos">${x?logo(x)+'<i aria-hidden="true">×</i>':""}${logo("heig")}</span>`;
 }
 /* ===== projects gallery: WebGL stage — three words play on their own, then the projects move with scroll, drag, side-wheel or arrows ===== */
 const GAL=(()=>{
   const root=document.getElementById("gal"),stage=root.querySelector(".gal-stage"),cv=root.querySelector(".gal-cv"),capsEl=document.getElementById("galCaps");
   const words=[...root.querySelectorAll(".gal-words span")],prev=root.querySelector(".gal-prev"),next=root.querySelector(".gal-next");
+  const count=document.createElement("div");count.className="gal-count";count.setAttribute("aria-hidden","true");prev.after(count);
   const SEG={step:.46},WORD=420,LAND=620,D=7,FOV=35*Math.PI/180,NX=16,NY=1,SP=2.85,PX=Math.tan(FOV/2)*D;
   const TEX=new Map();
   let posX=0,curV=0,dirty=true,uploads=[],saved=null,gl=null,U={},idx=0,cards=[],n=0,M={},caps=[],raf=null,cur=0,last=0,introT=null,drawn=[],P=null,asp=1,fit=1,failed=false,bound=false,drag=null,snapT=null;
@@ -472,6 +473,7 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
       fade(w,(l<=0||l>=1?0:smooth(l/.22)*(1-smooth((l-.72)/.28))).toFixed(2));
     });
     prev.disabled=act<=0;next.disabled=act>=n-1;
+    const ct=String(act+1).padStart(2,"0")+" / "+String(n).padStart(2,"0");if(count._t!==ct){count._t=ct;count.innerHTML="<b>"+String(act+1).padStart(2,"0")+"</b> / "+String(n).padStart(2,"0");}
   }
   function frame(now){
     raf=requestAnimationFrame(frame);
@@ -490,6 +492,10 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
     dirty=moving||intro;
     overlays(index(cur),el);
     drawn=poses(cur,curV/SEG.step,el);
+    if(narrow()){
+      let c=null;for(const d of drawn)if(!c||Math.abs(d.m[12])<Math.abs(c.m[12]))c=d;
+      if(c&&c.al>.9){const y=P[5]*(c.m[13]-c.h/2)/-c.m[14],px=Math.round((1-y)/2*stage.clientHeight);if(stage._cb!==px){stage._cb=px;stage.style.setProperty("--cb",px+"px");}}
+    }
     gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
     for(const d of drawn){
       gl.bindTexture(gl.TEXTURE_2D,d.t.tex);
@@ -530,7 +536,7 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
         if(raf==null){last=performance.now();raf=requestAnimationFrame(frame);}
       }
       else if(raf!=null){cancelAnimationFrame(raf);raf=null;}
-    }),{rootMargin:"60% 0px 60% 0px"}).observe(root);
+    }),{rootMargin:"25% 0px 25% 0px"}).observe(root);
     cv.addEventListener("pointerdown",e=>{if(stage.classList.contains("ui")){drag={x:e.clientX,from:posX,moved:false,lx:e.clientX,lt:e.timeStamp,v:0};cv.setPointerCapture(e.pointerId);}});
     cv.addEventListener("pointermove",e=>{
       if(!drag||drag.done){cv.style.cursor=hit(e)?"pointer":stage.classList.contains("ui")?"grab":"";return;}
@@ -757,7 +763,8 @@ function applyI18n(){
   document.documentElement.lang=LANG;
   document.querySelectorAll("[data-i18n]").forEach(el=>{
     const v=t(el.getAttribute("data-i18n"));
-    if(/[<&]/.test(v))el.innerHTML=v;else el.textContent=v;
+    // on ne réécrit que si le texte change : sinon le navigateur redessine tout le haut de page pour rien
+    if(/[<&]/.test(v)){if(el.innerHTML!==v)el.innerHTML=v;}else if(el.textContent!==v)el.textContent=v;
   });
   document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===LANG)));
   renderProjects();
@@ -878,7 +885,7 @@ let rotTimer=null;
 function startRotator(){
   const host=document.getElementById("rot");if(!host)return;
   const words=ROT[LANG];let idx=0;
-  host.textContent=words[0];
+  if(host.textContent!==words[0])host.textContent=words[0];
   clearInterval(rotTimer);
   rotTimer=setInterval(()=>{
     if(document.hidden||document.body.classList.contains("route-detail"))return;

@@ -3,11 +3,16 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
 
-# Les images changent rarement : cache navigateur d'une semaine.
+# Images et documents : cache de 30 jours, rafraîchi en arrière-plan.
 /assets/*
-  Cache-Control: public, max-age=604800
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
 
 # Le script n'a pas de nom versionné : le navigateur vérifie à chaque visite qu'il est à jour.
 /assets/js/*
   ! Cache-Control
   Cache-Control: public, max-age=0, must-revalidate
+
+# Polices : elles ne changent jamais, cache d'un an.
+/assets/fonts/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable

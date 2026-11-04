@@ -30,11 +30,28 @@
 <meta name="twitter:title" content="Yearbook HEIG-VD : édition de 28 pages | Luka Stojanovic">
 <meta name="twitter:description" content="Un yearbook de 28 pages pour la filière Ingénierie des médias : grille, système de symboles, mise en page InDesign et risographie.">
 <meta name="twitter:image" content="https://luka-stojanovic.ch/assets/img/og/yearbook.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap"></noscript>
+<link rel="preload" href="/assets/fonts/figtree-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-serif-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>/* Polices hébergées sur le site (latin + latin-ext, licence SIL OFL) */
+/* latin-ext */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;}/* latin */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:400;font-stretch:100%;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}/* latin-ext */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:500;font-stretch:100%;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;}/* latin */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:500;font-stretch:100%;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}/* latin-ext */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;}/* latin */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:600;font-stretch:100%;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}/* latin-ext */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;}/* latin */
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:700;font-stretch:100%;font-display:swap;src:url(/assets/fonts/bricolage-grotesque-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}/* latin-ext */
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/figtree-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;}/* latin */
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/figtree-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}/* latin-ext */
+@font-face{font-family:'Figtree';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/figtree-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;}/* latin */
+@font-face{font-family:'Figtree';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/figtree-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}/* latin-ext */
+@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/figtree-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;}/* latin */
+@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/figtree-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}/* latin-ext */
+@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/figtree-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;}/* latin */
+@font-face{font-family:'Figtree';font-style:normal;font-weight:700;font-display:swap;src:url(/assets/fonts/figtree-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}/* latin-ext */
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(/assets/fonts/instrument-serif-italic-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF;}/* latin */
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(/assets/fonts/instrument-serif-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}</style>
 <style>
 /* ============ FONT FALLBACKS ============ */
 @font-face{font-family:"Bricolage Fallback";src:local("Arial Bold"),local("Arial-BoldMT"),local("Arial"),local("Helvetica"),local("Roboto");font-weight:100 900;size-adjust:90.4%;ascent-override:103%;descent-override:30%;line-gap-override:0%}
@@ -177,6 +194,7 @@ html.nav-open{overflow:hidden}
 .gal-nav{position:absolute;z-index:3;top:calc(50% - 26px);width:52px;height:52px;border-radius:999px;display:grid;place-items:center;color:var(--ink);background:var(--surface);border:1px solid var(--line-2);transition:background .25s,color .25s,border-color .25s}
 .gal-nav:hover:not(:disabled){background:var(--rust);border-color:var(--rust);color:var(--on-accent)}
 .gal-nav:disabled{opacity:calc(var(--ui)*.3);cursor:default}
+.gal-count{display:none}
 .gal-prev{left:var(--gutter)}
 .gal-next{right:var(--gutter)}
 .gal-words{position:absolute;inset:0;z-index:2;display:grid;justify-items:center;align-content:start;padding-top:clamp(110px,22vh,200px);pointer-events:none}
@@ -207,9 +225,13 @@ html.nav-open{overflow:hidden}
   #travaux .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;width:calc(100% + var(--gutter));margin:0;padding-right:var(--gutter)}
   #travaux .filters::-webkit-scrollbar{display:none}
   #travaux .filters button{flex:none}
-  .gal-nav{top:auto;bottom:12px;width:44px;height:44px}
-  .gal-next{left:calc(var(--gutter) + 52px);right:auto}
-  .gal-caps{bottom:68px}
+  /* téléphone : flèches centrées juste sous la vignette, compteur entre les deux */
+  .gal-nav{top:calc(var(--cb,320px) + 16px);bottom:auto;width:42px;height:42px}
+  .gal-prev{left:calc(50% - 88px)}
+  .gal-next{left:calc(50% + 46px);right:auto}
+  .gal-count{display:block;position:absolute;z-index:3;left:50%;top:calc(var(--cb,320px) + 16px);transform:translateX(-50%);height:42px;line-height:42px;font-size:.9rem;font-weight:600;letter-spacing:.04em;color:var(--muted);opacity:var(--ui);font-variant-numeric:tabular-nums;pointer-events:none}
+  .gal-count b{color:var(--ink);font-weight:700}
+  .gal-caps{bottom:clamp(16px,3vh,26px)}
 }
 @media (max-width:560px){
   .gal-cap{gap:10px 12px;flex-wrap:wrap}
@@ -627,12 +649,13 @@ html.iv-skip .iv:not(.ptv){display:none!important}
 .hero h1{font-weight:500;letter-spacing:-.03em;line-height:1}
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.12em;font-size:clamp(1.7rem,3.5vw,3.3rem)}
 .hero h1 .ln>span{display:block;animation:heroLine .85s cubic-bezier(.22,.9,.3,1) .1s backwards}
-.hero .rot{display:block;margin-top:.02em;padding:0 .08em .1em;font-family:"Instrument Serif","Times New Roman",serif;font-style:italic;font-weight:400;font-size:min(16vw,33vh,250px);line-height:1;letter-spacing:-.02em;color:var(--lime);transition:opacity .3s ease,transform .45s cubic-bezier(.22,.9,.3,1),filter .3s ease;animation:heroUp 1s var(--ease) .25s backwards}
+.hero .rot{display:block;margin-top:.02em;padding:0 .08em .1em;font-family:"Instrument Serif","Times New Roman",serif;font-style:italic;font-weight:400;font-size:min(16vw,33vh,250px);line-height:1;letter-spacing:-.02em;color:var(--lime);transition:opacity .3s ease,transform .45s cubic-bezier(.22,.9,.3,1),filter .3s ease;animation:heroRise .8s var(--ease) .1s backwards}
 .hero .rot.out{opacity:0;transform:translateY(-.07em);filter:blur(10px)}
 .hero .rot.in{opacity:0;transform:translateY(.09em);filter:blur(10px);transition:none}
 .hero .lead{max-width:44ch;margin:clamp(18px,3vh,30px) auto 0;font-size:clamp(1.02rem,1.25vw,1.2rem);line-height:1.5;font-weight:500;color:var(--ink-2)}
 .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:clamp(20px,3.4vh,32px)}
-.hero .lead,.hero .hero-actions{opacity:0;animation:heroUp .85s var(--ease) .45s forwards}
+.hero .lead,.hero .hero-actions{animation:heroRise .7s var(--ease) .15s backwards}
+@keyframes heroRise{from{transform:translateY(16px)}}
 .hero .hero-actions{animation-delay:.55s}
 @media (max-width:760px){
   .hero{min-height:calc(88svh - 72px)}
@@ -707,14 +730,19 @@ html.iv-skip .iv:not(.ptv){display:none!important}
 [data-theme="dark"] .tg-t.on{background:#F7F5F1;border-color:transparent;box-shadow:0 12px 28px -18px rgba(0,0,0,.7)}
 [data-theme="dark"] .tg-t b{color:#1C1B19}
 [data-theme="dark"] .bn,[data-theme="dark"] .bn:nth-child(n){--b:var(--surface);--s:rgba(237,233,226,.16);--chip:rgba(237,233,226,.08)}
-[data-theme="dark"] .btn.proj,[data-theme="dark"] .btn.proj.ghost:hover{color:#1C1B19}
+[data-theme="dark"] .btn.proj:not(.ghost),[data-theme="dark"] .btn.proj.ghost:hover{color:#1C1B19}
 [data-theme="dark"] .project:hover,[data-theme="dark"] .bn:hover{box-shadow:0 22px 40px -28px rgba(0,0,0,.8)}
 </style>
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"Person",
+  "@id":"https://luka-stojanovic.ch/#luka",
   "name":"Luka Stojanovic",
+  "givenName":"Luka",
+  "familyName":"Stojanovic",
+  "nationality":{"@type":"Country","name":"Suisse"},
+  "knowsLanguage":["fr","sr","en","de"],
   "jobTitle":"Designer graphique et UX/UI",
   "description":"Étudiant en Ingénierie des médias à la HEIG-VD, spécialisé en design graphique, UX/UI et stratégie digitale.",
   "url":"https://luka-stojanovic.ch/",
@@ -725,6 +753,9 @@ html.iv-skip .iv:not(.ptv){display:none!important}
   "knowsAbout":["Design graphique","UX/UI","Stratégie digitale","Branding","E-commerce","SEO"],
   "sameAs":["https://www.linkedin.com/in/stojanovic-luka/","https://github.com/LukaStojanovic11"]
 }
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","@id":"https://luka-stojanovic.ch/#site","name":"Luka Stojanovic","alternateName":["Luka Stojanovic Portfolio","luka-stojanovic.ch"],"url":"https://luka-stojanovic.ch/","inLanguage":["fr","en"],"author":{"@id":"https://luka-stojanovic.ch/#luka"},"publisher":{"@id":"https://luka-stojanovic.ch/#luka"}}
 </script>
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"CreativeWork","name":"Yearbook de la filière Ingénierie des médias","headline":"Yearbook de la filière Ingénierie des médias","description":"Un yearbook de 28 pages pour la filière Ingénierie des médias : grille, système de symboles, mise en page InDesign et risographie.","url":"https://luka-stojanovic.ch/projets/yearbook/","image":"https://luka-stojanovic.ch/assets/img/og/yearbook.jpg","dateCreated":"2025","inLanguage":"fr","creator":{"@type":"Person","name":"Luka Stojanovic","url":"https://luka-stojanovic.ch/"},"keywords":"Édition, InDesign, Risographie"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://luka-stojanovic.ch/"},{"@type":"ListItem","position":2,"name":"Projets","item":"https://luka-stojanovic.ch/#travaux"},{"@type":"ListItem","position":3,"name":"Yearbook de la filière Ingénierie des médias","item":"https://luka-stojanovic.ch/projets/yearbook/"}]}]</script>
 <script>(function(){try{var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;var seen=sessionStorage.getItem('luka-intro')==='1'||location.pathname.length>1;document.documentElement.classList.add((rm||seen)?'iv-skip':'iv-lock');}catch(e){}})();</script>
