@@ -530,13 +530,25 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
       }
       else if(raf!=null){cancelAnimationFrame(raf);raf=null;}
     }),{rootMargin:"60% 0px 60% 0px"}).observe(root);
-    cv.addEventListener("pointerdown",e=>{if(stage.classList.contains("ui")){drag={x:e.clientX,from:posX,moved:false};cv.setPointerCapture(e.pointerId);}});
+    cv.addEventListener("pointerdown",e=>{if(stage.classList.contains("ui")){drag={x:e.clientX,from:posX,moved:false,lx:e.clientX,lt:e.timeStamp,v:0};cv.setPointerCapture(e.pointerId);}});
     cv.addEventListener("pointermove",e=>{
       if(!drag||drag.done){cv.style.cursor=hit(e)?"pointer":stage.classList.contains("ui")?"grab":"";return;}
       const dx=e.clientX-drag.x;if(Math.abs(dx)>6)drag.moved=true;
+      // finger speed (px/ms), smoothed, so a quick flick counts even when it is short
+      const dt=e.timeStamp-drag.lt;if(dt>0){drag.v=drag.v*.4+(e.clientX-drag.lx)/dt*.6;drag.lx=e.clientX;drag.lt=e.timeStamp;}
       if(drag.moved){cv.style.cursor="grabbing";setX(drag.from-dx/(stage.offsetHeight*spacing()/(2*PX))*SEG.step);}
     });
-    const release=()=>{if(!drag) return;const moved=drag.moved;drag=moved?{moved:true,done:true}:null;if(moved){go(nearest());cv.style.cursor="grab";}};
+    // a swipe always lands on the next or previous project in its direction:
+    // snapping to the nearest card made short flicks bounce back to the same one
+    const release=e=>{
+      if(!drag) return;const d=drag,moved=d.moved;drag=moved?{moved:true,done:true}:null;
+      if(!moved) return;cv.style.cursor="grab";
+      const dx=d.lx-d.x,start=Math.round(d.from/SEG.step),fast=Math.abs(d.v)>.25&&e.timeStamp-d.lt<120;
+      if(e.type==="pointerup"&&(Math.abs(dx)>30||fast)){
+        const dir=(fast?d.v:dx)<0?1:-1;
+        go(dir>0?Math.max(nearest(),start+1):Math.min(nearest(),start-1));
+      }else go(nearest());
+    };
     cv.addEventListener("pointerup",release);cv.addEventListener("pointercancel",release);
     cv.addEventListener("click",e=>{
       if(drag&&drag.moved){drag=null;return;}
