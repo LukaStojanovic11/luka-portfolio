@@ -14,3 +14,9 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# Le script n'a pas de nom versionné : le navigateur vérifie à chaque visite qu'il est à jour.
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
