@@ -413,12 +413,30 @@ body.route-detail .detail{display:block}
 .dg-cap{margin-top:2px;text-align:center;color:var(--muted);font-size:.9rem;line-height:1.45}
 .dg-zoom{position:absolute;left:50%;bottom:16%;transform:translate(-50%,8px);z-index:2;display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;background:rgba(22,33,58,.84);color:#fff;font-size:.78rem;font-weight:600;opacity:0;transition:.3s var(--ease);pointer-events:none}
 .dg-dev:hover .dg-zoom,.dg-dev:focus-visible .dg-zoom{opacity:1;transform:translate(-50%,0)}
-.lb{position:fixed;inset:0;z-index:200;background:rgba(20,18,16,.86);backdrop-filter:blur(4px);display:flex;align-items:flex-start;justify-content:center;padding:clamp(18px,4vw,56px);overflow:auto;animation:lbIn .25s var(--ease)}
+/* visionneuse : image centrée et agrandie, pages hautes en défilement, carrousel sur tout le projet */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(20,18,16,.92);backdrop-filter:blur(4px);display:flex;flex-direction:column;animation:lbIn .25s var(--ease);color:#fff}
 .lb[hidden]{display:none}
 @keyframes lbIn{from{opacity:0}to{opacity:1}}
-.lb img{max-width:min(1040px,100%);width:auto;height:auto;border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.lb-x{position:fixed;top:16px;right:20px;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,255,255,.14);color:#fff;font-size:1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
-.lb-x:hover{background:rgba(255,255,255,.28)}
+.lb-stage{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;display:flex;align-items:center;justify-content:center;padding:clamp(56px,7vh,72px) clamp(16px,7vw,96px) 12px}
+.lb.tall .lb-stage{align-items:flex-start}
+.lb-stage img{display:block;flex:none;max-width:none;height:auto;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.5);transition:opacity .2s ease}
+.lb-stage img.ld{opacity:0}
+.lb-x{position:absolute;z-index:2;top:14px;right:16px;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,255,255,.14);color:#fff;font-size:1.25rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s}
+.lb-x:hover,.lb-nav:hover:not(:disabled){background:rgba(255,255,255,.28)}
+.lb-nav{position:absolute;z-index:2;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.14);color:#fff;transition:background .25s}
+.lb-nav[hidden]{display:none}
+.lb-prev{left:clamp(10px,2vw,24px)}.lb-next{right:clamp(10px,2vw,24px)}
+.lb-bar{flex:none;display:flex;align-items:baseline;justify-content:center;gap:14px;flex-wrap:wrap;padding:12px 20px max(16px,env(safe-area-inset-bottom));text-align:center;font-size:.95rem}
+.lb-count{font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.lb-cap{color:rgba(255,255,255,.82)}
+.lb-hint{color:rgba(255,255,255,.55);font-size:.85rem}
+.lb-hint:empty,.lb-cap:empty{display:none}
+@media (max-width:760px){
+  .lb-stage{padding:60px 12px 8px}
+  .lb-nav{top:auto;bottom:10px;transform:none;width:44px;height:44px}
+  .lb-prev{left:12px}.lb-next{right:12px}
+  .lb-bar{min-height:64px;padding:10px 66px max(14px,env(safe-area-inset-bottom));align-items:center;flex-direction:column;gap:2px}
+}
 
 /* ============ RESPONSIVE ============ */
 @media (max-width:980px){
@@ -946,7 +964,13 @@ html.iv-skip .iv:not(.ptv){display:none!important}
   <div class="d-body"><div class="ctx"><h2>Contexte</h2><p>Une identité pensée autour de systèmes visuels clairs, où l'essentiel suffit. La direction artistique, le guide de marque et la stratégie de contenus Instagram et TikTok positionnent le lieu comme une adresse d'afterwork, avec un ton sobre et direct.</p></div>
   <div><h2>Ce que j'ai fait</h2><ul class="d-list"><li><span class="tx">Direction artistique et système visuel</span></li><li><span class="tx">Guide de marque</span></li><li><span class="tx">Stratégie de contenus Instagram et TikTok</span></li><li><span class="tx">Déclinaisons : posts, stories et menus</span></li></ul></div></div>
 </article>
-<div class="lb" id="lb" hidden><button class="lb-x" id="lbX" aria-label="Fermer">&#10005;</button><img id="lbImg" src="" alt=""></div>
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Images du projet">
+  <button class="lb-x" id="lbX" type="button" aria-label="Fermer">&#10005;</button>
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
+  <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Image précédente"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+  <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Image suivante"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  <div class="lb-bar"><span class="lb-count" id="lbCount"></span><span class="lb-cap" id="lbCap"></span><span class="lb-hint" id="lbHint"></span></div>
+</div>
 
 <!-- ============ PAGE TRANSITION ============ -->
 

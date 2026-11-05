@@ -760,14 +760,57 @@ window.addEventListener("hashchange",route);
 window.addEventListener("popstate",route);
 
 /* ============ LIGHTBOX ============ */
-const lb=document.getElementById("lb"),lbImg=document.getElementById("lbImg");
-function openLB(src){if(!src)return;lbImg.src=src;lb.hidden=false;document.documentElement.classList.add("nav-open");}
-function closeLB(){lb.hidden=true;lbImg.src="";document.documentElement.classList.remove("nav-open");}
-document.getElementById("lbX").addEventListener("click",closeLB);
-lb.addEventListener("click",e=>{if(e.target===lb)closeLB();});
-document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!lb.hidden)closeLB();});
-document.addEventListener("click",e=>{const w=e.target.closest(".dg-dev");if(w)openLB(w.dataset.full);});
-document.addEventListener("keydown",e=>{const a=document.activeElement;if((e.key==="Enter"||e.key===" ")&&a&&a.classList&&a.classList.contains("dg-dev")){e.preventDefault();openLB(a.dataset.full);}});
+// même visionneuse pour tous les projets : on passe d'une image à l'autre dans tout le projet
+const lb=document.getElementById("lb"),lbImg=document.getElementById("lbImg"),lbStage=document.getElementById("lbStage");
+const lbPrev=document.getElementById("lbPrev"),lbNext=document.getElementById("lbNext"),lbX=document.getElementById("lbX");
+const lbCount=document.getElementById("lbCount"),lbCap=document.getElementById("lbCap"),lbHint=document.getElementById("lbHint");
+let lbItems=[],lbI=0,lbBack=null,lbT=null;
+const LBT={fr:{prev:"Image précédente",next:"Image suivante",close:"Fermer",scroll:"Faites défiler pour voir toute la page"},en:{prev:"Previous image",next:"Next image",close:"Close",scroll:"Scroll to see the whole page"}};
+function lbFit(){
+  const w=lbImg.naturalWidth,h=lbImg.naturalHeight;if(!w||!h)return;
+  const cs=getComputedStyle(lbStage);
+  const sw=lbStage.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+  const sh=lbStage.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom);
+  // une page très haute se lit en défilant ; sinon l'image tient entière à l'écran, agrandie jusqu'à 2x
+  const tall=h/w>1.7&&h*Math.min(sw/w,1)>sh*1.25;
+  lb.classList.toggle("tall",tall);
+  const iw=tall?Math.min(sw,w<1000?460:1100,w*2):w*Math.min(sw/w,sh/h,2);
+  lbImg.style.width=Math.round(iw)+"px";
+  lbHint.textContent=tall?LBT[LANG].scroll:"";
+}
+function lbShow(i){
+  const n=lbItems.length;lbI=(i+n)%n;const it=lbItems[lbI];
+  lbImg.classList.add("ld");lbImg.alt=it.cap||"";
+  lbImg.onload=()=>{lbFit();lbStage.scrollTop=0;lbImg.classList.remove("ld");};
+  lbImg.src=it.src;
+  lbCount.textContent=(lbI+1)+" / "+n;lbCap.textContent=it.cap||"";
+  lbPrev.hidden=lbNext.hidden=n<2;
+  // les images voisines sont chargées à l'avance
+  [lbI+1,lbI-1].forEach(k=>{const x=lbItems[(k+n)%n];if(x){const im=new Image();im.src=x.src;}});
+}
+function openLB(el){
+  const all=[...document.querySelectorAll(".dg-dev")],i=all.indexOf(el);if(i<0)return;
+  lbItems=all.map(d=>({src:d.dataset.full,cap:d.getAttribute("aria-label")}));
+  const L=LBT[LANG];lbPrev.setAttribute("aria-label",L.prev);lbNext.setAttribute("aria-label",L.next);lbX.setAttribute("aria-label",L.close);
+  lbBack=el;lb.hidden=false;document.documentElement.classList.add("nav-open");lbShow(i);lbX.focus();
+}
+function closeLB(){lb.hidden=true;lbImg.removeAttribute("src");lb.classList.remove("tall");document.documentElement.classList.remove("nav-open");if(lbBack)lbBack.focus();}
+lbX.addEventListener("click",closeLB);
+lbPrev.addEventListener("click",()=>lbShow(lbI-1));
+lbNext.addEventListener("click",()=>lbShow(lbI+1));
+lbStage.addEventListener("click",e=>{if(e.target===lbStage)closeLB();});
+addEventListener("resize",()=>{if(!lb.hidden)lbFit();});
+document.addEventListener("keydown",e=>{
+  if(lb.hidden)return;
+  if(e.key==="Escape")closeLB();
+  else if(e.key==="ArrowRight"){e.preventDefault();lbShow(lbI+1);}
+  else if(e.key==="ArrowLeft"){e.preventDefault();lbShow(lbI-1);}
+});
+// glisser le doigt à gauche ou à droite pour changer d'image
+lbStage.addEventListener("touchstart",e=>{const t=e.touches[0];lbT={x:t.clientX,y:t.clientY};},{passive:true});
+lbStage.addEventListener("touchend",e=>{if(!lbT)return;const t=e.changedTouches[0],dx=t.clientX-lbT.x,dy=t.clientY-lbT.y;lbT=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.4)lbShow(lbI+(dx<0?1:-1));},{passive:true});
+document.addEventListener("click",e=>{const w=e.target.closest(".dg-dev");if(w)openLB(w);});
+document.addEventListener("keydown",e=>{const a=document.activeElement;if((e.key==="Enter"||e.key===" ")&&a&&a.classList&&a.classList.contains("dg-dev")){e.preventDefault();openLB(a);}});
 
 /* ============ I18N APPLY ============ */
 function applyI18n(){
