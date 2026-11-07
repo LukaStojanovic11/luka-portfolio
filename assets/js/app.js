@@ -370,6 +370,7 @@ const GAL=(()=>{
   const root=document.getElementById("gal"),stage=root.querySelector(".gal-stage"),cv=root.querySelector(".gal-cv"),capsEl=document.getElementById("galCaps");
   const words=[...root.querySelectorAll(".gal-words span")],prev=root.querySelector(".gal-prev"),next=root.querySelector(".gal-next");
   const count=document.createElement("div");count.className="gal-count";count.setAttribute("aria-hidden","true");prev.after(count);
+  const nums=document.createElement("div");nums.className="gal-nums";nums.setAttribute("aria-hidden","true");cv.after(nums);let numEls=[];
   const SEG={step:.46},WORD=420,LAND=620,D=7,FOV=35*Math.PI/180,NX=16,NY=1,SP=2.85,PX=Math.tan(FOV/2)*D;
   const TEX=new Map();
   let posX=0,curV=0,dirty=true,uploads=[],saved=null,gl=null,U={},idx=0,cards=[],n=0,M={},caps=[],raf=null,cur=0,last=0,introT=null,drawn=[],P=null,asp=1,fit=1,failed=false,bound=false,drag=null,snapT=null;
@@ -447,33 +448,70 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
   const index=x=>clamp(x/SEG.step,0,n-1);
   const pick=c=>cv.height&&cv.height<=1300?c.small:c.src;
 
+  // ordinateur : au premier projet la rangée glisse à gauche (et au dernier à droite) pour ne pas laisser
+  // un grand vide sur le côté ; la carte s'arrête juste après la flèche. Entre les deux, rien ne change.
+  function edgeShift(c){
+    if(!c) return 0;const t=loadTex(pick(c));if(!t.tex) return 0;
+    const W=PX*asp,px=2*W/(stage.clientWidth||1),gut=Math.min(60,Math.max(20,innerWidth*.05));
+    return Math.max(0,W-(gut+52+28)*px-sizeOf(t).w/2);
+  }
+  function rowShift(a){
+    if(narrow()||n<2) return 0;
+    // courbe t^p : vitesse continue en arrivant sur le 2e (ou l'avant-dernier) projet, sans faire reculer les cartes
+    const sp=spacing(),e0=edgeShift(cards[0]),e1=edgeShift(cards[n-1]);
+    const ease=(t,e)=>{t=clamp(t);if(!t||!e)return 0;const p=clamp(.85*sp/e,1,1.6);return e*Math.pow(t,p);};
+    return ease(1-a,e0)-ease(a-(n-2),e1);
+  }
+  // boucle dans les deux sens : après le dernier projet vient le premier, et inversement, dès 4 projets affichés
+  // (avec moins, la même carte apparaîtrait des deux côtés). Chaque carte est placée au tour le plus proche.
+  const loop=()=>n>=4,wrapI=i=>((i%n)+n)%n;
   function poses(x,vel,el){
-    const out=[],a=index(x),sp=spacing(),CY=lift(),w2=2*Math.PI/3.6,blurX=clamp(vel*.012,-.035,.035),half=PX*asp*1.6;
+    const out=[],a=x/SEG.step,sp=spacing(),CY=lift(),w2=2*Math.PI/3.6,blurX=clamp(vel*.005,-.012,.012),half=PX*asp*1.6,sh=loop()?0:rowShift(a);
     cards.forEach((c,i)=>{
       const m=smooth((el-WORD*2.6-c.rnd*220)/LAND);if(m<=0) return;
       const t=loadTex(pick(c));if(!t.tex) return;
-      const{w,h,a:ca}=sizeOf(t),d=c.d-a;
-      if(Math.abs(d)*sp-w/2>half) return;
-      const rp=[d*sp,CY,-D+1.6*(Math.cos(w2*d)-1)],p0=[rp[0],CY,-34],p=p0.map((v,j)=>lerp(v,rp[j],m));
+      let d=c.d-a;if(loop())d-=n*Math.round(d/n);
+      const{w,h,a:ca}=sizeOf(t);
+      if(Math.abs(d*sp-sh)-w/2>half) return;
+      const rp=[d*sp-sh,CY,-D+1.6*(Math.cos(w2*d)-1)],p0=[rp[0],CY,-34],p=p0.map((v,j)=>lerp(v,rp[j],m));
       const q=qMul(qRot(0,1,0,Math.atan(1.6*w2*Math.sin(w2*d)/sp)),qRot(0,1,0,(1-m)*4.2));
       const al=smooth(m*6);
-      if(al>.01) out.push({t,w,h,c:cropOf(t,ca),m:mat(q,p),z:p[2],k:.03*m,al,bx:Math.abs(blurX)<.002?0:blurX*m,by:0,id:c.id});
+      if(al>.01) out.push({t,w,h,c:cropOf(t,ca),m:mat(q,p),z:p[2],k:.03*m,al,bx:Math.abs(blurX)<.002?0:blurX*m,by:0,id:c.id,i:c.d});
     });
     return out.sort((p,q)=>p.z-q.z);
   }
   const fade=(el,v)=>{if(el._o!==v){el._o=v;el.style.opacity=v;}};
+  // grands numéros 01…n posés sous le coin bas-gauche de chaque carte (ordinateur) : ils suivent la carte en 3D,
+  // le « 06 » voisine le « 01 ». Sur téléphone, le compteur sous la carte suffit.
+  function placeNums(){
+    if(!numEls.length) return;
+    if(narrow()){numEls.forEach(e=>fade(e,"0"));return;}
+    const W=stage.clientWidth,H=stage.clientHeight,ui=parseFloat(stage._u||0),a=cur/SEG.step,actI=loop()?wrapI(Math.round(a)):Math.round(index(cur)),seen=new Set();
+    for(const d of drawn){
+      const e=numEls[d.i];if(!e) continue;
+      const m=d.m,x=-d.w/2,y=-d.h/2,cx=m[0]*x+m[4]*y+m[12],cy=m[1]*x+m[5]*y+m[13],cz=m[2]*x+m[6]*y+m[14];
+      if(cz>-.2) continue;seen.add(d.i);
+      const sx=(cx*P[0]/-cz+1)/2*W,sy=(1-cy*P[5]/-cz)/2*H,s=D/-cz;
+      e.style.transform=`translate(${sx.toFixed(1)}px,${sy.toFixed(1)}px) scale(${s.toFixed(3)}) translateY(12px)`;
+      fade(e,(d.al*ui).toFixed(2));
+      if(e._on!==(d.i===actI)){e._on=d.i===actI;e.classList.toggle("on",e._on);}
+    }
+    numEls.forEach((e,i)=>{if(!seen.has(i))fade(e,"0");});
+  }
   function overlays(a,el){
-    const ui=smooth((el-WORD*3.5)/280),act=Math.round(a),u=ui.toFixed(2);
+    const lp=loop();if(lp)a=((a%n)+n)%n;
+    const ui=smooth((el-WORD*3.5)/280),act=lp?wrapI(Math.round(a)):Math.round(a),u=ui.toFixed(2);
     if(stage._u!==u){stage._u=u;stage.style.setProperty("--ui",u);stage.classList.toggle("ui",ui>.5);}
     caps.forEach((c,i)=>{
-      const o=i===act?ui*clamp(1.5-Math.abs(a-i)*5):0;
+      let dist=Math.abs(a-i);if(lp)dist=Math.min(dist,n-dist);
+      const o=i===act?ui*clamp(1.5-dist*5):0;
       fade(c,o.toFixed(2));c.classList.toggle("on",o>.5);
     });
     words.forEach((w,j)=>{
       const l=el/WORD-j;
       fade(w,(l<=0||l>=1?0:smooth(l/.22)*(1-smooth((l-.72)/.28))).toFixed(2));
     });
-    prev.disabled=act<=0;next.disabled=act>=n-1;
+    prev.disabled=!lp&&act<=0;next.disabled=!lp&&act>=n-1;
     const ct=String(act+1).padStart(2,"0")+" / "+String(n).padStart(2,"0");if(count._t!==ct){count._t=ct;count.innerHTML="<b>"+String(act+1).padStart(2,"0")+"</b> / "+String(n).padStart(2,"0");}
   }
   function frame(now){
@@ -491,8 +529,9 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
     if(!moving){cur=posX;curV=0;}
     if(!moving&&!intro&&!dirty) return;
     dirty=moving||intro;
-    overlays(index(cur),el);
+    overlays(loop()?cur/SEG.step:index(cur),el);
     drawn=poses(cur,curV/SEG.step,el);
+    placeNums();
     if(narrow()){
       let c=null;for(const d of drawn)if(!c||Math.abs(d.m[12])<Math.abs(c.m[12]))c=d;
       if(c&&c.al>.9){const y=P[5]*(c.m[13]-c.h/2)/-c.m[14],px=Math.round((1-y)/2*stage.clientHeight);if(stage._cb!==px){stage._cb=px;stage.style.setProperty("--cb",px+"px");}}
@@ -520,7 +559,7 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
     return null;
   }
   // projects only ever move sideways: vertical scroll always belongs to the page
-  const setX=x=>{posX=clamp(x,0,M.C);};
+  const setX=x=>{posX=loop()?x:clamp(x,0,M.C);};
   const go=i=>setX(i*SEG.step);
   const nearest=()=>Math.round(posX/SEG.step);
   const onStage=()=>{const r=stage.getBoundingClientRect();return stage.classList.contains("ui")&&r.top<innerHeight*.5&&r.bottom>innerHeight*.5;};
@@ -554,7 +593,10 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
       const dx=e.clientX-drag.x;if(Math.abs(dx)>6)drag.moved=true;
       // finger speed (px/ms), smoothed, so a quick flick counts even when it is short
       const dt=e.timeStamp-drag.lt;if(dt>0){drag.v=drag.v*.4+(e.clientX-drag.lx)/dt*.6;drag.lx=e.clientX;drag.lt=e.timeStamp;}
-      if(drag.moved){cv.style.cursor="grabbing";setX(drag.from-dx/(stage.offsetHeight*spacing()/(2*PX))*SEG.step);}
+      if(drag.moved){cv.style.cursor="grabbing";
+        // au premier ou au dernier projet : résistance élastique au lieu d'un arrêt net, puis retour au relâchement
+        const raw=drag.from-dx/(stage.offsetHeight*spacing()/(2*PX))*SEG.step,over=loop()?0:raw<0?raw:raw>M.C?raw-M.C:0,dim=SEG.step*.35;
+        posX=over?(over<0?0:M.C)+over*dim*.55/(dim+.55*Math.abs(over)):raw;}
     });
     // a swipe always lands on the next or previous project in its direction:
     // snapping to the nearest card made short flicks bounce back to the same one
@@ -584,12 +626,14 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
     });
     capsEl.addEventListener("click",()=>{saved=scrollY;});
     capsEl.addEventListener("focusin",e=>{
-      const a=e.target.closest(".gal-cap");if(a) go(+a.dataset.i);
+      const a=e.target.closest(".gal-cap");if(!a) return;
+      const i=+a.dataset.i;if(!loop()){go(i);return;}
+      const k=nearest();go(k+((i-wrapI(k)+n+Math.floor(n/2))%n)-Math.floor(n/2));
     });
   }
   return {
     restore(){if(saved!=null){window.scrollTo({top:saved,behavior:"instant"});saved=null;}},
-    first(){go(0);},
+    first(){go(loop()?n*Math.round(nearest()/n):0);},
     supported(){
       if(failed||location.protocol==="file:") return false;
       return !!window.WebGL2RenderingContext;
@@ -598,9 +642,12 @@ vec3 r=c.rgb+(1.-c.a)*vec3(.97,.96,.94);if(!gl_FrontFacing)r*=.58;o=vec4(r*uO,uO
       n=Math.max(1,list.length);
       cards=list.map((p,i)=>({src:p.poster||p.cover,small:"assets/img/gal/"+p.id+".webp",id:p.id,d:i,rnd:(i*.37)%1}));
       M.B=0;M.C=(n-1)*SEG.step;
-      posX=clamp(posX,0,M.C);
+      // la position repart dans le premier tour (sans animation de rattrapage), puis on la borne si la boucle est coupée
+      {const L=n*SEG.step,off=Math.floor(posX/L)*L;posX-=off;cur-=off;}
+      if(!loop())posX=clamp(posX,0,M.C);
       capsEl.innerHTML=list.map((p,i)=>`<a class="gal-cap" href="/projets/${p.id}/" data-id="${p.id}" data-i="${i}"><span class="gal-cap-txt"><h3 class="gal-cap-hook">${tv(p.hook)}</h3><span class="gal-cap-sub">${p.name} · ${tv(p.catLabel)} · ${p.year}</span></span>${capLogos(p)}<span class="gal-cap-go"><span class="gal-cap-cta">${t("work.cta")}</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>`).join("");
       caps=[...capsEl.children];dirty=true;
+      nums.innerHTML=list.map((p,i)=>`<span>${String(i+1).padStart(2,"0")}</span>`).join("");numEls=[...nums.children];
       if(gl)cards.forEach(c=>loadTex(pick(c)));
       bind();resize();
     }
@@ -835,12 +882,13 @@ function syncTheme(){
   const dark=document.documentElement.dataset.theme==="dark",en=LANG==="en";
   b.setAttribute("aria-pressed",String(dark));
   b.setAttribute("aria-label",dark?(en?"Switch to light mode":"Passer en mode clair"):(en?"Switch to dark mode":"Passer en mode sombre"));
-  const m=document.querySelector('meta[name="theme-color"]');if(m)m.content=dark?"#1C1B19":"#F7F5F1";
+  const m=document.querySelector('meta[name="theme-color"]');if(m)m.content=dark?"#1C1B19":"#F5F5F3";
 }
 document.getElementById("themeBtn")?.addEventListener("click",()=>{
   const t=document.documentElement.dataset.theme==="dark"?"light":"dark";
-  document.documentElement.dataset.theme=t;try{localStorage.setItem("luka-theme",t)}catch(e){}
-  syncTheme();
+  const apply=()=>{document.documentElement.dataset.theme=t;try{localStorage.setItem("luka-theme",t)}catch(e){}syncTheme();};
+  /* fondu doux entre clair et sombre quand le navigateur le permet */
+  if(document.startViewTransition)document.startViewTransition(apply);else apply();
 });
 matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change",e=>{
   try{if(localStorage.getItem("luka-theme"))return;}catch(_){}
