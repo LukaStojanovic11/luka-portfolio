@@ -33,7 +33,7 @@ const PROJECTS = [
     tags:{fr:["UX/UI","Recherche","Santé"],en:["UX/UI","Research","Healthcare"]},
     teaser:{fr:"Une plateforme qui engage les entreprises dans le don du sang et valorise leur démarche grâce au label CTS.",en:"A platform that gets companies involved in blood donation and recognises their commitment with the CTS label."},
     lead:{fr:"Un parcours simple et rassurant pour donner envie aux entreprises de s'engager pour le don du sang.",en:"A simple, reassuring journey that makes companies want to get involved in blood donation."},
-    context:{fr:"Cette plateforme, réalisée pour les Hôpitaux Universitaires de Genève, aide à mobiliser les entreprises autour du don du sang. Le donneur est guidé de la découverte à la prise de rendez-vous : un quiz d'éligibilité en neuf questions, accompagné d'une mascotte castor conçue pour rassurer, puis la réservation d'un créneau. Les entreprises disposent d'un espace dédié, et leur engagement est reconnu par le label CTS et le Trophée de la générosité. J'ai travaillé le système de design, la mascotte et les maquettes du site public et de l'espace entreprise.",en:"Built for Geneva University Hospitals, this platform helps rally companies around blood donation. Donors are guided from discovery to booking: a nine-question eligibility quiz, led by a beaver mascot designed to reassure, then slot reservation. Companies get a dedicated space, and their commitment is recognised by the CTS label and the Trophée de la générosité. I worked on the design system, the mascot and the mockups for the public site and the company space."},
+    context:{fr:"Cette plateforme, réalisée pour les Hôpitaux Universitaires de Genève, aide à mobiliser les entreprises autour du don du sang. Le donneur est guidé de la découverte à la prise de rendez-vous : un quiz d'éligibilité en neuf questions, accompagné d'une mascotte castor conçue pour rassurer, puis la réservation d'un créneau. Les entreprises disposent d'un espace dédié, et leur engagement est reconnu par le label CTS et le Trophée de la générosité. J'ai travaillé sur le système de design, la mascotte et les maquettes du site public et de l'espace entreprise.",en:"Built for Geneva University Hospitals, this platform helps rally companies around blood donation. Donors are guided from discovery to booking: a nine-question eligibility quiz, led by a beaver mascot designed to reassure, then slot reservation. Companies get a dedicated space, and their commitment is recognised by the CTS label and the Trophée de la générosité. I worked on the design system, the mascot and the mockups for the public site and the company space."},
     did:{fr:["Recherche et cadrage sur le don du sang en entreprise","Système de design et mascotte","Quiz d'éligibilité et prise de rendez-vous","Maquettes du site public et de l'espace entreprise","Label CTS et Trophée de la générosité"],en:["Research and framing on workplace blood donation","Design system and mascot","Eligibility quiz and appointment booking","Mockups for the public site and company space","CTS label and Trophée de la générosité"]},
     poster:"assets/img/hug/card.webp",
     galleryGroups:[
@@ -98,7 +98,7 @@ const PROJECTS = [
     logo:"assets/img/logos/etoile.svg",logoName:"Étoile Blanche",pillDark:true,hoverLogo:"assets/img/logos/etoile.svg",
     role:{fr:"Direction artistique & marque",en:"Art direction & branding"},
     catLabel:{fr:"Design graphique",en:"Graphic design"},
-    tags:{fr:["Branding","Direction artistique","Social media"],en:["Branding","Art direction","Social media"]},
+    tags:{fr:["Identité de marque","Direction artistique","Réseaux sociaux"],en:["Branding","Art direction","Social media"]},
     teaser:{fr:"Une nouvelle identité de style suisse pour un restaurant : direction artistique, guide de marque et réseaux sociaux.",en:"A new Swiss-style identity for a restaurant: art direction, brand guide and social media."},
     lead:{fr:"Une identité sobre, construite sur une idée simple : l'essentiel suffit.",en:"A sober identity, built on one simple idea: the essentials are enough."},
     context:{fr:"Une identité pensée autour de systèmes visuels clairs, où l'essentiel suffit. La direction artistique, le guide de marque et la stratégie de contenus Instagram et TikTok positionnent le lieu comme une adresse d'afterwork, avec un ton sobre et direct.",en:"An identity built around clear visual systems, where the essentials are enough. The art direction, brand guide and Instagram and TikTok content strategy position the venue as an after-work destination, with a sober, direct tone."},
@@ -111,7 +111,7 @@ const PROJECTS = [
       {kind:"device",title:{fr:"Stories & annonces",en:"Stories & announcements"},
        items:[{src:"assets/img/etoile/page-savethedate.webp",mock:"assets/img/etoile/story-savethedate.webp",cap:{fr:"Save the date · afterwork",en:"Save the date · afterwork"}},
               {src:"assets/img/etoile/page-philosophie.webp",mock:"assets/img/etoile/story-philosophie.webp",cap:{fr:"L'essentiel suffit · la philosophie",en:"The essentials are enough · philosophy"}},
-              {src:"assets/img/etoile/page-review.webp",mock:"assets/img/etoile/story-review.webp",cap:{fr:"Avis client · Google review",en:"Customer review · Google"}}]},
+              {src:"assets/img/etoile/page-review.webp",mock:"assets/img/etoile/story-review.webp",cap:{fr:"Avis client Google",en:"Google customer review"}}]},
       {kind:"device",title:{fr:"Cartes & menus",en:"Menus & print"},
        items:[{src:"assets/img/etoile/page-mets.webp",mock:"assets/img/etoile/menu-mets.webp",cap:{fr:"La carte des mets",en:"The food menu"}},
               {src:"assets/img/etoile/page-bricoles.webp",mock:"assets/img/etoile/menu-bricoles.webp",cap:{fr:"Bricoles & bar",en:"Small plates & bar"}},
@@ -133,7 +133,7 @@ const PROJECTS = [
     teaser:{fr:"Un yearbook de 28 pages et son système de mise en page sur mesure, réalisé sur InDesign.",en:"A 28-page yearbook and its custom layout system, made in InDesign."},
     lead:{fr:"Un système de symboles guide la lecture, du début à la fin du livre.",en:"A system of symbols guides the reader from the first page to the last."},
     context:{fr:"Conception d'un yearbook de 28 pages pour la filière Ingénierie des médias. Un système de symboles (éditorial, enseignement, recherche, conclusion) structure la lecture du début à la fin. Le projet est complété par un travail en risographie.",en:"Design of a 28-page yearbook for the Media Engineering programme. A system of symbols (editorial, teaching, research, conclusion) structures the reading from start to finish. The project is completed by risograph work."},
-    did:{fr:["Direction éditoriale et grille de mise en page","Système de symboles et hiérarchie","Mise en page de 28 pages sur InDesign","Impression et risographie"],en:["Editorial direction and layout grid","Symbol system and hierarchy","28-page layout in InDesign","Printing and risograph"]},
+    did:{fr:["Direction éditoriale et grille de mise en page","Système de symboles et hiérarchie","Mise en page de 28 pages sur InDesign","Impression en risographie"],en:["Editorial direction and layout grid","Symbol system and hierarchy","28-page layout in InDesign","Risograph printing"]},
     galleryGroups:[
       {kind:"device",title:{fr:"L'objet imprimé",en:"The printed object"},
        items:[{src:"assets/img/yearbook/cover.webp",mock:"assets/img/yearbook/cover-mock.webp",cap:{fr:"La couverture",en:"The cover"}},
@@ -207,21 +207,21 @@ const I18N = {
     "tb.title":"Travail de Bachelor","tb.sub":"Brochure et échéances · Ingénierie des médias, HEIG-VD (2026–27).","tb.lead":"Je cherche une <span class='em'>entreprise partenaire</span> et un sujet pour mon Travail de Bachelor, en Suisse romande. Vous avez un projet en design, en UX/UI ou en stratégie digitale ? Écrivez-moi.","tb.eyebrow":"Travail de Bachelor, HEIG-VD 2026–27","tb.download":"Télécharger la brochure (PDF)","tb.meta":"PDF · 100 Ko · Guide officiel HEIG-VD","tb.p1":"Kick-off","tb.p2":"Validation du sujet","tb.p3":"Pré-étude & Travail de Bachelor","tb.p4":"Soutenances",
     "hero.status":"Disponible pour un Travail de Bachelor · Suisse romande",
     "hero.h1a":"Je conçois des",
-    "hero.lead":"Je m'appelle Luka Stojanovic et j'étudie l'Ingénierie des médias à la HEIG-VD. Je crée des sites web et des interfaces, de la première idée au résultat final.",
+    "hero.lead":"Je m'appelle Luka Stojanovic et j'étudie l'Ingénierie des médias à la HEIG-VD. Du design graphique à l'UX/UI, j'accompagne chaque projet de la première idée au résultat final.",
     "hero.f1":"projets","hero.f2":"disciplines","hero.f3":"Ingénierie des médias",
     "hero.btn1":"Voir les projets","hero.btn2":"Me contacter",
     "work.title":"Projets","work.projects":"projets","work.cta":"Voir le projet",
     "filter.all":"Tous","filter.design":"Design graphique","filter.ux":"UX/UI","filter.dev":"Développement","filter.dataviz":"Visualisation de données","filter.strategy":"Stratégie digitale",
-    "about.title":"À propos","about.sub":"En bref","about.lead":"Étudiant en médias et design, basé en Suisse romande.",
-    "about.bio":"J'étudie l'Ingénierie des médias à la <span class='em'>HEIG-VD</span>, une formation qui réunit design, communication et technique. C'est là que j'aime travailler : entre le visuel et l'interactif.",
-    "about.p2":"Mes projets vont de l'identité de marque à la visualisation de données, en passant par l'UX/UI. Ma méthode reste la même : comprendre le besoin, fixer une direction claire, puis soigner chaque détail, de la maquette au site en ligne.",
-    "about.k1":"Basé à","about.k2":"Formation","about.v2":"Ingénierie des médias, HEIG-VD","about.k3":"Domaines","about.v3":"Design · UX/UI · Développement","about.k4":"Disponible pour","about.v4":"Travail de Bachelor 2026–27",
+    "about.title":"À propos","about.sub":"En bref","about.lead":"Étudiant en Ingénierie des médias, basé en Suisse romande.",
+    "about.bio":"J'étudie l'Ingénierie des médias à la <span class='em'>HEIG-VD</span>, une formation qui réunit design, communication et technique. Ce que j'aime, c'est travailler entre le visuel et l'interactif.",
+    "about.p2":"Mes projets vont de l'identité de marque à la visualisation de données, en passant par l'UX/UI. Ma méthode reste la même : comprendre le besoin, fixer une direction claire, puis soigner chaque détail jusqu'au résultat final.",
+    "about.k1":"Basé en","about.v1":"Suisse romande","about.k2":"Formation","about.v2":"Ingénierie des médias, HEIG-VD","about.k3":"Domaines","about.v3":"Design graphique · UX/UI · Développement","about.k4":"Disponible pour","about.v4":"Travail de Bachelor 2026–27",
     "disc.design.t":"Design graphique","disc.design.p":"Identité, direction artistique, édition, réseaux.",
     "disc.ux.t":"UX / UI","disc.ux.p":"Recherche, wireframing, prototypage Figma, design systems.",
     "disc.strategy.t":"Stratégie digitale","disc.strategy.p":"Business model, e-commerce, SEO, publicité.",
-    "savoir.k":"Savoir-faire","outils.k":"Outils","outils.sub":"Les logiciels que j'utilise au quotidien.",
+    "savoir.k":"Savoir-faire","outils.k":"Outils","outils.sub":"Les logiciels avec lesquels je travaille.",
     "wdo.title":"Ce que je fais","wdo.sub":"Quatre domaines, de la première idée au projet fini.","wdo.aria":"Ce que je fais","wdo.count":"compétences",
-    "contact.title":"Contact","contact.tag":"Et si on <span class='em'>travaillait</span> ensemble ?","contact.sub":"Je cherche une entreprise en Suisse romande pour mon Travail de Bachelor : 14 semaines, d'avril à août 2027.",
+    "contact.title":"Contact","contact.tag":"Et si on <span class='em'>travaillait</span> ensemble ?","contact.sub":"Je cherche une entreprise en Suisse romande pour mon Travail de Bachelor : un projet de 14 semaines, entre avril et août 2027.",
     "contact.write":"Me contacter","contact.cv":"Télécharger mon CV",
     "foot.rights":"Conçu et réalisé à Lausanne","foot.top":"Haut ↑",
     "d.back":"Tous les projets","d.role":"Rôle","d.year":"Année","d.client":"Cadre","d.cat":"Catégorie",
@@ -232,21 +232,21 @@ const I18N = {
     "tb.title":"Bachelor's thesis","tb.sub":"Brochure and deadlines · Media Engineering, HEIG-VD (2026–27).","tb.lead":"I'm looking for a <span class='em'>partner company</span> and a topic for my Bachelor's thesis, in French-speaking Switzerland. Do you have a project in design, UX/UI or digital strategy? Get in touch.","tb.eyebrow":"Bachelor's thesis, HEIG-VD 2026–27","tb.download":"Download the brochure (PDF)","tb.meta":"PDF · 100 KB · Official HEIG-VD guide","tb.p1":"Kick-off","tb.p2":"Topic validation","tb.p3":"Pre-study & Bachelor's thesis","tb.p4":"Oral defenses",
     "hero.status":"Available for a Bachelor's thesis · French-speaking Switzerland",
     "hero.h1a":"I design",
-    "hero.lead":"I'm Luka Stojanovic, a Media Engineering student at HEIG-VD. I create websites and interfaces, from the first idea to the finished result.",
+    "hero.lead":"I'm Luka Stojanovic, a Media Engineering student at HEIG-VD. From graphic design to UX/UI, I take each project from the first idea to the finished result.",
     "hero.f1":"projects","hero.f2":"disciplines","hero.f3":"Media Engineering",
     "hero.btn1":"See the work","hero.btn2":"Contact me",
     "work.title":"Projects","work.projects":"projects","work.cta":"View project",
     "filter.all":"All","filter.design":"Graphic design","filter.ux":"UX/UI","filter.dev":"Development","filter.dataviz":"Data visualization","filter.strategy":"Digital strategy",
-    "about.title":"About","about.sub":"In short","about.lead":"Media and design student, based in French-speaking Switzerland.",
-    "about.bio":"I study Media Engineering at <span class='em'>HEIG-VD</span>, a programme that brings together design, communication and technology. That's where I like to work: between the visual and the interactive.",
-    "about.p2":"My projects range from brand identity to data visualization, through UX/UI. My method stays the same: understand the need, set a clear direction, then take care of every detail, from the mockup to the live site.",
-    "about.k1":"Based in","about.k2":"Education","about.v2":"Media Engineering, HEIG-VD","about.k3":"Fields","about.v3":"Design · UX/UI · Development","about.k4":"Available for","about.v4":"Bachelor's thesis 2026–27",
+    "about.title":"About","about.sub":"In short","about.lead":"Media Engineering student, based in French-speaking Switzerland.",
+    "about.bio":"I study Media Engineering at <span class='em'>HEIG-VD</span>, a programme that brings together design, communication and technology. What I enjoy most is working between the visual and the interactive.",
+    "about.p2":"My projects range from brand identity to data visualization, through UX/UI. My method stays the same: understand the need, set a clear direction, then take care of every detail right up to the finished result.",
+    "about.k1":"Based in","about.v1":"French-speaking Switzerland","about.k2":"Education","about.v2":"Media Engineering, HEIG-VD","about.k3":"Fields","about.v3":"Graphic design · UX/UI · Development","about.k4":"Available for","about.v4":"Bachelor's thesis 2026–27",
     "disc.design.t":"Graphic design","disc.design.p":"Identity, art direction, editorial, social.",
     "disc.ux.t":"UX / UI","disc.ux.p":"Research, wireframing, Figma prototyping, design systems.",
     "disc.strategy.t":"Digital strategy","disc.strategy.p":"Business model, e-commerce, SEO, advertising.",
-    "savoir.k":"Skills","outils.k":"Tools","outils.sub":"The software I use every day.",
+    "savoir.k":"Skills","outils.k":"Tools","outils.sub":"The software I work with.",
     "wdo.title":"What I do","wdo.sub":"Four fields, from the first idea to the finished project.","wdo.aria":"What I do","wdo.count":"skills",
-    "contact.title":"Contact","contact.tag":"Shall we <span class='em'>work</span> together?","contact.sub":"I'm looking for a company in French-speaking Switzerland for my Bachelor's thesis: 14 weeks, from April to August 2027.",
+    "contact.title":"Contact","contact.tag":"Shall we <span class='em'>work</span> together?","contact.sub":"I'm looking for a company in French-speaking Switzerland for my Bachelor's thesis: a 14-week project between April and August 2027.",
     "contact.write":"Contact me","contact.cv":"Download my CV (FR)",
     "foot.rights":"Designed and built in Lausanne","foot.top":"Top ↑",
     "d.back":"All projects","d.role":"Role","d.year":"Year","d.client":"Setting","d.cat":"Category",
@@ -293,18 +293,49 @@ const WDO = [
    s:{fr:["Positionnement","E-commerce","SEO & contenu","Publicité"],en:["Positioning","E-commerce","SEO & content","Advertising"]}}
 ];
 const TOOLS = [
-  {n:"Figma",l:"assets/img/tools/figma.svg"},
-  {n:"Claude",l:"assets/img/tools/claude.svg"},
-  {n:"Illustrator",l:"assets/img/tools/illustrator.svg"},
-  {n:"Photoshop",l:"assets/img/tools/photoshop.svg"},
-  {n:"InDesign",l:"assets/img/tools/indesign.svg"},
-  {n:"Premiere Pro",l:"assets/img/tools/premiere.svg"},
-  {n:"Canva",l:"assets/img/tools/canva.svg"},
-  {n:"WordPress",l:"assets/img/tools/wordpress.svg"},
-  {n:"Notion",l:"assets/img/tools/notion.svg"},
-  {n:"VS Code",l:"assets/img/tools/vscode.svg"},
-  {n:"Miro",l:"assets/img/tools/miro.svg"}
+  {n:"Figma",l:"assets/img/tools/figma.svg",b:"#A259FF"},
+  {n:"Claude",l:"assets/img/tools/claude.svg",b:"#D97757"},
+  {n:"Illustrator",l:"assets/img/tools/illustrator.svg",b:"#FF9A00"},
+  {n:"Photoshop",l:"assets/img/tools/photoshop.svg",b:"#31A8FF"},
+  {n:"InDesign",l:"assets/img/tools/indesign.svg",b:"#FF3366"},
+  {n:"Premiere Pro",l:"assets/img/tools/premiere.svg",b:"#9999FF"},
+  {n:"Canva",l:"assets/img/tools/canva.svg",b:"#00C4CC"},
+  {n:"WordPress",l:"assets/img/tools/wordpress.svg",b:"#21759B"},
+  {n:"Notion",l:"assets/img/tools/notion.svg",b:"#8A8580"},
+  {n:"VS Code",l:"assets/img/tools/vscode.svg",b:"#007ACC"},
+  {n:"Miro",l:"assets/img/tools/miro.svg",b:"#FFD02F"},
+  {n:"Teams",l:"assets/img/tools/teams.svg",b:"#5059C9"}
 ];
+/* à quoi sert chaque outil (bulle au survol ou au toucher) */
+const TOOL_DESC = {
+  "Illustrator":{fr:"Dessin vectoriel : logos, icônes et illustrations qui restent nets à toutes les tailles.",en:"Vector drawing: logos, icons and illustrations that stay sharp at any size."},
+  "Photoshop":{fr:"Retouche et montage photo : corriger une image, créer des visuels et des affiches.",en:"Photo editing: fix images, create visuals and posters."},
+  "InDesign":{fr:"Mise en page : brochures, magazines, rapports et livres prêts à imprimer.",en:"Page layout: brochures, magazines, reports and print-ready books."},
+  "Canva":{fr:"Visuels rapides : publications pour les réseaux sociaux, présentations et flyers.",en:"Quick visuals: social media posts, presentations and flyers."},
+  "Premiere Pro":{fr:"Montage vidéo : couper, assembler et finir une vidéo avec le son et les titres.",en:"Video editing: cut, assemble and finish a video with sound and titles."},
+  "Figma":{fr:"Conception d'interfaces : maquettes de sites et d'applications, prototypes cliquables.",en:"Interface design: website and app mockups, clickable prototypes."},
+  "Miro":{fr:"Tableau blanc en ligne : ateliers, parcours utilisateur et idées organisées en équipe.",en:"Online whiteboard: workshops, user journeys and team brainstorming."},
+  "VS Code":{fr:"Éditeur de code : écrire et tester des sites web en HTML, CSS et JavaScript.",en:"Code editor: write and test websites in HTML, CSS and JavaScript."},
+  "WordPress":{fr:"Création de sites : sites vitrines, blogs et boutiques que le client peut modifier lui-même.",en:"Website builder: showcase sites, blogs and shops the client can update."},
+  "Claude":{fr:"Assistant d'intelligence artificielle : rédiger, résumer, trouver des idées et coder plus vite.",en:"AI assistant: write, summarise, find ideas and code faster."},
+  "Notion":{fr:"Espace de travail : notes, listes de tâches et suivi de projet au même endroit.",en:"Workspace: notes, to-do lists and project tracking in one place."},
+  "Teams":{fr:"Travail d'équipe : discussions, appels vidéo et partage de fichiers.",en:"Teamwork: chat, video calls and file sharing."}
+};
+/* catégorie de chaque outil, affichée en terracotta dans la carte de description (ce à quoi il sert vraiment) */
+const TOOL_CAT = {
+  "Illustrator":{fr:"Design graphique",en:"Graphic design"},
+  "Photoshop":{fr:"Retouche photo",en:"Photo editing"},
+  "InDesign":{fr:"Mise en page",en:"Page layout"},
+  "Canva":{fr:"Réseaux sociaux",en:"Social media"},
+  "Premiere Pro":{fr:"Vidéo",en:"Video"},
+  "Figma":{fr:"UX/UI",en:"UX/UI"},
+  "Miro":{fr:"Collaboration",en:"Collaboration"},
+  "VS Code":{fr:"Développement web",en:"Web development"},
+  "WordPress":{fr:"Sites web",en:"Websites"},
+  "Claude":{fr:"Intelligence artificielle",en:"Artificial intelligence"},
+  "Notion":{fr:"Organisation",en:"Organisation"},
+  "Teams":{fr:"Communication",en:"Communication"}
+};
 
 /* ============ STATE ============ */
 let LANG="fr";
@@ -702,19 +733,32 @@ function renderSkills(){
   }
   const tl=document.getElementById("toolsLogos");
   if(tl){
-    // tools sit in a diamond at the centre of a dim tile wall; side columns drop out on phones
-    const order=[1,2,3,4,5,0,6,7,8,9,10];let k=0,cells="";
-    for(let r=0;r<5;r++)for(let c=0;c<9;c++){
-      const on=(r===2&&c>=2&&c<=6)||((r===1||r===3)&&c>=3&&c<=5),x=on?TOOLS[order[k]]:null;
-      cells+=`<span class="tg-t${on?" on":""}${c<2||c>6?" tg-e":""}"${on?' tabindex="0"':""} style="--dl:${Math.round(Math.hypot(c-4,(r-2)*1.3)*75)}ms;--gd:${(k*1.3).toFixed(1)}s">${on?`<img src="${x.l}" alt="" loading="lazy"><b>${x.n}</b>`:""}</span>`;
+    // le mur de cases d'origine (12 logos en losange 2-4-4-2 au centre de cases sombres) + une carte de description :
+    // à droite sur ordinateur, sous le mur sur téléphone. Survol, clavier ou toucher d'un logo = sa description ; Figma au départ.
+    const byName=Object.fromEntries(TOOLS.map(x=>[x.n,x]));
+    const order=[2,3, 4,0,1,5, 6,8,11,7, 9,10];let k=0,cells="";
+    for(let r=0;r<6;r++)for(let c=0;c<10;c++){
+      const on=((r===1||r===4)&&c>=4&&c<=5)||((r===2||r===3)&&c>=3&&c<=6),x=on?TOOLS[order[k]]:null;
+      cells+=`<span class="tg-t${on?" on":""}${c<2||c>7?" tg-e":""}"${on?` tabindex="0" role="button" data-n="${x.n}" aria-label="${x.n}"`:""} style="--dl:${Math.round(Math.hypot(c-4.5,(r-2.5)*1.3)*75)}ms;--gd:${(k*1.3).toFixed(1)}s">${on?`<img src="${x.l}" alt="" loading="lazy">`:""}</span>`;
       if(on)k++;
     }
-    const a11y=`<ul class="sr-only">${TOOLS.map(x=>`<li>${x.n}</li>`).join("")}</ul>`;
-    tl.classList.add("tools-grid","rv");tl.innerHTML=cells+a11y;
-    if(!tl.dataset.bound){
-      tl.dataset.bound="1";
-      tl.addEventListener("pointermove",e=>{const r=tl.getBoundingClientRect();tl.style.setProperty("--mx",(e.clientX-r.left)+"px");tl.style.setProperty("--my",(e.clientY-r.top)+"px");},{passive:true});
-    }
+    const sel=tl.dataset.sel&&byName[tl.dataset.sel]?tl.dataset.sel:"Figma";
+    tl.classList.add("tools-pick");
+    tl.innerHTML=`<div class="tools-grid rv">${cells}</div><div class="tool-card rv" aria-live="polite"><span class="tc-i"><img alt="" width="44" height="44"></span><div class="tc-t"><p class="tc-g"></p><p class="tc-n"></p><p class="tc-d"></p></div></div>`;
+    const grid=tl.querySelector(".tools-grid"),card=tl.querySelector(".tool-card");
+    const show=(n,anim)=>{
+      const x=byName[n];if(!x) return;tl.dataset.sel=n;
+      grid.querySelectorAll(".tg-t.on").forEach(t=>t.classList.toggle("sel",t.dataset.n===n));
+      const fill=()=>{card.querySelector(".tc-i img").src=x.l;card.querySelector(".tc-g").textContent=tv(TOOL_CAT[n]);card.querySelector(".tc-n").textContent=n;card.querySelector(".tc-d").textContent=tv(TOOL_DESC[n]).replace(/ :/g,"\u00a0:");};
+      if(!anim){fill();return;}
+      card.classList.add("swap");clearTimeout(card._t);card._t=setTimeout(()=>{fill();card.classList.remove("swap");},110);
+    };
+    show(sel,false);
+    const pick=e=>{const t=e.target.closest&&e.target.closest(".tg-t.on");if(t&&t.dataset.n!==tl.dataset.sel)show(t.dataset.n,true);};
+    grid.addEventListener("pointerover",e=>{if(e.pointerType==="mouse")pick(e);});
+    grid.addEventListener("click",pick);grid.addEventListener("focusin",pick);
+    grid.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(e);}});
+    grid.addEventListener("pointermove",e=>{const r=grid.getBoundingClientRect();grid.style.setProperty("--mx",(e.clientX-r.left)+"px");grid.style.setProperty("--my",(e.clientY-r.top)+"px");},{passive:true});
     observeReveal();
   }
 }
