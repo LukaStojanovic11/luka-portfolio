@@ -204,7 +204,7 @@ const PROJECTS = [
 const I18N = {
   fr:{
     "hero.sr":"Luka Stojanovic, designer graphique et UX/UI à Lausanne. ","seo.title":"Luka Stojanovic | Designer graphique et UX/UI à Lausanne","seo.desc":"Portfolio de Luka Stojanovic, étudiant en Ingénierie des médias à la HEIG-VD : design graphique, UX/UI et sites web. Disponible pour un Travail de Bachelor.","nav.work":"Projets","nav.about":"À propos","nav.tb":"Travail de Bachelor","nav.contact":"Contact",
-    "tb.title":"Travail de Bachelor","tb.sub":"Brochure et échéances · Ingénierie des médias, HEIG-VD (2026–27).","tb.lead":"Je cherche une <span class='em'>entreprise partenaire</span> et un sujet pour mon Travail de Bachelor, en Suisse romande. Vous avez un projet en design, en UX/UI ou en stratégie digitale ? Écrivez-moi.","tb.eyebrow":"Travail de Bachelor, HEIG-VD 2026–27","tb.download":"Télécharger la brochure (PDF)","tb.meta":"PDF · 100 Ko · Guide officiel HEIG-VD","tb.p1":"Kick-off","tb.p2":"Validation du sujet","tb.p3":"Pré-étude & Travail de Bachelor","tb.p4":"Soutenances",
+    "tb.title":"Travail de Bachelor","tb.sub":"Brochure et échéances · Ingénierie des médias, HEIG-VD (2026–27).","tb.lead":"Je cherche une <span class='em'>entreprise partenaire</span> et un sujet pour mon Travail de Bachelor, en Suisse romande. Vous avez un projet en design, en UX/UI ou en stratégie digitale ? Écrivez-moi.","tb.eyebrow":"Travail de Bachelor, HEIG-VD 2026–27","tb.download":"Télécharger la brochure","tb.meta":"PDF · 100 Ko · Guide officiel HEIG-VD","tb.p1":"Kick-off","tb.p2":"Validation du sujet","tb.p3":"Pré-étude & Travail de Bachelor","tb.p4":"Soutenances",
     "hero.status":"Disponible pour un Travail de Bachelor · Suisse romande",
     "hero.h1a":"Je conçois des",
     "hero.lead":"Je m'appelle Luka Stojanovic et j'étudie l'Ingénierie des médias à la HEIG-VD. Du design graphique à l'UX/UI, j'accompagne chaque projet de la première idée au résultat final.",
@@ -229,7 +229,7 @@ const I18N = {
   },
   en:{
     "hero.sr":"Luka Stojanovic, graphic and UX/UI designer in Lausanne. ","seo.title":"Luka Stojanovic | Graphic and UX/UI designer in Lausanne","seo.desc":"Portfolio of Luka Stojanovic, Media Engineering student at HEIG-VD: graphic design, UX/UI and websites. Available for a Bachelor's thesis.","nav.work":"Work","nav.about":"About","nav.tb":"Bachelor's thesis","nav.contact":"Contact",
-    "tb.title":"Bachelor's thesis","tb.sub":"Brochure and deadlines · Media Engineering, HEIG-VD (2026–27).","tb.lead":"I'm looking for a <span class='em'>partner company</span> and a topic for my Bachelor's thesis, in French-speaking Switzerland. Do you have a project in design, UX/UI or digital strategy? Get in touch.","tb.eyebrow":"Bachelor's thesis, HEIG-VD 2026–27","tb.download":"Download the brochure (PDF)","tb.meta":"PDF · 100 KB · Official HEIG-VD guide","tb.p1":"Kick-off","tb.p2":"Topic validation","tb.p3":"Pre-study & Bachelor's thesis","tb.p4":"Oral defenses",
+    "tb.title":"Bachelor's thesis","tb.sub":"Brochure and deadlines · Media Engineering, HEIG-VD (2026–27).","tb.lead":"I'm looking for a <span class='em'>partner company</span> and a topic for my Bachelor's thesis, in French-speaking Switzerland. Do you have a project in design, UX/UI or digital strategy? Get in touch.","tb.eyebrow":"Bachelor's thesis, HEIG-VD 2026–27","tb.download":"Download the brochure","tb.meta":"PDF · 100 KB · Official HEIG-VD guide","tb.p1":"Kick-off","tb.p2":"Topic validation","tb.p3":"Pre-study & Bachelor's thesis","tb.p4":"Oral defenses",
     "hero.status":"Available for a Bachelor's thesis · French-speaking Switzerland",
     "hero.h1a":"I design",
     "hero.lead":"I'm Luka Stojanovic, a Media Engineering student at HEIG-VD. From graphic design to UX/UI, I take each project from the first idea to the finished result.",
@@ -818,7 +818,7 @@ function renderDetail(id){
       if(g.kind==="mascot"){
         return `<div class="dg-group"><h3 data-n="${n}">${tv(g.title)}</h3><figure class="dg-mascots"><div class="mas">${g.items.map(it=>`<img src="${it.src}" alt="${tv(g.title)}" loading="lazy" decoding="async">`).join("")}</div>${g.cap?`<figcaption>${tv(g.cap)}</figcaption>`:""}</figure></div>`;
       }
-      return `<div class="dg-group"><h3 data-n="${n}">${tv(g.title)}</h3><div class="dg-devs">${g.items.map(it=>`<div class="dg-dev" data-full="${it.src}" role="button" tabindex="0" aria-label="${tv(it.cap)}"><div class="dg-devimg"><img src="${it.mock}" alt="" loading="lazy" decoding="async"><span class="dg-zoom">⤢ ${t("d.zoom")}</span></div><p class="dg-cap">${tv(it.cap)}</p></div>`).join("")}</div></div>`;
+      return `<div class="dg-group"><h3 data-n="${n}">${tv(g.title)}</h3><div class="dg-devs">${g.items.map(it=>`<div class="dg-dev" data-full="${it.src}" role="button" tabindex="0" aria-label="${tv(it.cap)}"><div class="dg-devimg"><img src="${it.mock}" alt="" loading="lazy" decoding="async"><span class="dg-zoom" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4M11 8v6M8 11h6"/></svg><span class="dg-zoom-t">${t("d.zoom")}</span></span></div><p class="dg-cap">${tv(it.cap)}</p></div>`).join("")}</div></div>`;
     }).join("")}</section>`:""}
     <div class="d-next">
       <div class="k">${t("d.next")}</div>
@@ -947,7 +947,11 @@ document.getElementById("filters").addEventListener("click",e=>{
   document.querySelectorAll("#filters button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
   renderProjects();
   GAL.first();
+  // sur téléphone, le filtre choisi revient au centre de la rangée qui défile
+  const fl=b.parentElement;if(fl.scrollWidth>fl.clientWidth+4)fl.scrollTo({left:fl.scrollLeft+b.getBoundingClientRect().left-fl.getBoundingClientRect().left-(fl.clientWidth-b.offsetWidth)/2,behavior:"smooth"});
 });
+/* fondu aux bords des filtres quand la rangée dépasse (téléphone) : montre qu'on peut faire glisser */
+(()=>{const fl=document.getElementById("filters");const upd=()=>{const over=fl.scrollWidth>fl.clientWidth+4;fl.classList.toggle("fl-l",over&&fl.scrollLeft>4);fl.classList.toggle("fl-r",over&&fl.scrollLeft+fl.clientWidth<fl.scrollWidth-4);};fl.addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd,{passive:true});upd();requestAnimationFrame(upd);})();
 
 
 /* ============ MOBILE NAV ============ */
