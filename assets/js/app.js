@@ -23,9 +23,9 @@
 const PROJECTS = [
   { id:"pulse", cover:"assets/img/pulse.webp", year:"2026", cats:["ux","dev"],
     theme:{bg:"#2E4A47",fg:"#F3EDE4"},
-    title:{fr:"Don du sang HUG, mobiliser les entreprises",en:"HUG blood donation, rallying companies"},name:"Don du sang HUG",
+    title:{fr:"Faire du don de sang un projet d'entreprise",en:"Making blood donation a company project"},name:"Don du sang HUG",
     seo:{"fr":{"t":"Don du sang HUG : UX/UI d'une plateforme | Luka Stojanovic","d":"Une plateforme pour les Hôpitaux Universitaires de Genève : Trophée de la générosité, label CTS, page de collecte par entreprise et quiz d'éligibilité."},"en":{"t":"HUG blood donation: platform UX/UI | Luka Stojanovic","d":"A platform for Geneva University Hospitals: Trophée de la générosité, CTS label, a blood-drive page for each company and an eligibility quiz."}},
-    hook:{fr:"Faire du don du sang un projet d'entreprise.",en:"Making blood donation a company project."},
+    hook:{fr:"Faire du don de sang un projet d'entreprise.",en:"Making blood donation a company project."},
     client:{fr:"HUG × HEIG-VD",en:"HUG × HEIG-VD"},
     logo:"assets/img/logos/hug.svg",logoName:"Hôpitaux Universitaires Genève",hoverLogo:"assets/img/logos/hug.svg",
     role:{fr:"UX/UI & concept",en:"UX/UI & concept"},
